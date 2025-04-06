@@ -2,15 +2,73 @@
 
 body{
     display: flex;
-    justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 97vh;
-    background-color: rgb(11, 11, 41);
+    background-color: #e2dfd0;
+    font-family: 'Montserrat',Montserrat;
+    margin-top: 0%;
 }
 
-h1{
+/* NAVIGATION SECTION STYLE */
+.nav-bar{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    gap: 3%;
+    list-style: none;
+    border: 1px solid;
+    font-size: clamp(0.6em,1.5vw,1.5vw);
+    font-weight:500;
     color: white;
-    font-family: 'Montserrat', Montserrat;
-    font-weight: 400;
-    font-size: 4em;
+    background-color: #3e3232;
+    height:clamp(50px,5vw,5vw);
+    width: 100%;
+    padding-right: 5%;
+}
+
+.products{
+    color: black;
+    font-family: 'Montserrat',Montserrat;
+    font-size: clamp(0.8em,1.5vw,1.5vw);
+    padding-top: 25%;
+    padding-bottom: 25%;
+    padding-left: 10%;
+    cursor: pointer;
+}
+
+.products:hover{
+    background-color: #f0f0d7;
+    border-radius: 5px;
+}
+
+#menu:hover .product-container{
+    display: flex;
+}
+
+.product-container:hover{
+    display: flex;
+}
+
+.product-container{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    margin-top: 1%;
+    height: clamp(8%,8%);
+    width: 8%;
+    border-radius: 5px;
+    background-color: #e5e5cb;
+}
+.nav-section{
+    padding: 1%;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.nav-section:hover{
+    background-color: #e2dfd0;
+    color: black;
+    border-radius: 3px;
 }

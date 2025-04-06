@@ -1,26 +1,37 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kofei</title>
-    <link rel="stylesheet " href="style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <nav class="nav-bar">
-        <ul class="nav-sec">
-          <li>Home</li>
-          <li>Menu</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Reviews</li>
-          <li>Sign Up</li>
-          <li>Sign In</li>
-        </ul>
-      </nav>
-    </div>
+    <nav class="nav-bar">
+      <li class="nav-section" id="home">Home</li>
+      <li class="nav-section" id="menu">
+        Menu
+        <div class="product-container">
+          <label class="products">Donut</label>
+          <label class="products">Coffee</label>
+        </div>
+      </li>
+      <li class="nav-section" id="about">About Us</li>
+      <li class="nav-section" id="contact">Contact</li>
+      <li class="nav-section" id="reviews">Reviews</li>
+      <li class="nav-section" id="sign-up">Sign Up</li>
+      <li class="nav-section" id="sign-in">Sign In</li>
+    </nav>
+    <div id="home-page"></div>
+    <div id="about-us-page"></div>
+    <div id="donut-page"></div>
+    <div id="coffee-page"></div>
+    <div id="reviews-page"></div>
+    <div id="contact-page"></div>
+
     <!-- laging nasa baba itong script tag -->
+    <script src="renderFiles.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
