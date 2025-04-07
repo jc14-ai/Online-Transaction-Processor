@@ -1,0 +1,55 @@
+.donut-background{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.coffee-donut-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+    height: clamp(150px,17vw,17vw);
+    width: 70vw;
+    gap: 10%;
+    /* border: 1px solid; */
+}
+
+.donut-block, .coffee-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: clamp(120px,13vw,13vw);
+    width: clamp(120px,20%,20%);
+    border: 5px solid;
+    border-radius: 100%;
+    padding: 1%;
+    background-color: white;
+    cursor: pointer;
+}
+
+.donut-block:hover, .coffee-block:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.donut-block:not(hover), .coffee-block:not(hover){
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+.inner-circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: 3px solid;
+    height: 90%;
+    width: 90%;
+    
+}
+
+.coffee, .donut{
+    height: 70%;
+    width: 70%;
+}

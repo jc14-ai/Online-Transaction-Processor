@@ -87,3 +87,10 @@ a{
     padding-top: clamp(60px,6%,6%);
 }
 
+#home-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:5px solid;
+}
+
