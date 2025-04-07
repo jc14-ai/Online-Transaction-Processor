@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Joti+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+html{
+    scroll-behavior: smooth;
+}
 body{
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 97vh;
     background-color: #e2dfd0;
     font-family: 'Montserrat',Montserrat;
     margin-top: 0%;
@@ -12,6 +14,7 @@ body{
 
 /* NAVIGATION SECTION STYLE */
 .nav-bar{
+    position: fixed;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -24,14 +27,15 @@ body{
     color: white;
     background-color: #3e3232;
     height:clamp(50px,5vw,5vw);
-    width: 100%;
-    padding-right: 5%;
+    width: 96%;
+    padding-right: clamp(80px,2%,2%);
+    margin-top: 0px;
 }
 
 .products{
     color: black;
     font-family: 'Montserrat',Montserrat;
-    font-size: clamp(0.8em,1.5vw,1.5vw);
+    font-size: clamp(0.9em,1.5vw,1.5vw);
     padding-top: 25%;
     padding-bottom: 25%;
     padding-left: 10%;
@@ -55,8 +59,7 @@ body{
     display: none;
     flex-direction: column;
     position: absolute;
-    margin-top: 1%;
-    height: clamp(8%,8%);
+    margin-top: 0.8%;
     width: 8%;
     border-radius: 5px;
     background-color: #e5e5cb;
@@ -67,8 +70,20 @@ body{
     cursor: pointer;
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
 .nav-section:hover{
     background-color: #e2dfd0;
     color: black;
     border-radius: 3px;
 }
+
+.pages{
+    height: 800px;
+    width: 100%;
+    padding-top: clamp(60px,6%,6%);
+}
+
