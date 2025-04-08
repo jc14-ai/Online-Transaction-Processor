@@ -1,5 +1,5 @@
 .donut-background{
-    height: 96vw;
+    height: 100%;
     width: 100vw;
     object-fit: cover;
 }
@@ -7,21 +7,22 @@
 .coffee-donut-section{
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: flex-start;
     flex-direction: row;
     position: absolute;
-    height: clamp(150px,17vw,17vw);
+    height: clamp(160px,22vw,22vw);
     width: 70vw;
     gap: 10%;
+    /* border: 1px solid; */
 }
 
 .donut-block, .coffee-block{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: clamp(90px,15vw,15vw);
-    width: clamp(90px,16vw,16vw);
-    border: 5px solid;
+    height: clamp(130px,15vw,15vw);
+    width: clamp(130px,16vw,16vw);
+    border: 5px solid ;
     border-radius: 100%;
     padding: 1%;
     background-color: white;
@@ -42,10 +43,9 @@
     justify-content: center;
     align-items: center;
     border-radius: 100%;
-    border: 3px solid;
+    border: 3px solid ;
     height: 90%;
     width: 90%;
-    
 }
 
 .coffee, .donut{
@@ -59,24 +59,27 @@
     justify-content: flex-end;
     align-items: flex-end;
     position: absolute;
-    height: 100vw;
+    height: 100vh;
     width: 100vw;
+    /* border: 1px solid; */
 }
 
 .choco-block{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 47vw;
+    height: 47vh;
     width: 100vw;
-    background-color: bisque;
+    background-color: rgb(196, 144, 80);
+    /* border: 1px solid; */
 }
 
-.choco{
-    height: 110%;
-    width: 100%;
+/* .choco{
+    height: 30vw;
+    width: 200vw;
+    border: 1px solid;
 }
 
 #choco-2{
     transform: scaleX(-1);
-}
+} */
