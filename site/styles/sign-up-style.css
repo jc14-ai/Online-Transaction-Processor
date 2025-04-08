@@ -1,0 +1,90 @@
+.sign-up-form{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: wheat;
+    border-radius: 2vw;
+    height: 60vh;
+    width: 100%;
+}
+
+.header-sign-up{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    font-size: 2em;
+    font-weight: 600;
+    width: 100%;
+    border-radius: 2vw;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: rgb(165, 104, 42);
+    color: rgb(237, 237, 237);
+}
+
+.form-input-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 40vh;
+    width: 80vh;
+    /* border: 1px solid; */
+}
+
+.sub-input-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    /* border: 1px solid; */
+    height: 10vh;
+    width: 30vw;
+    font-size: 1.7em;
+    gap: 5%;
+}
+
+.input-sign-up{
+    border: none;
+    border-radius: 8px;
+    height: 100%;
+    width: 90%;
+    font-size: 0.8em;
+    font-family: 'Motserrat',Montserrat;
+}
+
+.label-box{
+    display: flex;
+    justify-content: flex-end;
+    width: 30%;
+    /* border: 1px solid; */
+}
+.input-box{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 40%;
+    width: 60%;
+    /* border: 1px solid; */
+}
+
+.sign-up-button{
+    font-family: 'Montserrat',Montserrat;
+    font-size: 2em;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    height: 13%;
+    width: 30%;
+    background-color: #3e3232;
+    color: rgb(243, 243, 243);
+    cursor: pointer;
+}
+
+.sign-up-button:hover{
+    background-color: #514444;
+}
+
+

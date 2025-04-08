@@ -92,3 +92,15 @@ a{
     /* border:5px solid; */
 }
 
+.float-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid; */
+    position: fixed;
+    height: 100vh;
+    width: clamp(300px,35vw,35vw);
+    margin: auto;
+    z-index: 1;
+}
+
