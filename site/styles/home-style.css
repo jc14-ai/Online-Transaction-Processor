@@ -1,27 +1,26 @@
 .donut-background{
-    height: 100%;
-    width: 100%;
+    height: 96vw;
+    width: 100vw;
     object-fit: cover;
 }
 
 .coffee-donut-section{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     flex-direction: row;
     position: absolute;
     height: clamp(150px,17vw,17vw);
     width: 70vw;
     gap: 10%;
-    /* border: 1px solid; */
 }
 
 .donut-block, .coffee-block{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: clamp(120px,13vw,13vw);
-    width: clamp(120px,20%,20%);
+    height: clamp(90px,15vw,15vw);
+    width: clamp(90px,16vw,16vw);
     border: 5px solid;
     border-radius: 100%;
     padding: 1%;
@@ -52,4 +51,32 @@
 .coffee, .donut{
     height: 70%;
     width: 70%;
+}
+
+/* need to fix along these lines downward*/
+.choco-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: absolute;
+    height: 100vw;
+    width: 100vw;
+}
+
+.choco-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 47vw;
+    width: 100vw;
+    background-color: bisque;
+}
+
+.choco{
+    height: 110%;
+    width: 100%;
+}
+
+#choco-2{
+    transform: scaleX(-1);
 }
