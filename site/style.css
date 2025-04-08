@@ -9,7 +9,7 @@ body{
     flex-direction: column;
     background-color: #e2dfd0;
     font-family: 'Montserrat',Montserrat;
-    margin-top: 0%;
+    margin: auto;
 }
 
 /* NAVIGATION SECTION STYLE */
@@ -21,7 +21,6 @@ body{
     flex-direction: row;
     gap: 3%;
     list-style: none;
-    border: 1px solid;
     font-size: clamp(0.6em,1.5vw,1.5vw);
     font-weight:500;
     color: white;
@@ -82,8 +81,14 @@ a{
 }
 
 .pages{
-    height: 800px;
-    width: 100%;
-    padding-top: clamp(60px,6%,6%);
+    height: 100vh;
+    width: 100vw;
+}
+
+#home-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border:5px solid; */
 }
 
