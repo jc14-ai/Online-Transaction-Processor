@@ -5,22 +5,54 @@
     flex-direction: column;
     background-color: wheat;
     border-radius: 2vw;
-    height: 60vh;
-    width: 100%;
+    height: 500px;
+    min-height: 500px;
+    width: clamp(400px,35vw,35vw);
+}
+.close-box{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 45px;
+    width: 90%;
+    /* border: 1px solid; */
+}
+.close-button{
+    border-radius: 100px;
+    height: 100%;
+    cursor: pointer;
+}
+.close-button:hover{
+    background-color: #3e3232;
+    transform: scale(1.06);
+    transition: transform 0.1s ease-in;
+}
+.close-button:not(hover){
+    transform: scale(1);
+    transition: transform 0.1s ease-in;
 }
 
+.header-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    font-weight: 600;
+    width: 100%;
+    border-radius: 2vw;
+    /* border: 1px solid; */
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: rgb(165, 104, 42);
+}
 .header-sign-up{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10vh;
+    position: absolute;
     font-size: 2em;
     font-weight: 600;
-    width: 100%;
-    border-radius: 2vw;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    background-color: rgb(165, 104, 42);
+    /* border: 1px solid; */
     color: rgb(237, 237, 237);
 }
 
@@ -29,8 +61,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 40vh;
-    width: 80vh;
+    height: 320px;
+    width: 100%;
     /* border: 1px solid; */
 }
 
@@ -40,9 +72,9 @@
     align-items: center;
     flex-direction: row;
     /* border: 1px solid; */
-    height: 10vh;
-    width: 30vw;
-    font-size: 1.7em;
+    height: 55px;
+    width: 90%;
+    font-size: clamp(0.8em,1.2vw,1.2vw);
     gap: 5%;
 }
 
@@ -51,21 +83,25 @@
     border-radius: 8px;
     height: 100%;
     width: 90%;
-    font-size: 0.8em;
+    font-size: 0.9em;
     font-family: 'Motserrat',Montserrat;
 }
 
 .label-box{
     display: flex;
     justify-content: flex-end;
-    width: 30%;
+    width: 40%;
     /* border: 1px solid; */
 }
+
+/* #contact-label, #confirm-pass-label{
+    font-size: 0.5em;
+} */
 .input-box{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    height: 40%;
+    height: 60%;
     width: 60%;
     /* border: 1px solid; */
 }
@@ -85,6 +121,10 @@
 
 .sign-up-button:hover{
     background-color: #514444;
+}
+
+input:focus{
+    outline: none;
 }
 
 

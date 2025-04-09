@@ -7,16 +7,30 @@
     <link rel="stylesheet" href="/site/styles/sign-up-style.css" />
   </head>
   <body>
-    <form class="sign-up-form" method="POST">
-      <label class="header-sign-up"> SIGN UP</label>
-
+    <form class="sign-up-form" id="sign-up-form" method="post">
+      <div class="header-box">
+        <div class="close-box">
+          <img
+            onclick="showSignUp()"
+            class="close-button"
+            id="close-button"
+            src="/src/close-white.png"
+          />
+        </div>
+        <label class="header-sign-up"> SIGN UP </label>
+      </div>
       <div class="form-input-box">
         <div class="sub-input-box">
           <div class="label-box">
             <label class="label-sign-up">Username:</label>
           </div>
           <div class="input-box">
-            <input class="input-sign-up" type="text" />
+            <input
+              id="username-input"
+              class="input-sign-up"
+              type="text"
+              placeholder="Username"
+            />
           </div>
         </div>
         <div class="sub-input-box">
@@ -24,7 +38,29 @@
             <label class="label-sign-up">Email:</label>
           </div>
           <div class="input-box">
-            <input class="input-sign-up" type="text" />
+            <input
+              id="email-input"
+              class="input-sign-up"
+              type="text"
+              placeholder="Email"
+              type="email"
+              required
+            />
+          </div>
+        </div>
+        <div class="sub-input-box">
+          <div class="label-box">
+            <label class="label-sign-up" id="contact-label"
+              >Contact Number:</label
+            >
+          </div>
+          <div class="input-box">
+            <input
+              id="contact-input"
+              class="input-sign-up"
+              type="text"
+              placeholder="Contact no."
+            />
           </div>
         </div>
         <div class="sub-input-box">
@@ -32,11 +68,35 @@
             <label class="label-sign-up">Password:</label>
           </div>
           <div class="input-box">
-            <input class="input-sign-up" type="text" />
+            <input
+              id="password-input"
+              class="input-sign-up"
+              placeholder="Password"
+              type="password"
+              required
+            />
+          </div>
+        </div>
+        <div class="sub-input-box">
+          <div class="label-box">
+            <label class="label-sign-up" id="confirm-pass-label"
+              >Confirm Password:</label
+            >
+          </div>
+          <div class="input-box">
+            <input
+              id="confirm-password-input"
+              class="input-sign-up"
+              type="text"
+              placeholder="Confirm Password"
+              type="password"
+              required
+            />
           </div>
         </div>
       </div>
-      <button class="sign-up-button">Create</button>
+      <button class="sign-up-button" type="submit">Create</button>
     </form>
+    <script src="/site/functions/signUp.js"></script>
   </body>
 </html>

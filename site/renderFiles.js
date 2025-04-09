@@ -51,12 +51,12 @@ window.addEventListener("DOMContentLoaded", () => {
       .catch(error => {
         console.error("Error loading contact.html:", error);
       });
-    fetch("pages/sign-up.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("sign-up-page").innerHTML = data;
-      })
-      .catch(error => {
-        console.error("Error loading sign-up.html:", error);
-      });
+    // fetch("pages/sign-up.html")
+    //   .then(response => response.text())
+    //   .then(data => {
+    //     document.getElementById("sign-up-page").innerHTML = data;
+    //   })
+    //   .catch(error => {
+    //     console.error("Error loading sign-up.html:", error);
+    //   });
   });

@@ -6,15 +6,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kofei</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/site/styles/sign-up-style.css" />
   </head>
   <body>
-    <div class="float-page" id="sign-up-page"></div>
+    <!-- SIGN UP PAGE -->
+    <div class="float-page" id="sign-up-page">
+      <form class="sign-up-form" id="sign-up-form" method="POST">
+        <div class="header-box">
+          <div class="close-box">
+            <img
+              onclick="showSignUp()"
+              class="close-button"
+              id="close-button"
+              src="/src/close-white.png"
+            />
+          </div>
+          <label class="header-sign-up"> SIGN UP </label>
+        </div>
+        <div class="form-input-box">
+          <div class="sub-input-box">
+            <div class="label-box">
+              <label class="label-sign-up">Username:</label>
+            </div>
+            <div class="input-box">
+              <input
+                id="username-input"
+                class="input-sign-up"
+                type="text"
+                placeholder="Username"
+                required
+              />
+            </div>
+          </div>
+          <div class="sub-input-box">
+            <div class="label-box">
+              <label class="label-sign-up">Email:</label>
+            </div>
+            <div class="input-box">
+              <input
+                id="email-input"
+                class="input-sign-up"
+                type="email"
+                placeholder="Email"
+                required
+              />
+            </div>
+          </div>
+          <div class="sub-input-box">
+            <div class="label-box">
+              <label class="label-sign-up" id="contact-label"
+                >Contact Number:</label
+              >
+            </div>
+            <div class="input-box">
+              <input
+                id="contact-input"
+                class="input-sign-up"
+                type="text"
+                placeholder="Contact no."
+                required
+              />
+            </div>
+          </div>
+          <div class="sub-input-box">
+            <div class="label-box">
+              <label class="label-sign-up">Password:</label>
+            </div>
+            <div class="input-box">
+              <input
+                id="password-input"
+                class="input-sign-up"
+                type="password"
+                placeholder="Password"
+                required
+              />
+            </div>
+          </div>
+          <div class="sub-input-box">
+            <div class="label-box">
+              <label class="label-sign-up" id="confirm-pass-label"
+                >Confirm Password:</label
+              >
+            </div>
+            <div class="input-box">
+              <input
+                id="confirm-password-input"
+                class="input-sign-up"
+                type="password"
+                placeholder="Confirm Password"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <button class="sign-up-button" type="submit">Create</button>
+      </form>
+    </div>
+    <!-- SIGN IN PAGE -->
     <!-- <div class="float-page" id="sign-in-page"></div> -->
+    <!-- HOME PAGE -->
     <div class="pages" id="home-page"></div>
+    <!-- ABOUT US PAGE -->
     <div class="pages" id="about-us-page"></div>
+    <!-- ABOUT DONUT PAGE -->
     <div class="pages" id="donut-page"></div>
+    <!-- COFFEE PAGE -->
     <div class="pages" id="coffee-page"></div>
+    <!-- REVIEWS PAGE -->
     <div class="pages" id="reviews-page"></div>
+    <!-- CONTACT PAGE -->
     <div class="pages" id="contact-page"></div>
 
     <ul class="nav-bar">
@@ -37,9 +137,7 @@
       <li class="nav-section" id="contact">
         <a href="#contact-page">Contact</a>
       </li>
-      <li class="nav-section" id="sign-up">
-        <a href="#sign-up-page">Sign Up</a>
-      </li>
+      <li class="nav-section" id="sign-up" onclick="showSignUp()">Sign Up</li>
       <li class="nav-section" id="sign-in">
         <a href="#sign-in-page">Sign In</a>
       </li>
@@ -48,5 +146,6 @@
     <!-- laging nasa baba itong script tag -->
     <script src="renderFiles.js"></script>
     <script src="script.js"></script>
+    <script src="/site/functions/signUp.js"></script>
   </body>
 </html>

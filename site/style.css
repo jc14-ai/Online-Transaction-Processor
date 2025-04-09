@@ -2,6 +2,7 @@
 
 html{
     scroll-behavior: smooth;
+    user-select: none;
 }
 body{
     display: flex;
@@ -29,6 +30,7 @@ body{
     width: 96%;
     padding-right: clamp(80px,2%,2%);
     margin-top: 0px;
+    z-index: 2;
 }
 
 .products{
@@ -81,7 +83,7 @@ a{
 }
 
 .pages{
-    height: 100vh;
+    height: 800px;
     width: 100vw;
 }
 
@@ -98,9 +100,8 @@ a{
     align-items: center;
     /* border: 1px solid; */
     position: fixed;
-    height: 100vh;
-    width: clamp(300px,35vw,35vw);
-    margin: auto;
+    height: 800px;
+    width: 1550px;
     z-index: 1;
 }
 
