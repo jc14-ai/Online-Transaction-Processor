@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", () => {
-    fetch("pages/home.html")
+    fetch("/site/pages/home.html")
       .then(response => response.text())
       .then(data => {
         document.getElementById("home-page").innerHTML = data;
@@ -8,7 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
         console.error("Error loading home.html:", error);
       });
 
-    fetch("pages/aboutUs.html")
+    fetch("/site/pages/aboutUs.html")
       .then(response => response.text())
       .then(data => {
         document.getElementById("about-us-page").innerHTML = data;
@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
         console.error("Error loading aboutUs.html:", error);
       });
 
-    fetch("pages/donut.html")
+    fetch("/site/pages/donut.html")
       .then(response => response.text())
       .then(data => {
         document.getElementById("donut-page").innerHTML = data;
@@ -26,7 +26,7 @@ window.addEventListener("DOMContentLoaded", () => {
         console.error("Error loading donut.html:", error);
       });
     
-    fetch("pages/coffee.html")
+    fetch("/site/pages/coffee.html")
       .then(response => response.text())
       .then(data => {
         document.getElementById("coffee-page").innerHTML = data;
@@ -35,7 +35,7 @@ window.addEventListener("DOMContentLoaded", () => {
         console.error("Error loading coffee.html:", error);
       });
 
-    fetch("pages/reviews.html")
+    fetch("/site/pages/reviews.html")
       .then(response => response.text())
       .then(data => {
         document.getElementById("reviews-page").innerHTML = data;
@@ -43,7 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
       .catch(error => {
         console.error("Error loading reviews.html:", error);
       });
-    fetch("pages/contact.html")
+    fetch("/site/pages/contact.html")
       .then(response => response.text())
       .then(data => {
         document.getElementById("contact-page").innerHTML = data;
@@ -51,4 +51,12 @@ window.addEventListener("DOMContentLoaded", () => {
       .catch(error => {
         console.error("Error loading contact.html:", error);
       });
+    // fetch("/site/pages/sign-up.html")
+    //   .then(response => response.text())
+    //   .then(data => {
+    //     document.getElementById("sign-up-page").innerHTML = data;
+    //   })
+    //   .catch(error => {
+    //     console.error("Error loading sign-up.html:", error);
+    //   });
   });

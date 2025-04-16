@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kofai</title>
+    <link rel="stylesheet" href="/admin/admin.css" />
+  </head>
+  <body>
+    <!-- KOFAI ADD FLOATING WINDOW -->
+    <div class="add-kofai-container" id="add-kofai-container">
+      <button onclick="closeKofaiAddContainer()" class="add-kofai-close-button">
+        close
+      </button>
+      <h1 class="add-kofai-title">ADD KOFAI</h1>
+      <input class="kofai-name-input" type="text" placeholder="Kofai name" />
+      <input class="kofai-price-input" type="text" placeholder="Kofai price" />
+      <input class="kofai-status-input" type="button" value="STATUS" />
+      <input class="kofai-size-input" type="button" value="SIZE" />
+      <input
+        class="kofai-desc-input"
+        type="text"
+        placeholder="Kofai description"
+      />
+      <div class="button-container">
+        <button class="add-kofai-button">ADD</button>
+        <button class="back-kofai-button">BACK</button>
+      </div>
+    </div>
+
+    <!-- KOFAI DETAILS FLOATING WINDOW -->
+    <div class="details-kofai-container" id="details-kofai-container">
+      <button
+        onclick="closeKofaiDetailsContainer()"
+        class="details-kofai-close-button"
+      >
+        close
+      </button>
+      <h1 class="details-kofai-title">DETAILS</h1>
+      <input
+        class="kofai-name-input"
+        type="text"
+        placeholder="Kofai name"
+        disabled
+      />
+      <input
+        class="kofai-price-input"
+        type="text"
+        placeholder="Kofai price"
+        disabled
+      />
+      <input class="kofai-status-input" type="button" value="STATUS" disabled />
+      <input class="kofai-size-input" type="button" value="SIZE" disabled />
+      <input
+        class="kofai-desc-input"
+        type="text"
+        placeholder="Kofai description"
+        disabled
+      />
+      <div class="button-container">
+        <button class="edit-kofai-button">EDIT</button>
+        <button class="back-kofai-button">BACK</button>
+      </div>
+    </div>
+
+    <!-- KOFAI BOARD -->
+    <div class="kofai-board">
+      <div class="kofai-header">
+        <h4 class="product-list-label">PRODUCT LIST</h4>
+        <div class="add-kofai-button-container">
+          <button onclick="openKofaiAddContainer()" class="add-kofai-button">
+            ADD KOFAI
+          </button>
+        </div>
+      </div>
+      <div class="product-list-header">
+        <h3 class="product-name-header">PRODUCT NAME</h3>
+        <h3 class="product-price-header">PRICE</h3>
+        <h3 class="product-size-header">SIZE</h3>
+        <h3 class="product-status-header">STATUS</h3>
+        <h3 class="product-see-details-header">SEE DETAILS</h3>
+      </div>
+      <div class="product-list">
+        <div class="kofai-product">
+          <h4 class="kofai-name">ICED BLACK</h4>
+          <h4 class="kofai-price">P60.00</h4>
+          <h4 class="kofai-size">16OZ</h4>
+          <h4 class="kofai-status">ACTIVE</h4>
+          <button class="kofai-details" onclick="openKofaiDetailsContainer()">
+            DETAILS
+          </button>
+        </div>
+        <div class="kofai-product">
+          <h4 class="kofai-name">ICED BLACK</h4>
+          <h4 class="kofai-price">P60.00</h4>
+          <h4 class="kofai-size">16OZ</h4>
+          <h4 class="kofai-status">ACTIVE</h4>
+          <button class="kofai-details" onclick="openKofaiDetailsContainer()">
+            DETAILS
+          </button>
+        </div>
+    </div>
+
+    <script src="/admin/admin.js"></script>
+  </body>
+</html>

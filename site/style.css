@@ -2,6 +2,7 @@
 
 html{
     scroll-behavior: smooth;
+    user-select: none;
 }
 body{
     display: flex;
@@ -29,6 +30,7 @@ body{
     width: 96%;
     padding-right: clamp(80px,2%,2%);
     margin-top: 0px;
+    z-index: 2;
 }
 
 .products{
@@ -81,7 +83,7 @@ a{
 }
 
 .pages{
-    height: 100vh;
+    height: 800px;
     width: 100vw;
 }
 
@@ -92,3 +94,22 @@ a{
     /* border:5px solid; */
 }
 
+.float-page{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: 1px solid; */
+    position: fixed;
+    height: 800px;
+    width: 1550px;
+    z-index: 1;
+}
+
+/* #sign-up-page{
+    display: none;
+}
+
+#sign-in-page{
+    display: none;
+} */
