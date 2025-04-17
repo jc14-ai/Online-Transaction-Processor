@@ -9,12 +9,6 @@
   <body>
     <!-- BUNDLE ADD FLOATING WINDOW -->
     <div class="add-bundle-container" id="add-bundle-container">
-      <button
-        onclick="closeBundleAddContainer()"
-        class="add-bundle-close-button"
-      >
-        close
-      </button>
       <h1 class="add-bundle-title">ADD BUNDLE</h1>
       <input class="bundle-name-input" type="text" placeholder="Bundle name" />
       <input
@@ -31,18 +25,14 @@
       />
       <div class="button-container">
         <button class="add-bundle-button">ADD</button>
-        <button class="back-bundle-button">BACK</button>
+        <button class="back-bundle-button" onclick="closeBundleAddContainer()">
+          BACK
+        </button>
       </div>
     </div>
 
-    <!-- DONUT DETAILS FLOATING WINDOW -->
+    <!-- BUNDLE DETAILS FLOATING WINDOW -->
     <div class="details-bundle-container" id="details-bundle-container">
-      <button
-        onclick="closeBundleDetailsContainer()"
-        class="details-bundle-close-button"
-      >
-        close
-      </button>
       <h1 class="details-bundle-title">DETAILS</h1>
       <input
         class="bundle-name-input"
@@ -71,11 +61,16 @@
       />
       <div class="button-container">
         <button class="edit-bundle-button">EDIT</button>
-        <button class="back-bundle-button">BACK</button>
+        <button
+          class="back-bundle-button"
+          onclick="closeBundleDetailsContainer()"
+        >
+          BACK
+        </button>
       </div>
     </div>
 
-    <!-- DONUT BOARD -->
+    <!-- BUNDLE BOARD -->
     <div class="bundle-board">
       <div class="bundle-header">
         <h4 class="product-list-label">PRODUCT LIST</h4>
@@ -92,7 +87,7 @@
         <h3 class="product-see-details-header">SEE DETAILS</h3>
       </div>
       <div class="product-list">
-        <div class="donut-product">
+        <div class="bundle-product">
           <h4 class="bundle-name">Bundle 1</h4>
           <h4 class="bundle-price">P25.00</h4>
           <h4 class="bundle-status">ACTIVE</h4>
@@ -100,7 +95,7 @@
             DETAILS
           </button>
         </div>
-        <div class="donut-product">
+        <div class="bundle-product">
           <h4 class="bundle-name">Bundle 1</h4>
           <h4 class="bundle-price">P25.00</h4>
           <h4 class="bundle-status">ACTIVE</h4>
@@ -108,7 +103,7 @@
             DETAILS
           </button>
         </div>
-        <div class="donut-product">
+        <div class="bundle-product">
           <h4 class="bundle-name">Bundle 1</h4>
           <h4 class="bundle-price">P25.00</h4>
           <h4 class="bundle-status">ACTIVE</h4>
@@ -116,7 +111,7 @@
             DETAILS
           </button>
         </div>
-        <div class="donut-product">
+        <div class="bundle-product">
           <h4 class="bundle-name">Bundle 1</h4>
           <h4 class="bundle-price">P25.00</h4>
           <h4 class="bundle-status">ACTIVE</h4>
@@ -124,7 +119,7 @@
             DETAILS
           </button>
         </div>
-        <div class="donut-product">
+        <div class="bundle-product">
           <h4 class="bundle-name">Bundle 1</h4>
           <h4 class="bundle-price">P25.00</h4>
           <h4 class="bundle-status">ACTIVE</h4>
@@ -132,7 +127,7 @@
             DETAILS
           </button>
         </div>
-        <div class="donut-product">
+        <div class="bundle-product">
           <h4 class="bundle-name">Bundle 1</h4>
           <h4 class="bundle-price">P25.00</h4>
           <h4 class="bundle-status">ACTIVE</h4>
@@ -140,7 +135,7 @@
             DETAILS
           </button>
         </div>
-        <div class="donut-product">
+        <div class="bundle-product">
           <h4 class="bundle-name">Bundle 1</h4>
           <h4 class="bundle-price">P25.00</h4>
           <h4 class="bundle-status">ACTIVE</h4>

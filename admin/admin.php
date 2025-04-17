@@ -28,18 +28,22 @@ if (!isset($_SESSION['user'])) {
     </div>
     <div class="flex-container">
       <div class="navbar">
-        <a href="/admin/boards/dashboard.html" target="main">Dashboard</a>
-        <a href="/admin/boards/kofai.html" target="main">Kofai</a>
+        <a href="/admin/boards/dashboard.php" target="main">Dashboard</a>
+        <a href="/admin/boards/kofai.php" target="main">Kofai</a>
         <a href="/admin/boards/donut.html" target="main">Donut</a>
         <a href="/admin/boards/bundle.html" target="main">Bundle</a>
         <a href="/admin/boards/orders.html" target="main">Orders</a>
         <a href="/admin/boards/notification.html" target="main">Notification</a>
       </div>
       <div class="main-panel">
-        <iframe class="main" name="main"></iframe>
+        <iframe id="main-frame" src="/admin/boards/dashboard.php" class="main" name="main"></iframe>
       </div>
     </div>
   </div>
+  <script>
+    frameSource = document.getElementById("main-frame");
+  </script>
+
   <script src="admin.js"></script>
 </body>
 

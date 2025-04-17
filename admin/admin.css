@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Joti+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* ADMIN DESIGN SETTINGS */
 
 body{
@@ -6,6 +8,9 @@ body{
     align-items: center;
     height: 100vh;
     margin: auto;
+    font-family: Montserrat,'Montserrat';
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .admin-container{
@@ -155,78 +160,141 @@ body{
 }
 
 /* KOFAI PRODUCT DESIGN SETTINGS */
-.kofai-board{
+.kofai-board {
     display: flex;
     align-items: center;
     flex-direction: column;
     height: 100%;
     width: 100%;
-}
-.kofai-header{
+    background-color: #3e3232;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    padding-top: 10%;
+  }
+  .kofai-header {
+    background-color: #3e3232;
+    color: #f9f1e7;
     display: flex;
-    justify-content: center;
+    justify-content:space-between;
     align-items: center;
+    margin-bottom: 20px;
     width: 100%;
-    height: 20%;
-    background-color: rgb(209, 158, 92);
-}
-.product-list-label{
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    height: 100%;
-    width: 45%;
-}
-.add-kofai-button-container{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 100%;
-    width: 45%;
-}
-
-.product-list-header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    gap: 120px;
-    height: 10%;
+  }
+  .kofai-header h4 {
+    font-size: 3em;
+    margin: 0px;
+  }
+  .add-kofai-button {
+    background-color: #428ce2;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .add-kofai-button:hover{
+    background-color: #589eed;
+  }
+  .table-wrapper {
+    max-height: 400px;
     width: 100%;
-}
-
-.product-list{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 70%;
-    width: 100%;
-    gap: 2%;
     overflow-y: auto;
-}
-
-.kofai-product{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
+    border-radius: 10px;
+  }
+  table {
     width: 100%;
-    gap: 135px;
-    background-color: blue;
-}
+    border-collapse: collapse;  
+    background-color: #1a120b;
+    border: 1px solid;
+  }
+  th,
+  td {
+    padding: 12px;
+    text-align: center;
+    color: #e2dfd0;
+  }
+  th {
+    background-color: #272424;
+    font-size: 20px;
+  }
+  .details-button {
+    background-color: #3a2e2e;
+    border: none;
+    padding: 8px 16px;
+    color: #e2dfd0;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .details-button:hover{
+    background-color: #4b3a3a;
+  }
+  tr:hover {
+    background-color: #5f5954;
+  }
 
-/* KOFAI ADD FLOATING WINDOW */
-.add-kofai-container, .details-kofai-container{
-    display: none;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: cadetblue;
+  /* Floating windows */
+  .add-kofai-container,
+  .details-kofai-container {
     position: absolute;
-    width:35%;
-    height: 90%;
-    border-radius: 25px;
-}
+    border-radius: 20px;
+    background-color: #e2dfd0;
+    color: #3e3232;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    height: 80%;
+    width: 40%;
+    padding: 20px;
+    z-index: 2;
+  }
+  .add-kofai-name-input,
+  .add-kofai-price-input,
+  .add-kofai-status-input,
+  .add-kofai-size-input,
+  .add-kofai-desc-input,
+  .details-kofai-name-input,
+  .details-kofai-price-input,
+  .details-kofai-status-input,
+  .details-kofai-size-input,
+  .details-kofai-desc-input,
+  .back-kofai-button,
+  .edit-kofai-button,
+  .add-kofai-button-floating {
+    background-color: #3a2e2e;
+    color: #e2dfd0;
+    border: none;
+    border-radius: 8px;
+    padding: 3%;
+    margin: 3px 0;
+    width: 80%;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .back-kofai-button,
+  .edit-kofai-button,
+  .add-kofai-button-floating,
+  .add-kofai-status-input,
+  .add-kofai-size-input,
+  .details-kofai-status-input,
+  .details-kofai-size-input{
+    cursor: pointer;
+  }
+  .back-kofai-button:hover,
+  .edit-kofai-button:hover,
+  .add-kofai-button-floating:hover,
+  .add-kofai-status-input:hover,
+  .add-kofai-size-input:hover,
+  .details-kofai-status-input:hover,
+  .details-kofai-size-input:hover{
+    background-color: #473a3a;
+  }
 
 /* DONUT PRODUCT DESIGN SETTINGS */
 .donut-board{
