@@ -252,6 +252,8 @@ body{
     padding: 20px;
     z-index: 2;
   }
+  .save-kofai-button,
+  .cancel-kofai-button,
   .add-kofai-name-input,
   .add-kofai-price-input,
   .add-kofai-status-input,
@@ -277,6 +279,8 @@ body{
     text-align: center;
     box-sizing: border-box;
   }
+  .save-kofai-button,
+  .cancel-kofai-button,
   .back-kofai-button,
   .edit-kofai-button,
   .add-kofai-button-floating,
@@ -286,6 +290,8 @@ body{
   .details-kofai-size-input{
     cursor: pointer;
   }
+  .save-kofai-button:hover,
+  .cancel-kofai-button:hover,
   .back-kofai-button:hover,
   .edit-kofai-button:hover,
   .add-kofai-button-floating:hover,
@@ -296,6 +302,33 @@ body{
     background-color: #473a3a;
   }
 
+  .alert-add-kofai{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 30%;
+    width: 30%;
+    position: absolute;
+    border-radius: 10px;
+    background-color: rgb(245, 234, 208);
+    z-index: 1;
+  }
+.close-add-kofai-alert-button{
+    border: none;
+    border-radius: 5px;
+    background-color: #272424;
+    color: white;
+    padding: 10px;
+    font-family: 'Montserrat',Montserrat;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    gap: 10px;
+}
+.close-add-kofai-alert-button:hover{
+    background-color: #453d3d;
+}
 /* DONUT PRODUCT DESIGN SETTINGS */
 .donut-board{
     display: flex;
@@ -315,7 +348,7 @@ body{
 /* .product-list-label{
     display: flex;
     justify-content: flex-start;
-    align-items: flex-end;
+    align-items: flex-end;  
     height: 100%;
     width: 45%;
 } */
