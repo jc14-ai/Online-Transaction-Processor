@@ -182,9 +182,35 @@ function openBundleDetailsContainer(name,price,status,bundleId){
 }
 
 //VIEW ORDER FUNCTIONS
-function viewOrder(){
-    document.getElementById("view-order-container").style.display = 'flex';
-}
+function viewOrder(username, orderId) {
+    document.getElementById("view-customer-name").innerText = username;
+
+    fetch(`/admin/boards/get_order_details.php?order_id=${orderId}`)
+      .then(response => response.json())
+      .then(data => {
+        const tableBody = document.querySelector("#view-order-container tbody");
+        tableBody.innerHTML = "";
+  
+        data.items.forEach(item => {
+          const row = `<tr>
+                        <td>${item.product}</td>
+                        <td>${item.price}</td>
+                        <td>${item.quantity}</td>
+                      </tr>`;
+          tableBody.innerHTML += row;
+        });
+  
+        const totalRow = `<tr style="font-weight: bold; border-top: 2px solid #000;">
+                            <td>Total</td>
+                            <td>${data.summary.total_price}</td>
+                            <td>${data.summary.total_quantity}</td>
+                          </tr>`;
+        tableBody.innerHTML += totalRow;
+      });
+  
+    document.getElementById("view-order-container").style.display = "flex";
+  }
+  
 function closeViewOrder(){
     document.getElementById("view-order-container").style.display = 'none';
 }
