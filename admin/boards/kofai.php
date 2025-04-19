@@ -58,37 +58,46 @@ include("../../site/backend/dbcon.php");
   <!-- Floating Details Kofai-->
   <form class="details-kofai-container" id="details-kofai-container" action="edit_kofai.php" method="POST">
     <h1>DETAILS</h1>
+
     <input class="details-kofai-name-input" id="details-kofai-name-input" type="text" name="kofai_name"
       placeholder="Kofai name" value="" disabled />
+
     <input class="details-kofai-price-input" id="details-kofai-price-input" type="text" name="kofai_price"
       placeholder="Kofai price" value="" disabled />
+
     <input class="details-kofai-status-input" id="details-kofai-status-input" type="button" value=""
       onclick="changeStatus(this,document.getElementById('hidden-details-kofai-status-input'))" disabled />
+
     <input class="details-kofai-size-input" id="details-kofai-size-input" type="button" value=""
       onclick="changeSize(this,document.getElementById('hidden-details-kofai-size-input'))" disabled />
+
     <input class="hidden-details-kofai-status-input" id="hidden-details-kofai-status-input" type="hidden"
       name="kofai_status" value="" />
+
     <input class="hidden-details-kofai-size-input" id="hidden-details-kofai-size-input" type="hidden" name="kofai_size"
       value="" />
+
     <!-- <input class="details-kofai-desc-input" type="text" disabled /> -->
+
     <input class="save-kofai-button" id="save-kofai-button" type="hidden" name="save-kofai-button"
       onclick="closeKofaiDetailsContainer()" value="SAVE" />
+
     <input class="edit-kofai-button" id="edit-kofai-button" type="submit" onclick="editKofaiDetails()" value="EDIT" />
+
     <input class="cancel-kofai-button" id="cancel-kofai-button" type="hidden" onclick="cancelKofaiDetails()"
       value="CANCEL" />
+
     <input class="back-kofai-button" id="back-kofai-button" type="button" onclick="closeKofaiDetailsContainer()"
       value="BACK" />
 
-    <!-- NEEDED TO FIX THIS BECAUSE WHEN THE BUTTON ISNT CLICK, IT JUST RETURN NO VALUE AT ALL -->
     <input type="hidden" name="old-coffee-id" id="old-coffee-id" value="" />
     <input type="hidden" name="old-coffee-size-id" id="old-coffee-size-id" value="" />
-
   </form>
 
   <!-- Main Board -->
   <div class="kofai-board">
     <div class="kofai-header">
-      <h4>PRODUCT LIST</h4>
+      <h4>KOFAI LIST</h4>
       <button onclick="openKofaiAddContainer()" class="add-kofai-button">
         ADD KOFAI
       </button>

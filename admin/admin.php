@@ -30,8 +30,8 @@ if (!isset($_SESSION['user'])) {
       <div class="navbar">
         <a href="/admin/boards/dashboard.php" target="main">Dashboard</a>
         <a href="/admin/boards/kofai.php" target="main">Kofai</a>
-        <a href="/admin/boards/donut.html" target="main">Donut</a>
-        <a href="/admin/boards/bundle.html" target="main">Bundle</a>
+        <a href="/admin/boards/donut.php" target="main">Donut</a>
+        <a href="/admin/boards/bundle.php" target="main">Bundle</a>
         <a href="/admin/boards/orders.html" target="main">Orders</a>
         <a href="/admin/boards/notification.html" target="main">Notification</a>
       </div>
