@@ -51,7 +51,7 @@
           </a>
         </div>
         <div class="dashboard-item">
-          <a href="/admin/boards/notification.html" target="main" class="nav-button">
+          <a href="/admin/boards/notification.php" target="main" class="nav-button">
             <img src="/src/NOTIF-removebg-preview.png" class="icon" alt="Notification Icon">
             Notification
           </a>

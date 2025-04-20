@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="stylesheet" href="/user/user.css" />
+  </head>
+  <body>
+    <div class="cart-container">
+      <div class="my-cart-container">
+        <div class="cart-table-wrapper">
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th>Select</th>
+                <th>Product</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Remove</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td>Donut1</td>
+                <td>P25.00</td>
+                <td>
+                  <div>
+                    <button class="decrement-button">-</button>
+                    <label class="number-label">1</label>
+                    <button class="increment-button">+</button>
+                  </div>
+                </td>
+                <td>P50.00</td>
+                <td>
+                  <button>
+                    <img class="trash-image" src="/src/trash-xmark.png" />
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td>Donut1</td>
+                <td>P25.00</td>
+                <td>
+                  <div>
+                    <button>-</button>
+                    <label>1</label>
+                    <button>+</button>
+                  </div>
+                </td>
+                <td>P50.00</td>
+                <td>
+                  <button>
+                    <img class="trash-image" src="/src/trash-xmark.png" />
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="checkout-container">
+        <label class="total-orders">Total(2 Orders)</label>
+        <label class="total-orders-amount">P120.00</label>
+        <button class="checkout-button">CHECKOUT</button>
+      </div>
+    </div>
+  </body>
+</html>
