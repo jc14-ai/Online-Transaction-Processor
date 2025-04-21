@@ -10,6 +10,7 @@ body{
     flex-direction: column;
     background-color: #e2dfd0;
     font-family: 'Montserrat', Montserrat, serif;
+    font-family: 'Montserrat', Montserrat, serif;
     margin: auto;
 }
 
@@ -83,6 +84,10 @@ a{
 }
 
 .pages{
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
     width: 100%;
     display: block;
     position: relative;

@@ -1,0 +1,108 @@
+.pili {
+    perspective: 1000px;
+    display: inline-block;
+    margin: 20px 30px;
+    width: 300px;
+    height: 500px;
+    cursor: grab;
+}
+
+.lalagyan {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.loob {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.lalagyan:hover .loob {
+    transform: rotateY(180deg);
+}
+
+.harap, .likod {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+.harap img, .likod img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 32px;
+}
+
+.likod {
+    transform: rotateY(180deg);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 0;
+    position: relative;
+}
+
+.likod_lalagyan {
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.likod_imahe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+    transition: all 0.5s ease;
+}
+
+.likod_salita {
+    opacity: 0;
+    padding: 10px;
+    text-align: center;
+    font-size: 1em;
+    color: #333;
+    transition: opacity 0.5s ease;
+}
+
+.lalagyan:hover .likod_lalagyan {
+    animation: angat 0.5s forwards;
+    animation-delay: 5s;
+}
+
+.lalagyan:hover .likod_imahe {
+    animation: angatImahe 0.5s forwards;
+    animation-delay: 5s;
+}
+
+.lalagyan .likod_salita {
+    animation: pakita 0.5s forwards;
+    animation-delay: 5s;
+}
+
+/*.buong_lalagyan {*/
+/*    display: flex;*/
+/*    gap: 20px;*/
+/*    justify-content: center;*/
+/*    flex-wrap: wrap;*/
+/*}*/
+
+@keyframes pakita {
+    to {
+        opacity: 1;
+    }
+}

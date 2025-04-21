@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e7e3d5;
+}
+
+.menu-header {
+    text-align: center;
+    margin: 40px 0 10px;
+}
+
+.menu-header h1 {
+    background-color: #dc714c;
+    display: inline-block;
+    padding: 15px 40px;
+    border-radius: 20px;
+    color: white;
+    font-size: 30px;
+}
+
+.menu-type {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #dc714c;
+    font-weight: bold;
+}
+
+.divider {
+    margin: 0 10px;
+}
+
+/* New Responsive Grid */
+.donut-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.donut-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.donut-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+}
+
+.donut-img {
+    height: 120px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.donut-price, .donut-name {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.stars {
+    color: orange;
+    font-size: 18px;
+}
+
+span:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: #fff9ec;
+    border-radius: 12px;
+    cursor: pointer;
+}
