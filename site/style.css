@@ -9,7 +9,7 @@ body{
     align-items: center;
     flex-direction: column;
     background-color: #e2dfd0;
-    font-family: 'Montserrat',Montserrat;
+    font-family: 'Montserrat', Montserrat, serif;
     margin: auto;
 }
 
@@ -83,8 +83,10 @@ a{
 }
 
 .pages{
-    height: 800px;
-    width: 100vw;
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
 }
 
 #home-page{
@@ -94,22 +96,13 @@ a{
     /* border:5px solid; */
 }
 
-.float-page{
-    display: none;
+#contact-page {
+    margin-top: 50px;
+}
+
+#donut-page{
+    display: inline-block;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    /* border: 1px solid; */
-    position: fixed;
-    height: 800px;
-    width: 1550px;
-    z-index: 1;
+    height: 220vh;
 }
-
-/* #sign-up-page{
-    display: none;
-}
-
-#sign-in-page{
-    display: none;
-} */
