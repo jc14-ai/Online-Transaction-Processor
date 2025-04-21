@@ -1,0 +1,594 @@
+/* ADMIN DESIGN SETTINGS */
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: auto;
+}
+
+.admin-container{
+    height: 90vh;
+    width: 95vw;
+    border-radius: 25px;
+}
+
+.top-width{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+    background-color: red;
+    border-radius: 25px 25px 0px 0px;
+}
+.dashboard-name{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+    padding-left: 3%;
+}
+.top-right-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+    gap: 4%;
+    padding-right: 2%;
+}
+.profile{
+    width: 6%;
+}
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    height: 90%;
+    width: 100%;
+    border-radius: 0px 0px 25px 25px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 20%;
+    background-color: blue;
+    border-radius: 0px 0px 0px 25px;
+}
+
+.main-panel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 80%;
+    background-color: yellow;
+    border-radius: 0px 0px 25px 0px;
+}
+
+.main{
+    background-color: white;
+    height: 90%;
+    width: 95%;
+    border: none;
+    border-radius: 15px;
+}
+
+/* DASBOARD DESIGN SETTINGS */
+.dashboard-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    gap: 5%;
+}
+
+.name-board{
+    width: 90%;
+    height: 30%;
+    background-color: green;
+    border-radius: 25px;
+}
+
+.overview-board{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    width: 90%;
+    height: 50%;
+}
+
+.sales-overview{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 40%;
+    background-color: aqua;
+    border-radius: 20px;
+}
+
+.sales-today-display, .sales-week-display, .sales-month-display, .sales-year-display{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 50%;
+    border: 1px solid;
+    gap: 20px;
+}
+
+.order-analytics{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 40%;
+    background-color: brown;
+    border-radius: 20px;
+}
+
+.orders-completed-display, .orders-pending-display  {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 70%;
+    flex-direction: row;
+    gap: 20px;
+    border: 1px solid;
+}
+
+.num-of-orders-completed-label{
+    background-color: green;
+}
+.num-of-orders-pending-label{
+    background-color: purple;
+}
+
+/* KOFAI PRODUCT DESIGN SETTINGS */
+.kofai-board{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+.kofai-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    background-color: rgb(209, 158, 92);
+}
+.product-list-label{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    height: 100%;
+    width: 45%;
+}
+.add-kofai-button-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    width: 45%;
+}
+
+.product-list-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 120px;
+    height: 10%;
+    width: 100%;
+}
+
+.product-list{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 70%;
+    width: 100%;
+    gap: 2%;
+    overflow-y: auto;
+}
+
+.kofai-product{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 135px;
+    background-color: blue;
+}
+
+/* KOFAI ADD FLOATING WINDOW */
+.add-kofai-container, .details-kofai-container{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: cadetblue;
+    position: absolute;
+    width:35%;
+    height: 90%;
+    border-radius: 25px;
+}
+
+/* DONUT PRODUCT DESIGN SETTINGS */
+.donut-board{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+.donut-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    background-color: rgb(209, 158, 92);
+}
+/* .product-list-label{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    height: 100%;
+    width: 45%;
+} */
+.add-donut-button-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    width: 45%;
+}
+
+.product-list-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 120px;
+    height: 10%;
+    width: 100%;
+}
+
+/* .product-list{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 70%;
+    width: 100%;
+    gap: 5%;
+    overflow-y: auto;
+} */
+
+.donut-product{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 135px;
+    background-color: blue;
+}
+
+/* DONUT ADD FLOATING WINDOW */
+.add-donut-container, .details-donut-container{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: cadetblue;
+    position: absolute;
+    width:35%;
+    height: 90%;
+    border-radius: 25px;
+}
+
+/* BUNDLE PRODUCT DESIGN SETTINGS */
+.bundle-board{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+.bundle-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    background-color: rgb(209, 158, 92);
+}
+/* .product-list-label{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    height: 100%;
+    width: 45%;
+} */
+.add-bundle-button-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    width: 45%;
+}
+
+.product-list-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 120px;
+    height: 10%;
+    width: 100%;
+}
+
+/* .product-list{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 70%;
+    width: 100%;
+    gap: 5%;
+    overflow-y: auto;
+} */
+
+.bundle-product{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 135px;
+    background-color: blue;
+}
+
+/* DONUT ADD FLOATING WINDOW */
+.add-bundle-container, .details-bundle-container{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: cadetblue;
+    position: absolute;
+    width:35%;
+    height: 90%;
+    border-radius: 25px;
+}
+
+/* ORDERS DESIGN SETTINGS */
+.order-container{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.order-name{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    background-color: aqua;
+}
+
+.order-list-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 10%;
+    width: 100%;
+    height: 10%;
+    background-color: blueviolet;
+}
+
+.order-customer-name-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+.order-list{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 70%;
+    gap: 2%;
+    overflow-y: auto;
+}
+
+.order{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15%;
+    gap: 14%;
+    background-color: brown;
+}
+
+/* VIEW ORDER DESIGN SETTINGS */
+.view-order-container{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position:absolute;
+    background-color: rgb(148, 113, 113);
+    width: 40%;
+    height: 80%;
+    border-radius: 25px;
+}
+
+.view-customer-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:cadetblue;
+    width: 80%;
+    height: 12%;
+    border-radius: 10px;
+}
+
+.view-order-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    gap: 10%;
+    background-color: burlywood;
+}
+
+.view-order-details{
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+    height: 50%;
+    gap: 2%;
+}
+
+.view-order-orders{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 25%;
+    gap: 20%;
+    background-color: rgb(119, 119, 173);
+}
+
+.total-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20%;
+    background-color: blue;
+    width: 80%;
+}
+
+.got-it-button-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 80%;
+    height: 20%;
+}
+
+/* NOTIFICATION DESIGN SETTINGS */
+
+/* .outside-notif-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.notif-name{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+} */
+
+/* GAWIN MONG SCROLLABLE */
+/* .inside-notif-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 80%;
+    width: 100%;
+    gap: 2%;
+    overflow-y: auto;
+    background-color: aqua;
+}
+
+.notification{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    background-color: bisque;
+    gap: 60%;
+} */
+
+/* ORDERS DESIGN SETTINGS */
+.notif-container{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.notif-name{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    background-color: aqua;
+}
+
+/* .order-list-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 10%;
+    width: 100%;
+    height: 10%;
+    background-color: blueviolet;
+} */
+
+.notif-list{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 70%;
+    gap: 2%;
+    overflow-y: auto;
+}
+
+.notification{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15%;
+    gap: 60%;
+    background-color: brown;
+}

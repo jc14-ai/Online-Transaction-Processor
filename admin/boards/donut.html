@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donut</title>
+    <link rel="stylesheet" href="/admin/admin.css" />
+  </head>
+  <body>
+    <!-- DONUT ADD FLOATING WINDOW -->
+    <div class="add-donut-container" id="add-donut-container">
+      <button onclick="closeDonutAddContainer()" class="add-donut-close-button">
+        close
+      </button>
+      <h1 class="add-donut-title">ADD Donut</h1>
+      <input class="donut-name-input" type="text" placeholder="Donut name" />
+      <input class="donut-price-input" type="text" placeholder="Donut price" />
+      <input class="donut-status-input" type="button" value="STATUS" />
+      <input class="donut-size-input" type="button" value="SIZE" />
+      <input
+        class="donut-desc-input"
+        type="text"
+        placeholder="donut description"
+      />
+      <div class="button-container">
+        <button class="add-donut-button">ADD</button>
+        <button class="back-donut-button">BACK</button>
+      </div>
+    </div>
+
+    <!-- DONUT DETAILS FLOATING WINDOW -->
+    <div class="details-donut-container" id="details-donut-container">
+      <button
+        onclick="closeDonutDetailsContainer()"
+        class="details-donut-close-button"
+      >
+        close
+      </button>
+      <h1 class="details-donut-title">DETAILS</h1>
+      <input
+        class="donut-name-input"
+        type="text"
+        placeholder="Donut name"
+        disabled
+      />
+      <input
+        class="donut-price-input"
+        type="text"
+        placeholder="Donut price"
+        disabled
+      />
+      <input class="donut-status-input" type="button" value="STATUS" disabled />
+      <input class="donut-size-input" type="button" value="SIZE" disabled />
+      <input
+        class="donut-desc-input"
+        type="text"
+        placeholder="Donut description"
+        disabled
+      />
+      <div class="button-container">
+        <button class="edit-donut-button">EDIT</button>
+        <button class="back-donut-button">BACK</button>
+      </div>
+    </div>
+
+    <!-- DONUT BOARD -->
+    <div class="donut-board">
+      <div class="donut-header">
+        <h4 class="product-list-label">PRODUCT LIST</h4>
+        <div class="add-donut-button-container">
+          <button onclick="openDonutAddContainer()" class="add-donut-button">
+            ADD DONUT
+          </button>
+        </div>
+      </div>
+      <div class="product-list-header">
+        <h3 class="product-name-header">PRODUCT NAME</h3>
+        <h3 class="product-price-header">PRICE</h3>
+        <h3 class="product-status-header">STATUS</h3>
+        <h3 class="product-see-details-header">SEE DETAILS</h3>
+      </div>
+      <div class="product-list">
+        <div class="donut-product">
+          <h4 class="donut-name">Donut 1</h4>
+          <h4 class="donut-price">P25.00</h4>
+          <h4 class="donut-status">ACTIVE</h4>
+          <button class="donut-details" onclick="openDonutDetailsContainer()">
+            DETAILS
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/admin/admin.js"></script>
+  </body>
+</html>

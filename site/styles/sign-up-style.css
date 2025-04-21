@@ -1,0 +1,130 @@
+.sign-up-form{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: wheat;
+    border-radius: 2vw;
+    height: 500px;
+    min-height: 500px;
+    width: clamp(400px,35vw,35vw);
+}
+.close-box{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 45px;
+    width: 90%;
+    /* border: 1px solid; */
+}
+.close-button{
+    border-radius: 100px;
+    height: 100%;
+    cursor: pointer;
+}
+.close-button:hover{
+    background-color: #3e3232;
+    transform: scale(1.06);
+    transition: transform 0.1s ease-in;
+}
+.close-button:not(hover){
+    transform: scale(1);
+    transition: transform 0.1s ease-in;
+}
+
+.header-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    font-weight: 600;
+    width: 100%;
+    border-radius: 2vw;
+    /* border: 1px solid; */
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: rgb(165, 104, 42);
+}
+.header-sign-up{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    font-size: 2em;
+    font-weight: 600;
+    /* border: 1px solid; */
+    color: rgb(237, 237, 237);
+}
+
+.form-input-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 320px;
+    width: 100%;
+    /* border: 1px solid; */
+}
+
+.sub-input-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    /* border: 1px solid; */
+    height: 55px;
+    width: 90%;
+    font-size: clamp(0.8em,1.2vw,1.2vw);
+    gap: 5%;
+}
+
+.input-sign-up{
+    border: none;
+    border-radius: 8px;
+    height: 100%;
+    width: 90%;
+    font-size: 0.9em;
+    font-family: 'Motserrat',Montserrat;
+}
+
+.label-box{
+    display: flex;
+    justify-content: flex-end;
+    width: 40%;
+    /* border: 1px solid; */
+}
+
+/* #contact-label, #confirm-pass-label{
+    font-size: 0.5em;
+} */
+.input-box{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 60%;
+    width: 60%;
+    /* border: 1px solid; */
+}
+
+.sign-up-button{
+    font-family: 'Montserrat',Montserrat;
+    font-size: 2em;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    height: 13%;
+    width: 30%;
+    background-color: #3e3232;
+    color: rgb(243, 243, 243);
+    cursor: pointer;
+}
+
+.sign-up-button:hover{
+    background-color: #514444;
+}
+
+input:focus{
+    outline: none;
+}
+
+

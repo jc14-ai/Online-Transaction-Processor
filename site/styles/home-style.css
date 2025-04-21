@@ -59,16 +59,16 @@
     justify-content: flex-end;
     align-items: flex-end;
     position: absolute;
-    height: 100vh;
+    height: 800px;
     width: 100vw;
-    /* border: 1px solid; */
+    border: 1px solid;
 }
 
 .choco-block{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 47vh;
+    height: 45%;
     width: 100vw;
     background-color: rgb(196, 144, 80);
     /* border: 1px solid; */
