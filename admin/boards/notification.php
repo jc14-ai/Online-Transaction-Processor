@@ -21,12 +21,12 @@ include("../../site/backend/dbcon.php");
       <table>
         <tbody>
           <?php
-          $refresh_query = "SELECT * FROM  orders WHERE order_status = 'pending' ORDER BY order_date DESC;";
+          $refresh_query = "SELECT user.username, orders.* FROM orders LEFT JOIN user ON orders.user_id = user.user_id WHERE orders.order_status = 'pending' ORDER BY order_date DESC;";
           $refresh_query_run = mysqli_query($conn, $refresh_query);
 
           while ($row = mysqli_fetch_assoc($refresh_query_run)) {
-            echo "<tr>
-                    <td>YOU HAVE NEW ORDER</td>
+            echo "<tr>s
+                    <td>YOU HAVE NEW ORDER FROM <strong>" . strtoupper($row['username']) . "</strong> </td>
                     <td>" . $row['order_date'] . "</td>
                     <td>
                      <button class=\"view-button\" onclick=\"window.location.href='/admin/boards/orders.php'\">

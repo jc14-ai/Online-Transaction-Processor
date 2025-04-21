@@ -4,9 +4,28 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     height: 100vh;
     margin: auto;
+}
+.top-bar-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 8%;
+    width: 100%;
+    background-color: rgb(67, 43, 19);
+}
+.user-profile{
+    width: 50px;
+}
+.user-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 92%;
+    width: 100%;
 }
 .side-container{
     display: flex;
@@ -207,7 +226,7 @@ td {
     font-weight: 500;
     color: white;
 }
-.add-to-cart-button{
+.donut-add-to-cart-button{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -226,15 +245,171 @@ td {
     width: 15%;
 }
 
-.add-to-cart-button:hover{
+.donut-add-to-cart-button:hover{
     background-color: rgb(231, 178, 154);
 }
 
 /* KOFAI DESIGN SETTINGS */
+.kofai-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+.kofai-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    gap: 2%;
+}
+.kofai{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    background-color: #1a120b;
+    height: 280px;
+    width: 220px;
+    border-radius: 20px;
+    background-color: rgb(83, 61, 53);
+}
+.kofai-image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    width: 80%;
+    background-color: rgb(223, 223, 223);
+    border-radius: 20px;
+}
+.kofai-image{
+    width: 90px;
+}
+.kofai-name{
+    font-family: 'Montserrat', Montserrat;
+    margin: 0;
+    margin-top: 5%;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: white;
+}
 
+.kofai-price{
+    font-family: 'Montserrat', Montserrat;
+    margin: 0;
+    margin-top: 5%;
+    margin-bottom: 8%;
+    font-weight: 500;
+    color: white;
+}
+.kofai-add-to-cart-button{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Montserrat', Montserrat;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 5%;
+    width: 70%;
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(151, 122, 107);
+    color: white;
+    cursor: pointer;
+}
+.add-to-cart-image-button{
+    width: 15%;
+}
+
+.kofai-add-to-cart-button:hover{
+    background-color: rgb(181, 148, 131);
+}
 
 /* BUNDLE DESIGN SETTINGS */
+.bundle-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+.bundle-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    gap: 2%;
+}
+.bundle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    background-color: #1a120b;
+    height: 280px;
+    width: 220px;
+    border-radius: 20px;
+    background-color: rgb(203, 99, 61);
+}
+.bundle-image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    width: 80%;
+    background-color: rgb(223, 223, 223);
+    border-radius: 20px;
+}
+.bundle-image{
+    width: 90px;
+}
+.bundle-name{
+    font-family: 'Montserrat', Montserrat;
+    margin: 0;
+    margin-top: 5%;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: white;
+}
 
+.bundle-price{
+    font-family: 'Montserrat', Montserrat;
+    margin: 0;
+    margin-top: 5%;
+    margin-bottom: 8%;
+    font-weight: 500;
+    color: white;
+}
+.bundle-add-to-cart-button{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Montserrat', Montserrat;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 5%;
+    width: 70%;
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(237, 165, 132);
+    color: white;
+    cursor: pointer;
+}
+.add-to-cart-image-button{
+    width: 15%;
+}
+
+.bundle-add-to-cart-button:hover{
+    background-color: rgb(231, 178, 154);
+}
 
 /* CART DESIGN SETTINGS */
 .cart-container{
@@ -245,6 +420,14 @@ td {
     height: 100vh;
     width: 100vw;
     gap: 10%;
+}
+.my-cart-label{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    background-color: orange;
+    margin: 0;
 }
 .my-cart-container{
     display: flex;
@@ -271,7 +454,7 @@ th,td{
 }
 
 .trash-image{
-    width: 15px;
+    width: 25px;
 }
 .checkout-container{
     display: flex;
@@ -284,3 +467,39 @@ th,td{
 }
 
 /* NOTIFICATION DESIGN SETTINGS */
+.notification-label{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    background-color: orangered;
+    margin: 0;
+}
+.notification-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+.notification-table-wrapper{
+    max-height: 400px;
+    overflow-y: auto;
+    border-radius: 10px;
+    width: 90%;
+    font-family: 'Montserrat', Montserrat;
+    font-size: 1.2em;
+}
+
+.notification-table{
+    background-color: rgba(66, 34, 16, 0.886);
+    width: 100%;
+}
+th,td{
+    padding: 2%;
+}
+
+.trash-button{
+    width: 25px;
+}

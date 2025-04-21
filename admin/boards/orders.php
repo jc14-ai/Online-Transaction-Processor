@@ -32,7 +32,7 @@ include("../../site/backend/dbcon.php");
         </thead>
         <tbody>
           <?php
-          $refresh_query = "SELECT orders.order_id, user.user_id, user.username, user.contact, orders.order_status FROM orders LEFT JOIN user ON orders.user_id = user.user_id WHERE orders.order_status = 'pending';";
+          $refresh_query = "SELECT orders.order_id, user.user_id, user.username, user.contact, orders.order_status, orders.order_date FROM orders LEFT JOIN user ON orders.user_id = user.user_id WHERE orders.order_status = 'pending' ORDER BY order_date DESC;";
           $refresh_query_run = mysqli_query($conn, $refresh_query);
           while ($row = mysqli_fetch_assoc($refresh_query_run)) {
             echo "<tr>

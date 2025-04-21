@@ -18,7 +18,12 @@ include("../../site/backend/dbcon.php");
     <div class="top-board-wrapper">
       <div class="admin-tab">ADMIN</div>
       <div class="name-board">
-        <h1 class="admin-name">HELLO, <?php echo ' ' . $_SESSION['user'] ?></h1>
+        <h1 class="admin-name">
+          HELLO,
+          <strong>
+            <?php echo ' ' . strtoupper($_SESSION['user']) ?>
+          </strong>
+        </h1>
       </div>
       <div class="overview-board">
         <div class="overviewboard-container">

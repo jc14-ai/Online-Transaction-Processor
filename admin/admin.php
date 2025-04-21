@@ -12,11 +12,11 @@
 <body>
   <div class="admin-container">
     <div class="top-width">
-      <img class="logo" src="logo.png">
+      <!-- <img class="logo" src="logo.png"> -->
       <h1 class="dashboard-name"> ADMIN DASHBOARD</h1>
       <div class="top-right-container">
         <button class="switch-mode">Switch to user</button>
-        <img class="profile" src="user icon.png">
+        <img class="profile" src="/src/profile.png">
       </div>
     </div>
     <div class="flex-container">
