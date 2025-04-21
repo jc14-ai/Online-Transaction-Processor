@@ -8,8 +8,8 @@ body{
     align-items: center;
     flex-direction: column;
     background-color: #e2dfd0;
-    font-family: 'Montserrat',Montserrat;
-    margin-top: 0%;
+    font-family: 'Montserrat', Montserrat, serif;
+    margin: auto;
 }
 
 /* NAVIGATION SECTION STYLE */
@@ -21,7 +21,6 @@ body{
     flex-direction: row;
     gap: 3%;
     list-style: none;
-    border: 1px solid;
     font-size: clamp(0.6em,1.5vw,1.5vw);
     font-weight:500;
     color: white;
@@ -82,8 +81,26 @@ a{
 }
 
 .pages{
-    height: 800px;
     width: 100%;
-    padding-top: clamp(60px,6%,6%);
+    display: block;
+    position: relative;
+    overflow: hidden;
 }
 
+#home-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border:5px solid; */
+}
+
+#contact-page {
+    margin-top: 50px;
+}
+
+#donut-page{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    height: 220vh;
+}
