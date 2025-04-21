@@ -106,3 +106,14 @@ a{
     align-items: center;
     height: 220vh;
 }
+.float-page{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: 1px solid; */
+    position: fixed;
+    height: 800px;
+    width: 1550px;
+    z-index: 1;
+}
