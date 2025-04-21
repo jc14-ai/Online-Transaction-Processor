@@ -248,6 +248,102 @@ td {
 .donut-add-to-cart-button:hover{
     background-color: rgb(231, 178, 154);
 }
+.donut-pop-up-container{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    position: absolute;
+    border-radius: 25px;
+    height: 500px;
+    width: 400px;
+    background-color: rgb(206, 93, 85);
+    gap: 3%;
+}
+.donut-pop-up-image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45%;
+    width: 80%;
+    border-radius: 20px;
+    background-color: white;
+}
+.donut-pop-up-name{
+    font-family: 'Montserrat', Montserrat;
+    font-weight: 600;
+    font-size: 2em;
+    margin: 0;
+    color: white;
+}
+.donut-pop-up-price{
+    font-family: 'Montserrat', Montserrat;
+    font-weight: 600;
+    font-size: 1.5em;
+    margin: 0;
+    color: white;
+}
+.donut-pop-up-counter-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 7%;
+    width: 35%;
+}
+.dec-donut,.inc-donut{
+    color: whitesmoke;
+    border: none;
+    background-color: rgb(219, 144, 119);
+    border-radius: 8px;
+    font-size: 1.5em;
+    font-family: 'Montserrat', Montserrat;
+    width: 30%;
+    cursor: pointer;
+}
+.dec-donut:hover,.inc-donut:hover{
+    background-color: rgb(225, 165, 144);;
+}
+.donut-count{
+    font-family: 'Montserrat',Montserrat;
+    font-size: 1.5em;
+    color: white;
+}
+.donut-pop-up-button-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    height: 10%;
+    width: 80%;
+}
+.donut-pop-up-back-button, .donut-pop-up-add-to-cart-button{
+    font-family: 'Montserrat', Montserrat;
+    font-size: 1.1em;
+    color: white;
+    background-color: rgb(203, 139, 87);
+    border: none;
+    border-radius: 10px;
+    height: 100%;
+    width: 40%;
+    cursor: pointer;
+}
+.donut-pop-up-back-button:hover, .donut-pop-up-add-to-cart-button:hover{
+    background-color: rgb(212, 161, 120);
+}
+.donut-pop-up-add-to-cart-button{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.donut-pop-up-add-to-cart-image{
+    width: 15%;
+}
+.donut-pop-up-image{
+    width: 200px;
+}
 
 /* KOFAI DESIGN SETTINGS */
 .kofai-body{
