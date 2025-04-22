@@ -42,12 +42,12 @@ include("../../site/backend/dbcon.php");
         <div class="donut-pop-up-image-container">
           <img class="donut-pop-up-image" src="/src/donut.png" />
         </div>
-        <h1 class="donut-pop-up-name">Donut 1</h1>
-        <h2 class="donut-pop-up-price">P25.00</h2>
+        <h1 class="donut-pop-up-name" id="donut-pop-up-name">Donut 1</h1>
+        <h2 class="donut-pop-up-price" id="donut-pop-up-price">P25.00</h2>
         <div class="donut-pop-up-counter-container">
-          <button class="dec-donut" onclick="">-</button>
-          <label class="donut-count">1</label>
-          <button class="inc-donut" onclick="">+</button>
+          <button class="dec-donut" onclick="decrementDonut()">-</button>
+          <label class="donut-count" id="donut-count">1</label>
+          <button class="inc-donut" onclick="incrementDonut()">+</button>
         </div>
         <div class="donut-pop-up-button-container">
           <button class="donut-pop-up-back-button" onclick="closeDonutPopUpContainer()">Back</button>
@@ -55,6 +55,13 @@ include("../../site/backend/dbcon.php");
             <img class="donut-pop-up-add-to-cart-image" src="/src/shopping-cart-add.png" />Add to Cart
           </button>
         </div>
+      </div>
+
+      <!-- ADDED TO CART POP UP CONTAINER -->
+      <div class="donut-added-to-cart-pop-up-container" id="donut-added-to-cart-pop-up-container">
+        <h3 class="donut-added-to-cart-pop-up-text" id="donut-added-to-cart-pop-up-text">3 Donut 1 added to cart!</h3>
+        <button class="donut-close-added-to-cart-button" id="donut-close-added-to-cart-button"
+          onclick="closeDonutAddedToCartContainer()">Close</button>
       </div>
     </div>
   </div>
