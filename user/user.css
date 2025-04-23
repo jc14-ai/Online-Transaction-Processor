@@ -576,13 +576,20 @@ td {
     border-radius: 10px;
     width: 100px;
 }
+.kofai-size-button-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 8%;
+    width: 60%;
+}
 .kofai-size-picker-button{
     font-family: 'Montserrat', Montserrat;
     font-size: 1.5em;
     border: none;
     border-radius: 8px;
-    height: 8%;
-    width: 25%;
+    height: 100%;
+    width: 40%;
     background-color: rgb(45, 31, 15);
     color: whitesmoke;
     cursor: pointer;

@@ -129,14 +129,31 @@ function closeKofaiAddedToCartContainer(){
     document.getElementById("kofai-added-to-cart-pop-up-container").style.display = 'none';
 }
 function openKofaiPopUpContainer(kofaiId,kofaiName){
-    // fetch(`/user/boards/get_donut_details.php?donut_id=${encodeURIComponent(donutId)}&donut_name=${encodeURIComponent(donutName)}&donut_price=${donutPrice}`)
-    // .then(res => res.json())
-    // .then(data =>{
+    let num = 0;
+    fetch(`/user/boards/get_kofai_size.php?kofai_id=${encodeURIComponent(kofaiId)}`)
+    .then(res => res.json())
+    .then(data =>{
+        buttonContainer = document.getElementById("kofai-size-button-container");
+        buttonContainer.innerHTML = "";
+        data.forEach(size => {
+            buttonContainer.innerHTML += `<button class="kofai-size-picker-button" id="kofai-size-picker-button-${++num}" onclick="selectSize(this.id)">${size.coffee_size}oz</button>`;
+        });
+    }).catch(error => console.error('Error:', error ));
 
-    // })
     document.getElementById("kofai-pop-up-name").textContent = kofaiName;
 
     document.getElementById("kofai-pop-up-container").style.display = 'flex';
+}
+
+function selectSize(id){
+    //THIS NEEDS TO BE FIXED
+    // if(document.getElementById(id).style.backgroundColor === 'rgb(80, 57, 32)'){
+    //     document.getElementById(id).style.backgroundColor = 'white';
+    //     document.getElementById(id).style.color = 'black';
+    // }else{
+    //     document.getElementById(id).style.backgroundColor = 'rgb(80, 57, 32)';
+    //     document.getElementById(id).style.color = 'white';
+    // }
 }
 function closeKofaiPopUpContainer(){
     document.getElementById("kofai-pop-up-container").style.display = 'none';
@@ -156,16 +173,20 @@ function incrementKofai(){
     document.getElementById("kofai-count").textContent++;
 }
 
-function changeSize(){
-    size = document.getElementById("kofai-size-picker-button");
-    // fetch("")
-    // .then(res => res.json())
-    // .then(data =>{
-    //     if()
-    //     if(size.textContent == "16oz"){
-    //         size.textContent = "22oz"; 
-    //     }else{
-    //         size.textContent = "16oz";
-    //     }  
-    // })
+function changeSize(){  
+    fetch("/user/boards/get_kofai_size.php")
+    .then(res => res.json())
+    .then(data =>{
+        size = document.getElementById("kofai-size-picker-button");
+
+        //Gotta modify this
+        if(size){
+
+        }
+        if(size.textContent == "16oz"){
+            size.textContent = "22oz"; 
+        }else{
+            size.textContent = "16oz";
+        }  
+    })
 }
