@@ -105,3 +105,67 @@ function incrementBundle(){
     }
     document.getElementById("bundle-count").textContent++;
 }
+
+//KOFAI FUNCTIONS
+function addKofaiToCart(){
+    // fetch(`/user/boards/add_donut_to_cart.php?name=${encodeURIComponent(name)}&price=${encodeURIComponent(price)}`)
+    // .then(res => res.json())
+    // .then()
+    kofaiName = document.getElementById("kofai-pop-up-name").textContent;
+    kofaiCount = document.getElementById("kofai-count").textContent;
+
+    fetch(`/user/boards/insert_kofai_details.php?kofai_name=${encodeURIComponent(kofaiName)}&kofai_count=${encodeURIComponent(kofaiCount)}`)
+    .then(res => res.text())
+    .then(data =>{
+        closeKofaiPopUpContainer();
+        document.getElementById("kofai-added-to-cart-pop-up-text").textContent = data;
+        openKofaiAddedToCartContainer();
+    })
+}  
+function openKofaiddedToCartContainer(){
+    document.getElementById("kofai-added-to-cart-pop-up-container").style.display = 'flex';
+}
+function closeKofaiAddedToCartContainer(){
+    document.getElementById("kofai-added-to-cart-pop-up-container").style.display = 'none';
+}
+function openKofaiPopUpContainer(kofaiId,kofaiName){
+    // fetch(`/user/boards/get_donut_details.php?donut_id=${encodeURIComponent(donutId)}&donut_name=${encodeURIComponent(donutName)}&donut_price=${donutPrice}`)
+    // .then(res => res.json())
+    // .then(data =>{
+
+    // })
+    document.getElementById("kofai-pop-up-name").textContent = kofaiName;
+
+    document.getElementById("kofai-pop-up-container").style.display = 'flex';
+}
+function closeKofaiPopUpContainer(){
+    document.getElementById("kofai-pop-up-container").style.display = 'none';
+    document.getElementById("kofai-count").textContent = 1;
+}   
+function decrementKofai(){
+    if(document.getElementById("kofai-count").textContent == 1){
+        return;
+    }
+    document.getElementById("kofai-count").textContent--;
+
+}
+function incrementKofai(){
+    if(document.getElementById("kofai-count").textContent == 99){
+        return;
+    }
+    document.getElementById("kofai-count").textContent++;
+}
+
+function changeSize(){
+    size = document.getElementById("kofai-size-picker-button");
+    // fetch("")
+    // .then(res => res.json())
+    // .then(data =>{
+    //     if()
+    //     if(size.textContent == "16oz"){
+    //         size.textContent = "22oz"; 
+    //     }else{
+    //         size.textContent = "16oz";
+    //     }  
+    // })
+}
