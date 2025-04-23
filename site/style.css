@@ -2,13 +2,13 @@
 
 html{
     scroll-behavior: smooth;
-    user-select: none;
 }
 body{
     display: flex;
     align-items: center;
     flex-direction: column;
     background-color: #e2dfd0;
+    font-family: 'Montserrat', Montserrat, serif;
     font-family: 'Montserrat', Montserrat, serif;
     margin: auto;
 }
@@ -87,6 +87,10 @@ a{
     display: block;
     position: relative;
     overflow: hidden;
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
 }
 
 #home-page{
@@ -105,4 +109,16 @@ a{
     justify-content: center;
     align-items: center;
     height: 220vh;
+}
+
+.float-page{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: 1px solid; */
+    position: fixed;
+    height: 800px;
+    width: 1550px;
+    z-index: 1;
 }
