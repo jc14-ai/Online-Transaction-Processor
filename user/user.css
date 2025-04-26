@@ -7,18 +7,22 @@ body{
     flex-direction: column;
     height: 100vh;
     margin: auto;
+    font-family: 'Montserrat', Montserrat, serif;
 }
 .top-bar-container{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    height: 8%;
+    height: 9%;
     width: 100%;
-    background-color: rgb(67, 43, 19);
+    background-color: #3e3232;
 }
+
 .user-profile{
-    width: 50px;
+    width: 45px;
+    padding: 30px;
 }
+
 .user-container{
     display: flex;
     justify-content: center;
@@ -27,6 +31,7 @@ body{
     height: 92%;
     width: 100%;
 }
+
 .side-container{
     display: flex;
     justify-content: flex-start;
@@ -34,15 +39,106 @@ body{
     flex-direction: column;
     height: 100%;
     width: 25%;
-    background-color: antiquewhite;
+    padding-left: 40px;
+    background-color: #e2dfd0;
 }
+
+.account-name{
+    display: inline-block;
+    width: 75px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    cursor: pointer;
+}
+
+.icon-wrapper {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+  }
+  
+  .icon-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease;
+    width: 100%;
+    height: 100%;
+  }
+
+.dashboard-icon{
+    width: 45px;
+    padding: 10px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: left;
+}
+
+.dashboard-label{
+    font-size: 20px;
+    padding-bottom: 26px;
+    font-weight: bold;
+    color: #3e3232;
+    text-decoration: none;
+    justify-content: center;
+}
+
+.customer-profile{
+        display: flex;
+        flex-direction: column;
+    }
+ 
+.customer-container{
+    display: flex;
+    align-items: center; 
+    gap: 1rem;
+}
+
+.customer-icon{
+    color: #3e3232;
+    justify-content: center;
+    display: inline-block;
+}
+
+.customer-details{
+    color: #3e3232;
+    text-decoration: none;
+    align-items: center;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+}
+
+.name{
+    color: #cc4e20;
+    font-size: 22px;
+    font-weight: bolder;
+    padding-bottom: 10px;
+}
+
+.edit{
+    display: flex;
+    color: #67635d;
+    font-size: 16px;
+    font-weight: bold;
+    align-items: center;
+}
+
+.edit img{
+    width: 25px;
+    height: 25px;
+    justify-content: center;
+    padding-right: 5px;
+}
+
 .main-container{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     width: 75%;
-    background-color: antiquewhite;
+    background-color: #e2dfd0;
 }
 iframe{
     height:85%;
@@ -51,8 +147,7 @@ iframe{
     border: none;
     background-color: white;
 }
-
-/* ACCOUNT DESIGN SETTINGS */
+/* ------------------ACCOUNT DESIGN SETTINGS------------------------*/
 .account-container{
     display: flex;
     justify-content: center;
@@ -121,51 +216,142 @@ iframe{
     width: 40%;
 }
 
-/* PURCHASES DESIGN SETTINGS */
+/*--------------------PURCHASES DESIGN SETTINGS-------------------*/
 .purchases-container{
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
-    height: 100vh;
-    width: 100vw;
+    align-items: center;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    gap: 10px;
 }
+
+.top-board-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 85%;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px; /* or any max width you’re using for overview-board */
+    position: relative;
+}
+
+.my-profile-label{
+    background-color: #cc4e20;  
+    color: #f5f1e7;
+    font-size: 18px;
+    font-weight: bold;
+    padding-left:  25px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 50px;
+    width: 915px;
+    z-index: 1;
+    margin-left: 5px;
+}
+
+.name-board {
+    background-color: #e2dfd0;
+    border-radius: 0 0 25px 25px;
+    width: 94%;
+    box-sizing: border-box;
+    position: relative;    
+    height: 50px;
+    margin-left:3px;
+    margin-bottom: 35px;
+}
+.acc-profile-container{
+    background-color: #e2dfd0;
+    border-radius: 0 0 25px 25px;
+    width: 100%;
+    padding: 15px 30px;
+    box-sizing: border-box;
+    position: relative;    
+}
+
+.acc-greetings-label{
+    background-color: #e2dfd0;
+    border-radius: 0 0 25px 25px;
+    width: 100%;
+    font-size: 22px;
+    padding-bottom: 20px;
+    padding-left: 25px;
+    box-sizing: border-box;
+    position: relative;    
+}
+
 .display-orders-container{
+    background-color: white;
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    height: 60%;
-    width: 90%;
+    height: 75%;
+    width: 980px;
 }
 .completed-orders, .pending-orders{
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 80%;
-    width: 40%;
+    height: 100%;
+    width: 43%;
     border-radius: 20px;
-    background-color: rgb(174, 174, 174);
+    background-color: white;
 }
 
 .table-wrapper{
     max-height: 200px;
     overflow-y: auto;
-    border-radius: 10px;
-    border: 1px solid;
+    border-collapse: separate;
+    border-radius: 0px, 0px, 20px,20px;
 }
-.completed-orders-table, .pending-orders-table{
+
+.orders-theader-table{
+    background-color: #e26940;
+    width: 106%;
+    text-align: center;
+    color: white; 
+    padding-right: 35px;   
+}
+
+.orders-theader-table th{
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.completed-order-label, .pending-order-label{
+    background-color: #cc4e20;  
+    color: #f5f1e7;
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 25px;
+    padding-top: 15px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 35px;
     width: 100%;
-    border-collapse: collapse;
-    background-color: #1a120b;
-    border: 1px solid;
-    color: white;
+    z-index: 1;
+    margin-bottom: 0px;
 }
-th,
-td {
-  padding: 12px;
+
+.completed-orders-table, .pending-orders-table{
+    width: 430px;
+    height: 250px;
+    border-collapse: collapse;
+    background-color: #e2dfd0;
+
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.table-wrapper td{
   text-align: center;
-  color: #e2dfd0;
+  width: 3%;
+  color: #1a120b;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 /* DONUT DESIGN SETTINGS */
