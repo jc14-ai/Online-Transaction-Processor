@@ -10,18 +10,22 @@
     <div class="cart-container">
       <div class="my-cart-container">
         <h1 class="my-cart-label">MY CART</h1>
+        <table class="my-cart-theader">
+
+          <thead>
+            <tr>
+              <th>Select</th>
+              <th>Product</th>
+              <th>Unit Price</th>
+              <th>Quantity</th>
+              <th>Total Price</th>
+              <th>Remove</th>
+            </tr>
+          </thead>
+        </table>
         <div class="cart-table-wrapper">
           <table class="cart-table">
-            <thead>
-              <tr>
-                <th>Select</th>
-                <th>Product</th>
-                <th>Unit Price</th>
-                <th>Quantity</th>
-                <th>Total Price</th>
-                <th>Remove</th>
-              </tr>
-            </thead>
+
             <tbody>
               <tr>
                 <td><input type="checkbox" /></td>
@@ -110,12 +114,11 @@
 
       <div class="checkout-container">
         <div class="total-container">
-          <table>
-        <label class="total-orders" >Total(2 Orders)</label>
-        <label class="total-orders-amount">P120.00</label>
-      </table>
+
+        <div class="total-orders" >Total(2 Orders)</div>
+        <div class="total-orders-amount">P120.00</div>
+
         </div>
-        <div class="checkout-button">
         <button class="checkout-button">CHECKOUT</button>
         </div>
       </div>

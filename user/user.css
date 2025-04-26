@@ -807,13 +807,32 @@
     .my-cart-label{
         font-family: 'Courier New', Courier, monospace;
         display: flex;
-        justify-content:  center;
+        content:  center;
         align-items: center;
-        width: 100%;
-        background-color: #272424;
+        width: 97%;
+        height: 50px;
+        background-color: #cc4e20;
         margin: 0;
         border-radius: 30px 30px 0 0;
         padding-top: 5px;
+        padding-left: 3%;
+        color: white;
+    }
+    .my-cart-theader{
+        content: center;
+        align-items: center;
+        text-align: center;
+        padding-right: 1%;
+        width: 100%;
+        background-color: #ee7f56;
+    }
+    .my-cart-theader th{
+        content: center;
+        align-items: center;
+        padding: 1%;
+        background-color: #ee7f56;
+        font-size: 22px;
+        font-weight: bold;;
         color: white;
     }
     .my-cart-container{
@@ -822,18 +841,18 @@
         align-items: center;
         flex-direction: column;
         height: 60%;
-        width: 90%; ;
+        width: 90%; 
+     
         padding-left: 3;
-   
     }
+
     .cart-table-wrapper{
         max-height: 400px;
         overflow-y: auto;
-        border-radius: 0px 0px 10px 10px;
         width: 100%;
         font-family: 'Montserrat', Montserrat;
+        border-radius: 0px 0px 10px 10px;
         font-size: 1.2em;
-        color-scheme: dark;
     }
     .cart-table{
         background-color: #e2dfd0;
@@ -853,21 +872,37 @@
         align-items: center;
         height: 20%;
         width: 90%;
-        border: 1px solid;
-        border-radius: 10px 10px 10px 10px;
+        border-radius: 0px 0px 10px 10px;
         gap: 5%;
-        background-color: #e2dfd0;
+        background-color: white;
     }
     .total-container{
         display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
         height: 65%;
         width: 68%;
         font-size: 2.25em;
         background-color: white;
         border-radius: 10px 10px 10px 10px;
+    }
+
+    .total-orders{
+        padding-left: 22%;
+    }
+
+    .total-orders, .total-orders-amount {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 20px;
+        width: 42%;
+        height: 50%;
+        font-family: 'Courier New', Courier, monospace;
+        color: #1a120b;
+    }
+    .total-orders-amount{
+        color: #cc4e20;
+        font-weight: bold;
     }
     .checkout-button{
         display: flex;
@@ -878,10 +913,10 @@
         font-weight: 500;
         padding: 3%;
         height: 5%;
-        width: 10%;
+        width: 15%;
         border: none;
         border-radius: 15px;
-        background-color: #55b05c;
+        background-color: #d96f47;
         color: white;
         cursor: pointer;
     }
@@ -893,13 +928,15 @@
     .notification-label{
         font-family: 'Courier New', Courier, monospace;
         display: flex;
-        justify-content: center;
+        content: center;
         align-items: center;
-        width: 90%;
-        background-color: #272424;
+        width: 87%;
+        height: 50px;
+        background-color: #cc4e20 ;
         margin: 0;
         border-radius: 30px 30px 0 0;
         padding-top: 5px;
+        padding-left: 3%;
         color: white;
     }
     .notification-container{
