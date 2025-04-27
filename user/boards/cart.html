@@ -12,23 +12,23 @@
         <h1 class="my-cart-label">MY CART</h1>
         <div class="cart-table-wrapper">
           <table class="cart-table">
-            <thead>
-              <tr>
-                <th>Select</th>
-                <th>Product</th>
-                <th>Unit Price</th>
-                <th>Quantity</th>
-                <th>Total Price</th>
-                <th>Remove</th>
-              </tr>
-            </thead>
+            <thead class="my-cart-theader">
+            <tr>
+              <th class="cart-head">Select</th>
+              <th class="cart-head">Product</th>
+              <th class="cart-head">Unit Price</th>
+              <th class="cart-head">Quantity</th>
+              <th class="cart-head">Total Price</th>
+              <th class="cart-head">Remove</th>
+            </tr>
+          </thead>
             <tbody>
               <tr>
-                <td><input type="checkbox" /></td>
+                <td><input class="checkbox-button" type="checkbox" /></td>
                 <td>Donut1</td>
                 <td>P25.00</td>
-                <td>
-                  <div>
+                <td class="quantity-container">
+                  <div class="quantity-button-container">
                     <button class="decrement-button">-</button>
                     <label class="number-label">1</label>
                     <button class="increment-button">+</button>
@@ -38,79 +38,21 @@
                 <td>
                   <img class="trash-image" src="/src/trash-xmark.png" />
                 </td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" /></td>
-                <td>Donut1</td>
-                <td>P25.00</td>
-                <td>
-                  <div>
-                    <button>-</button>
-                    <label>1</label>
-                    <button>+</button>
-                  </div>
-                </td>
-                <td>P50.00</td>
-                <td>
-                  <img class="trash-image" src="/src/trash-xmark.png" />
-                </td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" /></td>
-                <td>Donut1</td>
-                <td>P25.00</td>
-                <td>
-                  <div>
-                    <button>-</button>
-                    <label>1</label>
-                    <button>+</button>
-                  </div>
-                </td>
-                <td>P50.00</td>
-                <td>
-                  <img class="trash-image" src="/src/trash-xmark.png" />
-                </td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" /></td>
-                <td>Donut1</td>
-                <td>P25.00</td>
-                <td>
-                  <div>
-                    <button>-</button>
-                    <label>1</label>
-                    <button>+</button>
-                  </div>
-                </td>
-                <td>P50.00</td>
-                <td>
-                  <img class="trash-image" src="/src/trash-xmark.png" />
-                </td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" /></td>
-                <td>Donut1</td>
-                <td>P25.00</td>
-                <td>
-                  <div>
-                    <button>-</button>
-                    <label>1</label>
-                    <button>+</button>
-                  </div>
-                </td>
-                <td>P50.00</td>
-                <td>
-                  <img class="trash-image" src="/src/trash-xmark.png" />
-                </td>
-              </tr>
+              </tr> 
             </tbody>
           </table>
         </div>
       </div>
+
       <div class="checkout-container">
-        <label class="total-orders">Total(2 Orders)</label>
-        <label class="total-orders-amount">P120.00</label>
+        <div class="total-container">
+
+        <div class="total-orders" >Total(2 Orders)</div>
+        <div class="total-orders-amount">P120.00</div>
+
+        </div>
         <button class="checkout-button">CHECKOUT</button>
+        </div>
       </div>
     </div>
   </body>
