@@ -598,6 +598,15 @@ td {
     background-color: rgb(80, 57, 32);
 }
 
+.kofai-size-picker-button-clicked{
+    color: black;
+    background-color: rgb(235, 235, 235);
+}
+
+.kofai-size-picker-button-clicked:hover{
+    background-color: rgb(252, 252, 252);
+}
+
 /* BUNDLE DESIGN SETTINGS */
 .bundle-body{
     display: flex;

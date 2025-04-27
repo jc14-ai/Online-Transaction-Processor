@@ -17,10 +17,19 @@ if (isset($_GET['bundle_name'])) {
 
     $bundle = mysqli_fetch_assoc($bundle_select_query_run);
 
-    $bundle_insert_query = "INSERT INTO cart(user_id, bundle_id, quantity) VALUES(" . $user_id['user_id'] . ", " . $bundle['bundle_id'] . ", " . " $bundle_count);";
-    $bundle_insert_query_run = mysqli_query($conn, $bundle_insert_query);
+    $is_existing_query = "SELECT COUNT(*) AS existing FROM cart WHERE bundle_id = " . $bundle['bundle_id'] . " AND user_id = " . $user_id['user_id'] . " LIMIT 1;";
+    $is_existing_query_run = mysqli_query($conn, $is_existing_query);
+
+    $existing = mysqli_fetch_assoc($is_existing_query_run);
+
+    if ($existing['existing'] == 1) {
+        $update_existing_query = "UPDATE CART SET quantity = quantity + $bundle_count WHERE bundle_id = " . $bundle['bundle_id'] . " AND user_id = " . $user_id['user_id'] . ";";
+        $update_existing_query_run = mysqli_query($conn, $update_existing_query);
+    } else if ($existing['existing'] == 0) {
+        $bundle_insert_query = "INSERT INTO cart(user_id, bundle_id, quantity) VALUES(" . $user_id['user_id'] . ", " . $bundle['bundle_id'] . ", " . " $bundle_count);";
+        $bundle_insert_query_run = mysqli_query($conn, $bundle_insert_query);
+    }
 
     echo "$bundle_count $bundle_name bundle added to cart!";
 }
-
 ?>

@@ -107,26 +107,37 @@ function incrementBundle(){
 }
 
 //KOFAI FUNCTIONS
-function addKofaiToCart(){
-    // fetch(`/user/boards/add_donut_to_cart.php?name=${encodeURIComponent(name)}&price=${encodeURIComponent(price)}`)
-    // .then(res => res.json())
-    // .then()
+let kofaiSize = "0oz";
+function addKofaiToCart(){ 
+    if(kofaiSize === "0oz") return;
+
     kofaiName = document.getElementById("kofai-pop-up-name").textContent;
     kofaiCount = document.getElementById("kofai-count").textContent;
 
-    fetch(`/user/boards/insert_kofai_details.php?kofai_name=${encodeURIComponent(kofaiName)}&kofai_count=${encodeURIComponent(kofaiCount)}`)
+    fetch(`/user/boards/insert_kofai_details.php?kofai_name=${encodeURIComponent(kofaiName)}&kofai_count=${encodeURIComponent(kofaiCount)}&kofai_size=${encodeURIComponent(kofaiSize)}`)
     .then(res => res.text())
     .then(data =>{
         closeKofaiPopUpContainer();
         document.getElementById("kofai-added-to-cart-pop-up-text").textContent = data;
+        kofaiSize = "0oz";
         openKofaiAddedToCartContainer();
     })
 }  
-function openKofaiddedToCartContainer(){
+function openKofaiAddedToCartContainer(){
     document.getElementById("kofai-added-to-cart-pop-up-container").style.display = 'flex';
 }
 function closeKofaiAddedToCartContainer(){
     document.getElementById("kofai-added-to-cart-pop-up-container").style.display = 'none';
+}
+
+function getSizeListener(){
+    const sizeButtons = document.querySelectorAll('.kofai-size-picker-button');
+    sizeButtons.forEach(sizeButton =>{
+        sizeButton.addEventListener('click',() => {
+            sizeButtons.forEach(button => button.classList.remove('kofai-size-picker-button-clicked'));
+            sizeButton.classList.add('kofai-size-picker-button-clicked');
+        })
+    })
 }
 function openKofaiPopUpContainer(kofaiId,kofaiName){
     let num = 0;
@@ -138,6 +149,7 @@ function openKofaiPopUpContainer(kofaiId,kofaiName){
         data.forEach(size => {
             buttonContainer.innerHTML += `<button class="kofai-size-picker-button" id="kofai-size-picker-button-${++num}" onclick="selectSize(this.id)">${size.coffee_size}oz</button>`;
         });
+        getSizeListener();
     }).catch(error => console.error('Error:', error ));
 
     document.getElementById("kofai-pop-up-name").textContent = kofaiName;
@@ -146,19 +158,15 @@ function openKofaiPopUpContainer(kofaiId,kofaiName){
 }
 
 function selectSize(id){
-    //THIS NEEDS TO BE FIXED
-    // if(document.getElementById(id).style.backgroundColor === 'rgb(80, 57, 32)'){
-    //     document.getElementById(id).style.backgroundColor = 'white';
-    //     document.getElementById(id).style.color = 'black';
-    // }else{
-    //     document.getElementById(id).style.backgroundColor = 'rgb(80, 57, 32)';
-    //     document.getElementById(id).style.color = 'white';
-    // }
+    kofaiSize = document.getElementById(id).textContent;
 }
+
 function closeKofaiPopUpContainer(){
     document.getElementById("kofai-pop-up-container").style.display = 'none';
     document.getElementById("kofai-count").textContent = 1;
+    kofaiSize = "0oz";
 }   
+
 function decrementKofai(){
     if(document.getElementById("kofai-count").textContent == 1){
         return;
@@ -166,6 +174,7 @@ function decrementKofai(){
     document.getElementById("kofai-count").textContent--;
 
 }
+
 function incrementKofai(){
     if(document.getElementById("kofai-count").textContent == 99){
         return;
@@ -173,20 +182,20 @@ function incrementKofai(){
     document.getElementById("kofai-count").textContent++;
 }
 
-function changeSize(){  
-    fetch("/user/boards/get_kofai_size.php")
-    .then(res => res.json())
-    .then(data =>{
-        size = document.getElementById("kofai-size-picker-button");
+// function changeSize(){  
+//     fetch("/user/boards/get_kofai_size.php")
+//     .then(res => res.json())
+//     .then(data =>{
+//         size = document.getElementById("kofai-size-picker-button");
 
-        //Gotta modify this
-        if(size){
+//         //Gotta modify this
+//         if(size){
 
-        }
-        if(size.textContent == "16oz"){
-            size.textContent = "22oz"; 
-        }else{
-            size.textContent = "16oz";
-        }  
-    })
-}
+//         }
+//         if(size.textContent == "16oz"){
+//             size.textContent = "22oz"; 
+//         }else{
+//             size.textContent = "16oz";
+//         }  
+//     })
+// }
