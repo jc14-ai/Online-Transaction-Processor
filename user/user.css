@@ -904,12 +904,13 @@
     }
 
     .cart-table-wrapper{
-        max-height: 400px;
+        height: 400px;
         overflow-y: auto;
         width: 100%;
         font-family: 'Montserrat', Montserrat;
         border-radius: 0px 0px 10px 10px;
         font-size: 1.2em;
+        background-color: #eaeaea;
     }
     .cart-table{
         background-color: #e2dfd0;
