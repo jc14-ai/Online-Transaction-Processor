@@ -141,6 +141,13 @@ iframe{
   color: #ffffff;
   font-weight: bold;
   font-size: 22px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.acc-cancel-button:hover, .acc-save-button:hover {
+    background-color: #c0392b; /* Darker red on hover */
+    transform: scale(1.1); /* Slightly enlarges the button */
 }
 
 .acc-username, .acc-email, .acc-number{
@@ -154,6 +161,35 @@ iframe{
     font-family: 'Montserrat', Montserrat;
     font-weight: 500;
     outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.acc-username:hover,
+.acc-email:hover,
+.acc-number:hover {
+    border-color: #3498db; /* Changes border color on hover */
+    box-shadow: 0 0 5px #3498db; /* Adds a subtle glow effect */
+}
+
+.account-image {
+    width: 200px; /* Adjust the size as needed */
+    height: 200px; /* Ensure the height matches the width */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image fits within the circle */
+    border: 2px solid #ccc; /* Optional: Add a border for styling */
+}
+
+.select-image-button {
+    font-size: 24px;
+    color: #d35400;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.select-image-button:hover {
+    color: #e74c3c; /* Changes color on hover */
+    transform: scale(1.1); /* Slightly enlarges the button */
 }
 
 /* PURCHASES DESIGN SETTINGS */
@@ -202,6 +238,8 @@ td {
   text-align: center;
   color: #e2dfd0;
 }
+
+
 
 /* DONUT DESIGN SETTINGS */
 .donut-body{
