@@ -23,7 +23,7 @@ if (isset($_POST['sign-in-button'])) {
                 if ($role['role'] === 'user') {
                     //PUT THE CODE HERE IF ROLE IS USER
                     $_SESSION['user'] = $username;
-                    header("location: /user/user.html");
+                    header("location: /user/user.php");
                     exit(0);
                 } else {
                     //PUT THE CODE HERE IF ROLE IS ADMIN

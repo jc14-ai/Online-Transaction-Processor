@@ -15,17 +15,18 @@ include("../../site/backend/dbcon.php");
 
 <body>
   <div class="purchases-container">
-    <div class="account-profile-container">
-      <h3 class="my-profile-label">MY PROFILE</h3>
-      <h1 class="acc-greetings-label">
-        HELLO, <?php echo ' ' . $_SESSION['user']; ?>
-      </h1>
-    </div>
-    <div class="display-orders-container">
-      <div class="completed-orders">
-        <h1 class="completed-order-label">COMPLETED ORDERS</h1>
-        <div class="table-wrapper">
-          <table class="completed-orders-table">
+    <div class="top-board-wrapper">
+      <div class="my-profile-label">
+        <h3>MY PROFILE</h3>
+      </div>
+      <div class="name-board">
+        <h1 class="acc-greetings-label">HELLO, GERALD ANDERSON!</h1>
+      </div>
+
+      <div class="display-orders-container">
+        <div class="completed-orders">
+          <h1 class="completed-order-label">COMPLETED ORDERS</h1>
+          <table class="orders-theader-table">
             <thead>
               <tr>
                 <th>PRODUCT</th>
@@ -33,87 +34,78 @@ include("../../site/backend/dbcon.php");
                 <th>PRICE</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>DONUT1</td>
-                <td>3X</td>
-                <td>P25</td>
-              </tr>
-              <tr>
-                <td>KOFAI1</td>
-                <td>1X</td>
-                <td>P70</td>
-              </tr>
-              <tr>
-                <td>KOFAI2</td>
-                <td>1X</td>
-                <td>P80</td>
-              </tr>
-              <tr>
-                <td>KOFAI2</td>
-                <td>1X</td>
-                <td>P80</td>
-              </tr>
-              <tr>
-                <td>KOFAI2</td>
-                <td>1X</td>
-                <td>P80</td>
-              </tr>
-              <tr>
-                <td>KOFAI2</td>
-                <td>1X</td>
-                <td>P80</td>
-              </tr>
-              <tr>
-                <td>KOFAI2</td>
-                <td>1X</td>
-                <td>P80</td>
-              </tr>
-              <tr>
-                <td>TOTAL</td>
-                <td>5X</td>
-                <td>P375</td>
-              </tr>
-            </tbody>
           </table>
+
+          <div class="table-wrapper">
+            <table class="completed-orders-table">
+              <tbody>
+                <tr>
+                  <td>DONUT1</td>
+                  <td>3X</td>
+                  <td>P75</td>
+                </tr>
+                <tr>
+                  <td>KOFAI1</td>
+                  <td>1X</td>
+                  <td>P70</td>
+                </tr>
+                <tr>
+                  <td>KOFAI1</td>
+                  <td>1X</td>
+                  <td>P80</td>
+                </tr>
+                <tr>
+                  <td>TOTAL</td>
+                  <td>5X</td>
+                  <td>P375</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
-      <div class="pending-orders">
-        <h1 class="pending-order-label">PENDING ORDERS</h1>
-        <div class="table-wrapper">
-          <table class="pending-orders-table">
+
+
+        <div class="pending-orders">
+          <h1 class="pending-order-label">PENDING ORDERS</h1>
+
+          <table class="orders-theader-table">
             <thead>
-              <th>PRODUCT</th>
-              <th>QUANTITY</th>
-              <th>PRICE</th>
+              <tr>
+                <th>PRODUCT</th>
+                <th>QUANTITY</th>
+                <th>PRICE</th>
+              </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>DONUT1</td>
-                <td>3X</td>
-                <td>P25</td>
-              </tr>
-              <tr>
-                <td>KOFAI1</td>
-                <td>1X</td>
-                <td>P70</td>
-              </tr>
-              <tr>
-                <td>KOFAI2</td>
-                <td>1X</td>
-                <td>P80</td>
-              </tr>
-              <tr>
-                <td>TOTAL</td>
-                <td>5X</td>
-                <td>P375</td>
-              </tr>
-            </tbody>
           </table>
+
+          <div class="table-wrapper">
+            <table class="pending-orders-table">
+              <tbody>
+                <tr>
+                  <td>DONUT1</td>
+                  <td>3X</td>
+                  <td>P75</td>
+                </tr>
+                <tr>
+                  <td>KOFAI1</td>
+                  <td>1X</td>
+                  <td>P70</td>
+                </tr>
+                <tr>
+                  <td>KOFAI1</td>
+                  <td>1X</td>
+                  <td>P80</td>
+                </tr>
+                <tr>
+                  <td>TOTAL</td>
+                  <td>5X</td>
+                  <td>P375</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 </body>
 
 </html>
