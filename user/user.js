@@ -197,6 +197,28 @@ document.getElementById("selectImageButton").addEventListener("click", function 
     }
   });
 
+  function decrementItem(button, userID, productName, unitPrice, quantity, totalPrice){
+    if(quantity <= 1){
+        return;
+    }
+
+    fetch(`/user/boards/decrement_item.php?user_id=${encodeURIComponent(userID)}&product_name=${encodeURIComponent(productName)}&unit_price=${encodeURIComponent(unitPrice)}&quantity=${encodeURIComponent(quantity)}&total_price=${encodeURIComponent(totalPrice)}`)
+    .then(res => res.json())
+    .then(data => {
+        const container = button.parentElement;
+        const amount = container.querySelector('.number-label');
+
+        let newQuantity = data.quantity;
+        amount.textContent = newQuantity;
+    })
+  }
+
+  function incrementItem(button, userID, productName, unitPrice, quantity, totalPrice){
+    if(quantity >= 99){
+        return;
+    }
+  }
+
 // function changeSize(){  
 //     fetch("/user/boards/get_kofai_size.php")
 //     .then(res => res.json())

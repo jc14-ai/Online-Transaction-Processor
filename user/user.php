@@ -76,7 +76,7 @@ include("../site/backend/dbcon.php");
         </div>
 
         <div class="dashboard-label">
-          <a href="/user/boards/cart.html" target="main" style="text-decoration: none; color: #3e3232;">
+          <a href="/user/boards/cart.php" target="main" style="text-decoration: none; color: #3e3232;">
             <span class="icon-wrapper">
               <img class="dashboard-icon" src="/src/cart-default.png">
             </span>

@@ -20,24 +20,19 @@ include("../../site/backend/dbcon.php");
         <h3>MY PROFILE</h3>
       </div>
       <div class="name-board">
-        <h1 class="acc-greetings-label">HELLO, GERALD ANDERSON!</h1>
+        <h1 class="acc-greetings-label">HELLO,<?php echo ' ' . $_SESSION['user']; ?></h1>
       </div>
 
       <div class="display-orders-container">
         <div class="completed-orders">
           <h1 class="completed-order-label">COMPLETED ORDERS</h1>
-          <table class="orders-theader-table">
-            <thead>
-              <tr>
-                <th>PRODUCT</th>
-                <th>QUANTITY</th>
-                <th>PRICE</th>
-              </tr>
-            </thead>
-          </table>
-
           <div class="table-wrapper">
             <table class="completed-orders-table">
+              <thead class="purchases-theader">
+                <th class="purchases-head">PRODUCT</th>
+                <th class="purchases-head">QUANTITY</th>
+                <th class="purchases-head">PRICE</th>
+              </thead>
               <tbody>
                 <tr>
                   <td>DONUT1</td>
@@ -67,19 +62,16 @@ include("../../site/backend/dbcon.php");
 
         <div class="pending-orders">
           <h1 class="pending-order-label">PENDING ORDERS</h1>
-
-          <table class="orders-theader-table">
-            <thead>
-              <tr>
-                <th>PRODUCT</th>
-                <th>QUANTITY</th>
-                <th>PRICE</th>
-              </tr>
-            </thead>
           </table>
-
           <div class="table-wrapper">
             <table class="pending-orders-table">
+              <thead class="purchases-theader">
+                <tr>
+                  <th class="purchases-head">PRODUCT</th>
+                  <th class="purchases-head">QUANTITY</th>
+                  <th class="purchases-head">PRICE</th>
+                </tr>
+              </thead>
               <tbody>
                 <tr>
                   <td>DONUT1</td>
