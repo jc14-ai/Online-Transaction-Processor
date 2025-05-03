@@ -17,7 +17,9 @@ include("../../site/backend/dbcon.php");
   <div class="account-container">
     <div class="account-profile-container">
       <h3 class="my-profile-label">MY PROFILE</h3>
-      <h1 class="acc-greetings-label">HELLO, <?php echo ' ' . $_SESSION['user']; ?></h1>
+      <h1 class="acc-greetings-label">HELLO, GERALD ANDERSON!
+         <!-- <?php echo ' ' . $_SESSION['user']; ?> -->
+        </h1>
     </div>
 
     <div class="acc-information-container">
@@ -40,8 +42,9 @@ include("../../site/backend/dbcon.php");
         </div>
       </div>
       <div class="acc-select-image-container">
-        <img class="account-image" src="/src/profile.png" />
-        <h3 class="select-image-button">Select Image</h3>
+        <img class="account-image" src="/src/profile.png" id="profileImage" />
+        <h3 class="select-image-button" id="selectImageButton">Select Image</h3>
+        <input type="file" id="imageInput" accept="image/*" style="display: none;" />
       </div>
     </div>
   </div>
