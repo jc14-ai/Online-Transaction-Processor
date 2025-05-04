@@ -69,9 +69,9 @@ include("../../site/backend/dbcon.php");
               <td>P$unit_price</td>
               <td class=\"quantity-container\">
                 <div class=\"quantity-button-container\">
-                  <button class=\"decrement-button\" onclick=\"decrementItem(this, $user_id, '$product_name', $unit_price, $quantity, $total_price)\">-</button>
+                  <button class=\"decrement-button\" onclick=\"countItem(this, $user_id, '$product_name', $unit_price, $quantity, $total_price)\">-</button>
                   <label class=\"number-label\">$quantity</label>
-                  <button class=\"increment-button\" onclick=\"incrementItem(this, $user_id, '$product_name', $unit_price, $quantity, $total_price)\">+</button>
+                  <button class=\"increment-button\" onclick=\"countItem(this, $user_id, '$product_name', $unit_price, $quantity, $total_price)\">+</button>
                 </div>
               </td>
               <td>P$total_price</td>
@@ -97,6 +97,7 @@ include("../../site/backend/dbcon.php");
     </div>
   </div>
   </div>
+  <script src="/user/user.js"></script>
 </body>
 
 </html>

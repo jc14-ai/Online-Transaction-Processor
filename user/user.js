@@ -197,27 +197,51 @@ document.getElementById("selectImageButton").addEventListener("click", function 
     }
   });
 
-  function decrementItem(button, userID, productName, unitPrice, quantity, totalPrice){
-    if(quantity <= 1){
-        return;
+  function countItem(button, userID, productName, unitPrice, quantity, totalPrice){
+    let sign = button.textContent;
+    let operator = "";
+    if(sign == "-"){
+        operator = "minus";
+        if(quantity <= 1){
+            return;
+        }
+    }else if(sign == "+"){
+        operator = "add";
+        if(quantity >= 99){
+            return;
+        }
     }
 
-    fetch(`/user/boards/decrement_item.php?user_id=${encodeURIComponent(userID)}&product_name=${encodeURIComponent(productName)}&unit_price=${encodeURIComponent(unitPrice)}&quantity=${encodeURIComponent(quantity)}&total_price=${encodeURIComponent(totalPrice)}`)
+    fetch(`/user/boards/count_item.php?user_id=${encodeURIComponent(userID)}&product_name=${encodeURIComponent(productName)}&unit_price=${encodeURIComponent(unitPrice)}&quantity=${encodeURIComponent(quantity)}&total_price=${encodeURIComponent(totalPrice)}&operator=${encodeURIComponent(operator)}`)
     .then(res => res.json())
     .then(data => {
-        const container = button.parentElement;
-        const amount = container.querySelector('.number-label');
+        // const container = button.parentElement;
+        // const amount = container.querySelector('.number-label');
 
-        let newQuantity = data.quantity;
-        amount.textContent = newQuantity;
+        // let newQuantity = data;
+        // amount.textContent = newQuantity;
+
+        location.reload();
     })
   }
 
-  function incrementItem(button, userID, productName, unitPrice, quantity, totalPrice){
-    if(quantity >= 99){
-        return;
-    }
-  }
+//   function incrementItem(button, userID, productName, unitPrice, quantity, totalPrice){
+//     if(quantity >= 99){
+//         return;
+//     }
+
+//     fetch(`/user/boards/increment_item.php?user_id=${encodeURIComponent(userID)}&product_name=${encodeURIComponent(productName)}&unit_price=${encodeURIComponent(unitPrice)}&quantity=${encodeURIComponent(quantity)}&total_price=${encodeURIComponent(totalPrice)}`)
+//     .then(res => res.json())
+//     .then(data => {
+//         // const container = button.parentElement;
+//         // const amount = container.querySelector('.number-label');
+
+//         // let newQuantity = data;
+//         // amount.textContent = newQuantity;
+
+//         location.reload();
+//     })
+//   }
 
 // function changeSize(){  
 //     fetch("/user/boards/get_kofai_size.php")
