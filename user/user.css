@@ -309,11 +309,26 @@ iframe{
     position: relative;
 }
 
-.purchases-theader{
+.purchase-table-wrapper{
+    /* display: flex;
+    justify-content: center;
+    text-align: center; */
+    height: 198px;
+    overflow-y: auto;
+    width: 100%;
+    font-family: 'Montserrat', Montserrat;
+    border-radius: 0px 0px 10px 10px;
+    background-color: #eaeaea;
+}
+.purchase-table{
+    background-color: #e2dfd0;
+    width: 100%;
+    border-collapse: collapse;
+}
+.my-purchase-theader{
     content: center;
     align-items: center;
     text-align: center;
-    padding-right: 1%;
     position: sticky;
     background-color: rgb(240, 125, 83);
     width: 100%;
@@ -321,18 +336,31 @@ iframe{
     z-index: 1;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+.purchase-head{
+    position: sticky;
+        top: 0;
+        background-color: rgb(240, 125, 83);
+        text-align: center;
+        z-index: 1;
+        border: none;
+        font-size: 1em;
+        color: white;
+}
+
+/* .purchases-theader{
+    position: sticky;
+    background-color: rgb(240, 125, 83);
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
 .purchases-head{
     position: sticky;
     top: 0;
     background-color: rgb(240, 125, 83);
-    text-align: center;
-    padding-right: 1%;
-    z-index: 1;
     border: none;
-    padding: 2%;
     color: white;
-}
+} */
 
 .my-profile-label{
     background-color: #cc4e20;  
@@ -390,7 +418,7 @@ iframe{
     align-items: center;
     flex-direction: column;
     height: 100%;
-    width: 41.3%;
+    width: 48%;
     border-radius: 20px;
     background-color: white;
 }
@@ -405,29 +433,23 @@ iframe{
 
 .orders-theader-table{
     background-color: #e26940;
-    width: 106%;
+    width: 100%;
     text-align: center;
     color: white; 
-    padding-right: 35px;   
-}
-
-.orders-theader-table th{
-    align-items: center;
-    font-size: 18px;
-    font-weight: bold;
+    /* padding-right: 35px;    */
 }
 
 .completed-order-label, .pending-order-label{
     background-color: #cc4e20;  
     color: #f5f1e7;
-    font-size: 18px;
+    font-size: 1.2em;
     font-weight: bold;
     padding-left: 25px;
     padding-top: 15px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     height: 35px;
-    width: 100%;
+    width: 94.7%;
     z-index: 1;
     margin-bottom: 0px;
 }
@@ -442,13 +464,13 @@ iframe{
     border-bottom-right-radius: 20px;
 }
 
-.table-wrapper td{
+/* .table-wrapper td{
   text-align: center;
   width: 3%;
   color: #1a120b;
   font-weight: bold;
   font-size: 18px;
-}
+} */
 
 
 

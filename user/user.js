@@ -182,32 +182,34 @@ function incrementKofai(){
     document.getElementById("kofai-count").textContent++;
 }
 //select image for profile
-document.getElementById("selectImageButton").addEventListener("click", function () {
-    document.getElementById("imageInput").click();
-  });
+// document.getElementById("selectImageButton").addEventListener("click", function () {
+//     document.getElementById("imageInput").click();
+//   });
   
-  document.getElementById("imageInput").addEventListener("change", function (event) {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        document.getElementById("profileImage").src = e.target.result;
-      };
-      reader.readAsDataURL(file);
-    }
-  });
+//   document.getElementById("imageInput").addEventListener("change", function (event) {
+//     const file = event.target.files[0];
+//     if (file) {
+//       const reader = new FileReader();
+//       reader.onload = function (e) {
+//         document.getElementById("profileImage").src = e.target.result;
+//       };
+//       reader.readAsDataURL(file);
+//     }
+//   });
 
   function countItem(button, userID, productName, unitPrice, quantity, totalPrice){
     let sign = button.textContent;
     let operator = "";
+    const row = button.closest('tr');
+    const amount = row.querySelector('.number-label');
     if(sign == "-"){
         operator = "minus";
-        if(quantity <= 1){
-            return;
+        if(parseInt(amount.textContent) - 1 < 1){
+            return; 
         }
     }else if(sign == "+"){
         operator = "add";
-        if(quantity >= 99){
+        if(parseInt(amount.textContent) + 1 > 99){
             return;
         }
     }
@@ -215,12 +217,21 @@ document.getElementById("selectImageButton").addEventListener("click", function 
     fetch(`/user/boards/count_item.php?user_id=${encodeURIComponent(userID)}&product_name=${encodeURIComponent(productName)}&unit_price=${encodeURIComponent(unitPrice)}&quantity=${encodeURIComponent(quantity)}&total_price=${encodeURIComponent(totalPrice)}&operator=${encodeURIComponent(operator)}`)
     .then(res => res.json())
     .then(data => {
-        // const container = button.parentElement;
-        // const amount = container.querySelector('.number-label');
+    
+        const total = row.querySelector('.total-price');
+        const totallAll = document.getElementById("total-orders-amount");
 
-        // let newQuantity = data;
-        // amount.textContent = newQuantity;
+        amount.textContent = data.quantity;
+        total.textContent = `P${data.totalPrice}.00`;
+        totallAll.textContent = `P${data.totalAll}`;
+        // location.reload();
+    })
+  }
 
+  function removeOnCart(userID, productName, unitPrice){
+    fetch(`/user/boards/remove_on_cart.php?user_id=${encodeURIComponent(userID)}&product_name=${productName}&unit_price=${unitPrice}`)
+    .then(res => res.json())
+    .then(data => {
         location.reload();
     })
   }
