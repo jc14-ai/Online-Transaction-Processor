@@ -236,29 +236,28 @@ function cancelInfo(cancelButton){
     location.reload();
 }
 
-async function saveInfo(saveButton){
-    const username = document.getElementById("acc-username");
-    const email = document.getElementById("acc-email");
-    const number = document.getElementById("acc-number");
+async function saveInfo(saveButton) {
+    const username = document.getElementById("acc-username").value.trim();
+    const email = document.getElementById("acc-email").value.trim();
+    const number = document.getElementById("acc-number").value.trim();
+    const imageFile = document.getElementById("imageInput").files[0];
 
-    if(username.value.trim() == "" || email.value.trim() == "" || number.value.trim() == ""){
-        return;
-    }
+    if (!username || !email || !number) return;
 
-    await fetch(`/user/set_profile.php?username=${encodeURIComponent(username.value)}&email=${encodeURIComponent(email.value)}&number=${encodeURIComponent(number.value)}&image=${encodeURIComponent(document.getElementById("profileImage").src)}`);
+    const formData = new FormData();
+    formData.append("username", username);
+    formData.append("email", email);
+    formData.append("number", number);
+    if (imageFile) formData.append("image", imageFile);
 
-    document.getElementById("acc-edit-button").style.display = 'block';
-    document.getElementById("acc-cancel-button").style.display = 'none';
-    document.getElementById(saveButton.id).style.display = 'none';
-
-    document.getElementById("selectImageButton").style.display = 'none';
-
-    document.getElementById("acc-username").disabled = true;
-    document.getElementById("acc-email").disabled = true;
-    document.getElementById("acc-number").disabled = true;
+    await fetch("/user/set_profile.php", {
+        method: "POST",
+        body: formData
+    });
 
     location.reload();
 }
+
 // `document.getElementById("selectImageButton").addEventListener("click", function () {
 //     document.getElementById("imageInput").click();
 // });`
@@ -348,3 +347,11 @@ async function saveInfo(saveButton){
 //         }  
 //     })
 // }
+
+function removeNotification(notificationID, userID){
+    fetch(`/user/boards/remove_notification.php?notification_id=${encodeURIComponent(notificationID)}&user_id=${encodeURIComponent(userID)}`)
+    .then(res => res.json())
+    .then(data =>{
+        location.reload();
+    });
+}
