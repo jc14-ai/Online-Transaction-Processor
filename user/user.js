@@ -172,7 +172,6 @@ function decrementKofai(){
         return;
     }
     document.getElementById("kofai-count").textContent--;
-
 }
 
 function incrementKofai(){
@@ -182,11 +181,89 @@ function incrementKofai(){
     document.getElementById("kofai-count").textContent++;
 }
 //select image for profile
-// document.getElementById("selectImageButton").addEventListener("click", function () {
+
+document.getElementById("imageInput").addEventListener("change", function (event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            //fix this
+            document.getElementById("profileImage").src = e.target.result;
+            console.log(file.name); // Logs the new file name (e.g., image.jpg)
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+function selectImage(){
+    document.getElementById("imageInput").click();
+    // document.getElementById("imageInput").addEventListener("change", function (event) {
+    //     const file = event.target.files[0];
+    //     if (file) {
+    //       const reader = new FileReader();
+    //       reader.onload = function (e) {
+    //         document.getElementById("profileImage").src = e.target.result;
+    //         console.log(document.getElementById("profileImage").src);
+    //       };
+    //       reader.readAsDataURL(file);
+    //     }
+    // });
+}
+
+function editInfo(editButton){
+    document.getElementById(editButton.id).style.display = 'none';
+    document.getElementById("acc-cancel-button").style.display = 'block';
+    document.getElementById("acc-save-button").style.display = 'block';
+
+    document.getElementById("selectImageButton").style.display = 'block';
+
+    document.getElementById("acc-username").disabled = false;
+    document.getElementById("acc-email").disabled = false;
+    document.getElementById("acc-number").disabled = false;
+}
+
+function cancelInfo(cancelButton){
+    document.getElementById("acc-edit-button").style.display = 'block';
+    document.getElementById(cancelButton.id).style.display = 'none';
+    document.getElementById("acc-save-button").style.display = 'none';
+
+    document.getElementById("selectImageButton").style.display = 'none';
+
+    document.getElementById("acc-username").disabled = true;
+    document.getElementById("acc-email").disabled = true;
+    document.getElementById("acc-number").disabled = true;
+
+    location.reload();
+}
+
+async function saveInfo(saveButton){
+    const username = document.getElementById("acc-username");
+    const email = document.getElementById("acc-email");
+    const number = document.getElementById("acc-number");
+
+    if(username.value.trim() == "" || email.value.trim() == "" || number.value.trim() == ""){
+        return;
+    }
+
+    await fetch(`/user/set_profile.php?username=${encodeURIComponent(username.value)}&email=${encodeURIComponent(email.value)}&number=${encodeURIComponent(number.value)}&image=${encodeURIComponent(document.getElementById("profileImage").src)}`);
+
+    document.getElementById("acc-edit-button").style.display = 'block';
+    document.getElementById("acc-cancel-button").style.display = 'none';
+    document.getElementById(saveButton.id).style.display = 'none';
+
+    document.getElementById("selectImageButton").style.display = 'none';
+
+    document.getElementById("acc-username").disabled = true;
+    document.getElementById("acc-email").disabled = true;
+    document.getElementById("acc-number").disabled = true;
+
+    location.reload();
+}
+// `document.getElementById("selectImageButton").addEventListener("click", function () {
 //     document.getElementById("imageInput").click();
-//   });
+// });`
   
-//   document.getElementById("imageInput").addEventListener("change", function (event) {
+// function insertImage(event){
 //     const file = event.target.files[0];
 //     if (file) {
 //       const reader = new FileReader();
@@ -195,7 +272,7 @@ function incrementKofai(){
 //       };
 //       reader.readAsDataURL(file);
 //     }
-//   });
+// }
 
   function countItem(button, userID, productName, unitPrice, quantity, totalPrice){
     let sign = button.textContent;

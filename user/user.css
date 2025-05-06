@@ -208,9 +208,19 @@ iframe{
     margin-top: 5%;
     width: 70%;
 }
-.acc-cancel-button,.acc-save-button{
+.acc-cancel-button,.acc-save-button, .acc-edit-button{
     font-size: 1.3em;
     border-radius: 40px; 
+}
+
+.acc-edit-button{
+    display: block;
+}
+.acc-cancel-button{
+    display: none;
+}
+.acc-save-button{
+    display: none;
 }
 
 .account-image{
@@ -227,7 +237,8 @@ iframe{
 }
 
 .acc-cancel-button,
-.acc-save-button {
+.acc-save-button,
+.acc-edit-button {
   padding: 10px 20px;
   border: none; 
   border-radius: 5px;
@@ -241,7 +252,7 @@ iframe{
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.acc-cancel-button:hover, .acc-save-button:hover {
+.acc-cancel-button:hover, .acc-save-button:hover, .acc-edit-button:hover {
     background-color: #c0392b; /* Darker red on hover */
     transform: scale(1.1); /* Slightly enlarges the button */
 }
@@ -276,6 +287,7 @@ iframe{
 }
 
 .select-image-button {
+    display: none;
     font-size: 24px;
     color: #d35400;
     cursor: pointer;

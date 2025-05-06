@@ -23,7 +23,21 @@ include("../site/backend/dbcon.php");
 
       <div class="customer-container">
         <div class="customer-icon">
-          <img class="account-name" src="/src/account-icon.png" />
+          <img class="account-name" src="<?php
+          $user_name = $_SESSION['user'];
+
+          $user_id_query = "SELECT user_id FROM user WHERE username = '$user_name';";
+          $user_id_query_run = mysqli_query($conn, $user_id_query);
+          $user_id_row = mysqli_fetch_assoc($user_id_query_run);
+          $user_id = $user_id_row['user_id'];
+
+          $image_query = "SELECT image FROM user WHERE user_id = $user_id;";
+          $image_query_run = mysqli_query($conn, $image_query);
+          $image_row = mysqli_fetch_assoc($image_query_run);
+          $image = $image_row['image'];
+
+          echo "/src/$image";
+          ?>" />
         </div>
 
         <div class="customer-details">
