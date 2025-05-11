@@ -1,3 +1,8 @@
+<?php
+session_start();
+include("../site/backend/dbcon.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,8 +20,9 @@
       <!-- <img class="logo" src="logo.png"> -->
       <h1 class="dashboard-name"> ADMIN DASHBOARD</h1>
       <div class="top-right-container">
-        <button class="switch-mode">Switch to user</button>
-        <img class="profile" src="/src/profile.png">
+        <button class="switch-mode" onclick="switchToUser()">Switch to user</button>
+        <img class="profile" src="/src/profile.png" onclick="showLogout()">
+        <button class="logout-button" id="logout-button" onclick="logout()">Logout</button>
       </div>
     </div>
     <div class="flex-container">

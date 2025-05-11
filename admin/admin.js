@@ -214,3 +214,24 @@ function viewOrder(username, orderId) {
 function closeViewOrder(){
     document.getElementById("view-order-container").style.display = 'none';
 }
+
+function switchToUser(){
+    
+}
+
+let isLogoutShowing = false;
+function showLogout(){
+    if(isLogoutShowing){
+        document.getElementById("logout-button").style.display = 'none';
+    }else if(!isLogoutShowing){
+        document.getElementById("logout-button").style.display = 'block';
+    }
+    isLogoutShowing = !isLogoutShowing;
+}
+
+function logout() {
+    fetch("logout_admin.php?logout=1")
+    .then(() => {
+        window.location.href = "../site/php/index/body.php";
+    });
+}

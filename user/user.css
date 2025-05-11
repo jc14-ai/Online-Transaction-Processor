@@ -22,6 +22,27 @@ body{
     width: 45px;
     padding: 30px;
     border-radius: 100px;
+    cursor: pointer;
+}
+
+.logout-button{
+  display: none;
+  position: absolute;
+  padding: 0.4%;
+  width: 10%;
+  font-family: 'Montserrat', Montserrat;
+  font-size: 1em;
+  color: white;
+  top: 8%;
+  z-index: 3;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background-color: #2d2525;
+}
+
+.logout-button:hover{
+  background-color: #554848;
 }
 
 .user-container{

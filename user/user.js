@@ -180,35 +180,6 @@ function incrementKofai(){
     }
     document.getElementById("kofai-count").textContent++;
 }
-//select image for profile
-
-document.getElementById("imageInput").addEventListener("change", function (event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            //fix this
-            document.getElementById("profileImage").src = e.target.result;
-            console.log(file.name); // Logs the new file name (e.g., image.jpg)
-        };
-        reader.readAsDataURL(file);
-    }
-});
-
-function selectImage(){
-    document.getElementById("imageInput").click();
-    // document.getElementById("imageInput").addEventListener("change", function (event) {
-    //     const file = event.target.files[0];
-    //     if (file) {
-    //       const reader = new FileReader();
-    //       reader.onload = function (e) {
-    //         document.getElementById("profileImage").src = e.target.result;
-    //         console.log(document.getElementById("profileImage").src);
-    //       };
-    //       reader.readAsDataURL(file);
-    //     }
-    // });
-}
 
 function editInfo(editButton){
     document.getElementById(editButton.id).style.display = 'none';
@@ -354,4 +325,45 @@ function removeNotification(notificationID, userID){
     .then(data =>{
         location.reload();
     });
+}
+
+let isLogoutShowing = false;
+function showLogout(){
+    if(isLogoutShowing){
+        document.getElementById("logout-button").style.display = 'none';
+    }else if(!isLogoutShowing){
+        document.getElementById("logout-button").style.display = 'block';
+    }
+    isLogoutShowing = !isLogoutShowing;
+}
+
+function logout() {
+    fetch("logout_user.php?logout=1")
+    .then(() => {
+        window.location.href = "../site/php/index/body.php";
+    });
+}
+
+function checkout(){
+    document.getElementById("cart-container").style.display = 'none';
+    document.getElementById("main-checkout-container").style.display = 'flex';
+}
+
+//select image for profile
+
+document.getElementById("imageInput").addEventListener("change", function (event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            //fix this
+            document.getElementById("profileImage").src = e.target.result;
+            console.log(file.name);
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+function selectImage(){
+    document.getElementById("imageInput").click();
 }

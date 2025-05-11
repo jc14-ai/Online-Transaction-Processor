@@ -14,7 +14,7 @@ include("../../site/backend/dbcon.php");
 </head>
 
 <body>
-  <div class="cart-container">
+  <div class="cart-container" id="cart-container">
     <div class="my-cart-container">
       <h1 class="my-cart-label">MY CART</h1>
       <div class="cart-table-wrapper">
@@ -150,9 +150,12 @@ include("../../site/backend/dbcon.php");
         ?></div>
 
       </div>
-      <button class="checkout-button">CHECKOUT</button>
+      <button class="checkout-button" onclick="checkout()">CHECKOUT</button>
     </div>
   </div>
+
+  <div class="main-checkout-container" id="main-checkout-container">
+    <!-- NEED TO PUT THE PAYMAYA FRONTEND HERE -->
   </div>
   <script src="/user/user.js"></script>
 </body>

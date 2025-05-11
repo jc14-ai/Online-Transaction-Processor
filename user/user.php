@@ -29,7 +29,8 @@ include("../site/backend/dbcon.php");
     $image = $image_row['image'];
 
     echo "/src/$image";
-    ?>" />
+    ?>" onclick="showLogout()" />
+    <button class="logout-button" id="logout-button" onclick="logout()">Logout</button>
   </div>
 
   <div class="user-container">
@@ -125,6 +126,7 @@ include("../site/backend/dbcon.php");
 
   </div>
   </div>
+  <script src="/user/user.js"></script>
 </body>
 
 </html>
