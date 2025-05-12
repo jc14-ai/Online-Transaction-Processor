@@ -43,3 +43,54 @@ function closeSignIn(){
     signInForm.style.display = 'none';
     isSignInShown = true;
 }
+
+function showSolo() {
+    const container = document.getElementById("donut-container");
+    fetch("/site/pages/show_donut.php?show=1")
+    .then(res => res.json())
+    .then(data => {
+        container.innerHTML = "";
+
+        data.forEach(donut => {
+            container.innerHTML += 
+            `<div class=\"donut\">
+            <img src=\"/src/donut.png\" width=\"40%\" />
+            <h2>${donut.donut_name}</h2>
+            <p>P${donut.donut_price}</p>
+            <div style=\"text-align: center\">
+                <button class=\"order-button\" onclick=\"showSignUp()\">
+                    <img src=\"/src/order-now.png\" />
+                </button>
+            </div>
+            </div>`; 
+        });
+    });
+}
+
+function showBundle() {
+    const container = document.getElementById("donut-container");
+    fetch("/site/pages/show_bundle.php?show=1")
+    .then(res => res.json())
+    .then(data => {
+        container.innerHTML = "";
+
+        data.forEach(bundle => {
+            container.innerHTML += 
+            `<div class=\"donut\">
+            <img src=\"/src/bundle.png\" width=\"40%\" />
+            <h2>${bundle.bundle_name}</h2>
+            <p>P${bundle.bundle_price}</p>
+            <div style=\"text-align: center\">
+                <button class=\"order-button\" onclick=\"showSignUp()\">
+                    <img src=\"/src/order-now.png\" />
+                </button>
+            </div>
+            </div>`; 
+        });
+    });
+    // soloContainer.style.display = 'none';
+    // bundleContainer.style.display = 'flex';
+    // bundleContainer.classList.remove('slide-in-left');
+    // void bundleContainer.offsetWidth;
+    // bundleContainer.classList.add('slide-in-right');
+}

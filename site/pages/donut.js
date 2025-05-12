@@ -1,5 +1,5 @@
-const soloBtn = document.querySelector('.menu-type span:nth-child(1)');
-const bundleBtn = document.querySelector('.menu-type span:nth-child(3)');
+const soloBtn = document.getElementById("soloBtn");
+const bundleBtn = document.getElementById("bundleBtn");
 const soloContainer = document.getElementById('regular-solo');
 const bundleContainer = document.getElementById('regular-bundle');
 
@@ -19,5 +19,5 @@ function showBundle() {
     bundleContainer.classList.add('slide-in-right');
 }
 
-soloBtn.addEventListener('click', showSolo);
-bundleBtn.addEventListener('click', showBundle);
+// soloBtn.addEventListener('click', showSolo);
+// bundleBtn.addEventListener('click', showBundle);

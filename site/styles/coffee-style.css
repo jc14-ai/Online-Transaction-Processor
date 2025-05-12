@@ -1,11 +1,11 @@
-body{
+/* body{
     display: flex;
     align-items: center;
     flex-direction: column;
     background-color: #e2dfd0;
     font-family: 'Montserrat',Montserrat;
     margin: auto;
-}
+} */
 
 .table-donut{
     font-style: initial;
@@ -20,7 +20,7 @@ body{
     background-color: #e2dfd0;
 }
 
-.donut {
+/* .donut {
     flex: 1 1 22%;
     max-width: 22%;
     box-sizing: border-box;
@@ -29,7 +29,7 @@ body{
     text-align: center;
     margin: 10px;
     font-family: 'Montserrat', Montserrat;
-}
+} */
 
 @media (max-width: 768px) {
     .donut {
@@ -38,10 +38,10 @@ body{
         background-color: #e2dfd0;
     }
 }
-.order-button {
+/* .order-button {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     background-color: #d96f47;
     color: white;
     border: none;
@@ -52,10 +52,8 @@ body{
     padding: 10px;
     width: 65%;
     height: 40%;
-    box-shadow: 3px 3px 5px #999;
-    align-items: center;
-    margin: 35px;
-}
+    border: 1px solid;
+} */
 
 .order-button img {
     border-radius: 50%;
@@ -74,10 +72,11 @@ body{
     font-style: initial;
 }
 
+/* 
 #donut-page{
     display: inline-block;
     justify-content: center;
     align-items: center;
     height: 220vh;
-}
+} */
 

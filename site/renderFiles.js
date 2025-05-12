@@ -17,22 +17,22 @@ window.addEventListener("DOMContentLoaded", () => {
         console.error("Error loading aboutUs.html:", error);
       });
 
-    fetch("/site/pages/donut.html")
+    fetch("/site/pages/donut.php")
       .then(response => response.text())
       .then(data => {
         document.getElementById("donut-page").innerHTML = data;
       })
       .catch(error => {
-        console.error("Error loading donut.html:", error);
+        console.error("Error loading donut.php:", error);
       });
     
-    fetch("/site/pages/coffee.html")
+    fetch("/site/pages/coffee.php")
       .then(response => response.text())
       .then(data => {
         document.getElementById("coffee-page").innerHTML = data;
       })
       .catch(error => {
-        console.error("Error loading coffee.html:", error);
+        console.error("Error loading coffee.php:", error);
       });
 
     fetch("/site/pages/reviews.html")

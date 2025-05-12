@@ -51,7 +51,6 @@ body {
 .donut-card:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
     background-color: #f7f7f7;
     /* color: #fff; */
 }

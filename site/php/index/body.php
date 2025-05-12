@@ -155,9 +155,11 @@ include("header.php");
 <div class="pages" id="contact-page"></div>
 
 <ul class="nav-bar">
-    <li class="nav-section" id="home">
-        <a href="#home-page">Home</a>
-    </li>
+    <div class="home-page" class="home-link">
+        <a href="#home-page">
+            <img class="store-home" src="/src/store.png" />
+        </a>
+    </div>
     <li class="nav-section" id="menu">
         Menu
         <div class="product-container">
