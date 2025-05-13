@@ -55,8 +55,8 @@ function showSolo() {
             container.innerHTML += 
             `<div class=\"donut\">
             <img src=\"/src/donut.png\" width=\"40%\" />
-            <h2>${donut.donut_name}</h2>
-            <p>P${donut.donut_price}</p>
+            <h2 class=\"donut-name-label\">${donut.donut_name}</h2>
+            <p class=\"donut-price-label\">P${donut.donut_price}</p>
             <div style=\"text-align: center\">
                 <button class=\"order-button\" onclick=\"showSignUp()\">
                     <img src=\"/src/order-now.png\" />
@@ -78,8 +78,8 @@ function showBundle() {
             container.innerHTML += 
             `<div class=\"donut\">
             <img src=\"/src/bundle.png\" width=\"40%\" />
-            <h2>${bundle.bundle_name}</h2>
-            <p>P${bundle.bundle_price}</p>
+            <h2 class=\"donut-name-label\">${bundle.bundle_name}</h2>
+            <p class=\"donut-price-label\" >P${bundle.bundle_price}</p>
             <div style=\"text-align: center\">
                 <button class=\"order-button\" onclick=\"showSignUp()\">
                     <img src=\"/src/order-now.png\" />
