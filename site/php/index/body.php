@@ -8,12 +8,27 @@ include("header.php");
     <div class="sign-up-alert" id="sign-up-alert">
         <?php
         if (isset($_SESSION['sign-up-status'])) {
-            echo "<h4 style='color: white;'>" . $_SESSION['sign-up-status'] . "</h4>";
+            echo "  
+            <div id=\"page-status\" style=\"
+            background-color: #3e3232; 
+            padding-left: 20px; 
+            padding-right: 20px; 
+            padding-top: 1px; 
+            padding-bottom: 1px; 
+            border-radius: 8px; 
+            margin-bottom: 5px;\">
+                <h4 style='color: white;'>" .
+                $_SESSION['sign-up-status'] .
+                "</h4>
+            </div>";
             ?>
 
             <script>
                 document.getElementById("sign-up-page").style.display = 'flex';
                 // isSignUpShown = !isSignUpShown;
+                setTimeout(() => {
+                    document.getElementById("page-status").style.display = 'none';
+                }, 3000);
             </script>
 
             <?php
@@ -86,12 +101,28 @@ include("header.php");
     <div class="sign-in-alert" id="sign-in-alert">
         <?php
         if (isset($_SESSION['sign-in-status'])) {
-            echo "<h4 style='color: red;'>" . $_SESSION['sign-in-status'] . "</h4>";
+            echo "
+            <div id=\"page-status\" style=\"
+            background-color: #3e3232; 
+            padding-left: 20px; 
+            padding-right: 20px; 
+            padding-top: 1px; 
+            padding-bottom: 1px; 
+            border-radius: 8px; 
+            margin-bottom: 5px;\">
+                <h4 style='color: white;'>" .
+                $_SESSION['sign-in-status'] .
+                "</h4>
+            </div>
+            ";
             ?>
 
             <script>
                 document.getElementById("sign-in-page").style.display = 'flex';
                 // isSignInShown = !isSignInShown;
+                setTimeout(() => {
+                    document.getElementById("page-status").style.display = 'none';
+                }, 3000);
             </script>
 
             <?php
@@ -135,10 +166,12 @@ include("header.php");
                 </div>
             </div>
         </div>
+        <a class="forgot-password" href="">forgot password?</a>
         <button class="sign-in-button" name="sign-in-button" type="submit">
             LOGIN
         </button>
     </form>
+
 </div>
 <!-- <div class="float-page" id="sign-in-page"></div> -->
 <!-- HOME PAGE -->
@@ -155,9 +188,11 @@ include("header.php");
 <div class="pages" id="contact-page"></div>
 
 <ul class="nav-bar">
-    <li class="nav-section" id="home">
-        <a href="#home-page">Home</a>
-    </li>
+    <div class="home-page" class="home-link">
+        <a href="#home-page">
+            <img class="store-home" src="/src/store.png" />
+        </a>
+    </div>
     <li class="nav-section" id="menu">
         Menu
         <div class="product-container">

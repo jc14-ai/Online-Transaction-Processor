@@ -2,13 +2,13 @@
 
 html{
     scroll-behavior: smooth;
-    user-select: none;
 }
 body{
     display: flex;
     align-items: center;
     flex-direction: column;
     background-color: #e2dfd0;
+    font-family: 'Montserrat', Montserrat, serif;
     font-family: 'Montserrat', Montserrat, serif;
     margin: auto;
 }
@@ -22,7 +22,7 @@ body{
     flex-direction: row;
     gap: 3%;
     list-style: none;
-    font-size: clamp(0.6em,1.5vw,1.5vw);
+    font-size: clamp(0.6em,1vw,1vw);
     font-weight:500;
     color: white;
     background-color: #3e3232;
@@ -30,7 +30,37 @@ body{
     width: 96%;
     padding-right: clamp(80px,2%,2%);
     margin-top: 0px;
-    z-index: 2;
+    z-index: 6;
+}
+
+/* .home-image-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 100px;
+    border: 1px solid;
+} */
+
+.home-page{
+    position: fixed;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+    height: 6%;
+}
+
+li{
+z-index: 16;
+}
+.store-home{
+    width:  15%;
+    border: 5px solid white;
+    border-radius: 100px;
+    transform: scale(1);
+    transition: 0.2s ease;
+}
+.store-home:hover{
+    transform: scale(1.07);
 }
 
 .products{
@@ -74,6 +104,7 @@ body{
 a{
     text-decoration: none;
     color: inherit;
+    z-index: 5;
 }
 
 .nav-section:hover{
@@ -83,6 +114,10 @@ a{
 }
 
 .pages{
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
     width: 100%;
     display: block;
     position: relative;
@@ -99,12 +134,24 @@ a{
 #contact-page {
     margin-top: 50px;
 }
-
+/* 
 #donut-page{
     display: inline-block;
     justify-content: center;
     align-items: center;
-    height: 220vh;
+    height: 100vh;
+} */
+
+.float-page{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: 1px solid; */
+    position: fixed;
+    height: 800px;
+    width: 1550px;
+    z-index: 12;
 }
 .float-page{
     display: none;

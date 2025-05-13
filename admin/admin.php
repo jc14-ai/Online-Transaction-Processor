@@ -1,10 +1,6 @@
 <?php
 session_start();
-
-if (!isset($_SESSION['user'])) {
-  header("location: /site/php/index/body.php");
-  exit;
-}
+include("../site/backend/dbcon.php");
 ?>
 
 <!DOCTYPE html>
@@ -15,28 +11,60 @@ if (!isset($_SESSION['user'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin</title>
   <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com">
 </head>
 
 <body>
   <div class="admin-container">
     <div class="top-width">
-      <h1 class="dashboard-name">DASHBOARD</h1>
+      <!-- <img class="logo" src="logo.png"> -->
+      <h1 class="dashboard-name"> ADMIN</h1>
       <div class="top-right-container">
-        <button class="switch-mode">switch to user</button>
-        <img class="profile" src="/src/profile.png" />
+        <!-- <button class="switch-mode" onclick="switchToUser()">Switch to user</button> -->
+        <img class="profile" src="/src/avatar.png" onclick="showLogout()">
+        <button class="logout-button" id="logout-button" onclick="logout()">Logout</button>
       </div>
     </div>
     <div class="flex-container">
       <div class="navbar">
-        <a href="/admin/boards/dashboard.html" target="main">Dashboard</a>
-        <a href="/admin/boards/kofai.html" target="main">Kofai</a>
-        <a href="/admin/boards/donut.html" target="main">Donut</a>
-        <a href="/admin/boards/bundle.html" target="main">Bundle</a>
-        <a href="/admin/boards/orders.html" target="main">Orders</a>
-        <a href="/admin/boards/notification.html" target="main">Notification</a>
+        <div class="dashboard-item">
+          <a href="/admin/boards/dashboard.php" target="main" class="nav-button" id="nav-button-dashboard">
+            <img src="/src/window-orange.png" class="icon" id="icon-dashboard">
+            Dashboard
+          </a>
+        </div>
+        <div class="dashboard-item">
+          <a href="#" class="nav-button product-link" id="nav-button-product">
+            <img src="/src/product-orange.png" class="icon" alt="Product Icon" id="icon-product">
+            Product
+          </a>
+          <ul class="dropdown-product" id="dropdownMenu">
+            <li class="productnga">
+              <a href="/admin/boards/kofai.php" target="main" class="nav-button">Kofai</a>
+            </li>
+            <li class="productnga">
+              <a href="/admin/boards/donut.php" target="main" class="nav-button">Donut</a>
+            </li>
+            <li class="productnga">
+              <a href="/admin/boards/bundle.php" target="main" class="nav-button">Bundle</a>
+            </li>
+          </ul>
+        </div>
+        <div class="dashboard-item">
+          <a href="/admin/boards/orders.php" target="main" class="nav-button" id="nav-button-order">
+            <img src="/src/order-orange.png" class="icon" alt="Orders Icon" id="icon-order">
+            Orders
+          </a>
+        </div>
+        <div class="dashboard-item">
+          <a href="/admin/boards/notification.php" target="main" class="nav-button" id="nav-button-notif">
+            <img src="/src/notif-orange.png" class="icon" alt="Notification Icon" id="icon-notif">
+            Notification
+          </a>
+        </div>
       </div>
       <div class="main-panel">
-        <iframe class="main" name="main"></iframe>
+        <iframe src="/admin/boards/dashboard.php" class="main" name="main"></iframe>
       </div>
     </div>
   </div>

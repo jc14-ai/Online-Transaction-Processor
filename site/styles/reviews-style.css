@@ -40,7 +40,7 @@ body {
 }
 
 .donut-card {
-    background-color: white;
+    background-color: rgb(237, 237, 237);
     padding: 15px;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -51,9 +51,8 @@ body {
 .donut-card:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    background-color: #000;
-    color: #fff;
+    background-color: #f7f7f7;
+    /* color: #fff; */
 }
 
 .donut-img {
