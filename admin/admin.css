@@ -32,8 +32,7 @@ body{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 40%;
-    padding-left: 3%;
+    width: 46%;
     font-family: 'Poppins', monospace;
     color: white;
 }
@@ -41,13 +40,33 @@ body{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 46%;
+    width: 50%;
     gap: 4%;
-    padding-right: 2%;
+    /* border: 1px solid; */
 }
 .profile{
-    width: 6%;
+    width: 8%;
+    cursor: pointer;
 }
+.logout-button{
+  display: none;
+  position: absolute;
+  padding: 0.4%;
+  width: 5%;
+  font-family: 'Montserrat', Montserrat;
+  font-size: 0.6em;
+  top: 12%;
+  z-index: 2;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background-color: #e2dfd0;
+}
+
+.logout-button:hover{
+  background-color: rgb(244, 241, 227);
+}
+
 .logo{
     width: 4%;
 }
@@ -95,6 +114,7 @@ body{
     color: #cc603d;
     text-decoration: none;
     font-weight: bold;
+    font-size: 0.6em;
     cursor: pointer;
     transition: background-color 0.2s;
   }
@@ -261,6 +281,10 @@ body{
   flex-direction: row;
   width: 100%;
   gap: 40px;
+}
+
+.icon{
+  width: 15%;
 }
 
 /* Sales-Overview and Order Analytics*/
@@ -1003,7 +1027,7 @@ tr:hover {
 }
 
 td{
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 /* ORDERS DESIGN SETTINGS */

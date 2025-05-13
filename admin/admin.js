@@ -214,3 +214,60 @@ function viewOrder(username, orderId) {
 function closeViewOrder(){
     document.getElementById("view-order-container").style.display = 'none';
 }
+
+function switchToUser(){
+    
+}
+
+let isLogoutShowing = false;
+function showLogout(){
+    if(isLogoutShowing){
+        document.getElementById("logout-button").style.display = 'none';
+    }else if(!isLogoutShowing){
+        document.getElementById("logout-button").style.display = 'block';
+    }
+    isLogoutShowing = !isLogoutShowing;
+}
+
+function logout() {
+    fetch("logout_admin.php?logout=1")
+    .then(() => {
+        window.location.href = "../site/php/index/body.php";
+    });
+}
+
+function completeOrder(orderID){
+    fetch(`/admin/boards/complete_orders.php?order_id=${orderID}`)
+    .then(res => res.json())
+    .then(data => {
+        location.reload();
+    });
+}
+
+document.getElementById("nav-button-dashboard").addEventListener("mouseover", () => {
+    document.getElementById("icon-dashboard").src = "/src/window-white.png";
+});
+document.getElementById("nav-button-dashboard").addEventListener("mouseout", () => {
+    document.getElementById("icon-dashboard").src = "/src/window-orange.png";
+});
+
+document.getElementById("nav-button-product").addEventListener("mouseover", () => {
+    document.getElementById("icon-product").src = "/src/product-white.png";
+});
+document.getElementById("nav-button-product").addEventListener("mouseout", () => {
+    document.getElementById("icon-product").src = "/src/product-orange.png";
+});
+
+document.getElementById("nav-button-order").addEventListener("mouseover", () => {
+    document.getElementById("icon-order").src = "/src/order-white.png";
+});
+document.getElementById("nav-button-order").addEventListener("mouseout", () => {
+    document.getElementById("icon-order").src = "/src/order-orange.png";
+});
+
+document.getElementById("nav-button-notif").addEventListener("mouseover", () => {
+    document.getElementById("icon-notif").src = "/src/notif-white.png";
+});
+document.getElementById("nav-button-notif").addEventListener("mouseout", () => {
+    document.getElementById("icon-notif").src = "/src/notif-orange.png";
+});

@@ -49,7 +49,10 @@ include("../../site/backend/dbcon.php");
           <label class="kofai-count" id="kofai-count">1</label>
           <button class="inc-kofai" onclick="incrementKofai()">+</button>
         </div>
-        <button class="kofai-size-picker-button" id="kofai-size-picker-button" onclick="changeSize()">16oz</button>
+        <div class="kofai-size-button-container" id="kofai-size-button-container">
+          <!-- <button class="kofai-size-picker-button" id="kofai-size-picker-button-1" onclick="changeSize()">16oz</button>
+          <button class="kofai-size-picker-button" id="kofai-size-picker-button-2" onclick="changeSize()">22oz</button> -->
+        </div>
         <div class="kofai-pop-up-button-container">
           <button class="kofai-pop-up-back-button" onclick="closeKofaiPopUpContainer()">Back</button>
           <button class="kofai-pop-up-add-to-cart-button" onclick="addKofaiToCart()">

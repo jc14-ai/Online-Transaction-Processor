@@ -17,7 +17,7 @@ include("../../site/backend/dbcon.php");
   <!-- ORDER -->
   <div class="order-board">
     <div class="order-header">
-      <h4>ORDERS</h4>
+      <h4 style="font-size: 2em;">ORDERS</h4>
     </div>
     <div class="table-wrapper">
       <table>
@@ -35,12 +35,13 @@ include("../../site/backend/dbcon.php");
           $refresh_query = "SELECT orders.order_id, user.user_id, user.username, user.contact, orders.order_status, orders.order_date FROM orders LEFT JOIN user ON orders.user_id = user.user_id WHERE orders.order_status = 'pending' ORDER BY order_date DESC;";
           $refresh_query_run = mysqli_query($conn, $refresh_query);
           while ($row = mysqli_fetch_assoc($refresh_query_run)) {
+            $order_id = $row['order_id'];
             echo "<tr>
                     <td>" . $row['username'] . "</td>
                     <td>" . $row['contact'] . "</td>
                     <td><button class='view-order-button' onclick='viewOrder(" . "\"" . $row['username'] . "\"," . $row['order_id'] . ")' >VIEW ORDER</button></td>
                     <td>" . $row['order_status'] . "</td>
-                    <td><button class='action-button' onclick='' >DONE</button></td>
+                    <td><button class='action-button' onclick=\"completeOrder($order_id)\" >DONE</button></td>
                   </tr>";
           }
           ?>
