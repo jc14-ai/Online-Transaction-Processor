@@ -97,8 +97,8 @@ include("../../site/backend/dbcon.php");
   <!-- Main Board -->
   <div class="donut-board">
     <div class="donut-header">
-      <h4>DONUT LIST</h4>
-      <button onclick="openDonutAddContainer()" class="add-donut-button">
+      <h4 style="font-size: 2em;">DONUT LIST</h4>
+      <button onclick=" openDonutAddContainer()" class="add-donut-button">
         ADD DONUT
       </button>
     </div>

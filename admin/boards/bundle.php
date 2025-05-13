@@ -98,7 +98,7 @@ include("../../site/backend/dbcon.php");
   <!-- Main Board -->
   <div class="bundle-board">
     <div class="bundle-header">
-      <h4>BUNDLE LIST</h4>
+      <h4 style="font-size: 2em;">BUNDLE LIST</h4>
       <button onclick="openBundleAddContainer()" class="add-bundle-button">
         ADD BUNDLE
       </button>

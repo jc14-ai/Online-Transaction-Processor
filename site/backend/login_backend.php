@@ -2,11 +2,20 @@
 session_start();
 include("dbcon.php");
 
-$username = $_POST['sign-in-username'];
-$email = $_POST['sign-in-email'];
-$password = $_POST['sign-in-password'];
-
 if (isset($_POST['sign-in-button'])) {
+    $username = $_POST['sign-in-username'];
+    $email = $_POST['sign-in-email'];
+    $password = $_POST['sign-in-password'];
+
+    $check_username_query = "SELECT COUNT(*) AS usernames FROM user WHERE username = '$username';";
+    $check_username_query_run = mysqli_query($conn, $check_username_query);
+    $user_row = mysqli_fetch_assoc($check_username_query_run);
+    if ($user_row['usernames'] == 0) {
+        $_SESSION['sign-in-status'] = 'Login Failed.';
+        header('Location: /site/php/index/body.php');
+        exit;
+    }
+
     $login_query = "SELECT username, email, password, verified FROM user WHERE username = '$username' AND email = '$email' AND password = '$password' LIMIT 1;";
     $login_query_run = mysqli_query($conn, $login_query);
 
@@ -39,6 +48,10 @@ if (isset($_POST['sign-in-button'])) {
             header("location: /site/php/index/body.php");
             exit(0);
         }
+    } else {
+        $_SESSION['sign-in-status'] = "Username or email doesnt exist.";
+        header("location: /site/php/index/body.php");
+        exit(0);
     }
 }
 

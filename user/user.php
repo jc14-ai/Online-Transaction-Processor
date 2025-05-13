@@ -56,12 +56,11 @@ include("../site/backend/dbcon.php");
 
         <div class="customer-details">
           <div class="name"><?php echo ' ' . $_SESSION['user']; ?></div>
-          <div class="edit"> <img src="/src/edit-icon.png" /> EDIT PROFILE </div>
+          <!-- <div class="edit"> <img src="/src/edit-icon.png" /> EDIT PROFILE </div> -->
         </div>
       </div>
 
       <div class="customer-profile">
-
         <div class="dashboard-label">
           <a href="/user/boards/account.php" target="main" style="text-decoration: none; color: #3e3232;">
             <span class="icon-wrapper">

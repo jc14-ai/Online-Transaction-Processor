@@ -16,7 +16,7 @@ include("../../site/backend/dbcon.php");
 <body>
   <!-- Main Board -->
   <div class="notification-board">
-    <h4 class="notification-label">NOTIFICATION</h4>
+    <h4 class="notification-label" style="font-size: 2em;">NOTIFICATION</h4>
     <div class="notification-table-wrapper">
       <table>
         <tbody>
@@ -25,8 +25,8 @@ include("../../site/backend/dbcon.php");
           $refresh_query_run = mysqli_query($conn, $refresh_query);
 
           while ($row = mysqli_fetch_assoc($refresh_query_run)) {
-            echo "<tr>s
-                    <td>YOU HAVE NEW ORDER FROM <strong>" . strtoupper($row['username']) . "</strong> </td>
+            echo "<tr>
+                    <td>You have new order from <strong>" . strtoupper($row['username']) . "</strong> </td>
                     <td>" . $row['order_date'] . "</td>
                     <td>
                      <button class=\"view-button\" onclick=\"window.location.href='/admin/boards/orders.php'\">

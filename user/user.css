@@ -554,10 +554,11 @@ iframe{
         width: 90px;
     }
     .donut-name{
+        text-align: center;
         font-family: 'Montserrat', Montserrat;
         margin: 0;
         margin-top: 5%;
-        font-size: 1.5em;
+        font-size:1.1em;
         font-weight: 500;
         color: white;
     }
@@ -602,7 +603,7 @@ iframe{
         border-radius: 25px;
         height: 500px;
         width: 400px;
-        background-color: rgb(206, 93, 85);
+        background-color: rgb(255, 234, 217);
         gap: 3%;
     }
     .donut-pop-up-image-container{
@@ -612,21 +613,22 @@ iframe{
         height: 45%;
         width: 80%;
         border-radius: 20px;
-        background-color: white;
+        background-color: rgb(255, 197, 161);
+         border: 4px solid;
     }
     .donut-pop-up-name{
         font-family: 'Montserrat', Montserrat;
         font-weight: 600;
         font-size: 2em;
         margin: 0;
-        color: white;
+        color: black;
     }
     .donut-pop-up-price{
         font-family: 'Montserrat', Montserrat;
         font-weight: 600;
         font-size: 1.5em;
         margin: 0;
-        color: white;
+        color: black;
     }
     .donut-pop-up-counter-container{
         display: flex;
@@ -651,7 +653,7 @@ iframe{
     .donut-count{
         font-family: 'Montserrat',Montserrat;
         font-size: 1.5em;
-        color: white;
+        color: black;
     }
     .donut-pop-up-button-container{
         display: flex;
@@ -812,7 +814,7 @@ iframe{
         border-radius: 25px;
         height: 500px;
         width: 400px;
-        background-color: rgb(206, 93, 85);
+        background-color: rgb(255, 234, 217);
         gap: 1.8%;
     }
     .kofai-pop-up-image-container{
@@ -822,21 +824,22 @@ iframe{
         height: 45%;
         width: 80%;
         border-radius: 20px;
-        background-color: white;
+        border: 4px solid;
+        background-color: rgb(255, 197, 161);
     }
     .kofai-pop-up-name{
         font-family: 'Montserrat', Montserrat;
         font-weight: 600;
         font-size: 2em;
         margin: 0;
-        color: white;
+            color: black;
     }
     .kofai-pop-up-price{
         font-family: 'Montserrat', Montserrat;
         font-weight: 600;
         font-size: 1.5em;
         margin: 0;
-        color: white;
+            color: black;
     }
     .kofai-pop-up-counter-container{
         display: flex;
@@ -861,7 +864,7 @@ iframe{
     .kofai-count{
         font-family: 'Montserrat',Montserrat;
         font-size: 1.5em;
-        color: white;
+        color: black;
     }
     .kofai-pop-up-button-container{
         display: flex;
@@ -1040,9 +1043,10 @@ iframe{
         font-family: 'Montserrat', Montserrat;
         margin: 0;
         margin-top: 5%;
-        font-size: 1.5em;
+        font-size: 1.1em;
         font-weight: 500;
         color: white;
+        text-align: center;
     }
 
     .bundle-price{

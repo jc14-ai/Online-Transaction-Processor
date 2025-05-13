@@ -97,7 +97,7 @@ include("../../site/backend/dbcon.php");
   <!-- Main Board -->
   <div class="kofai-board">
     <div class="kofai-header">
-      <h4>KOFAI LIST</h4>
+      <h4 style="font-size: 2em;">KOFAI LIST</h4>
       <button onclick="openKofaiAddContainer()" class="add-kofai-button">
         ADD KOFAI
       </button>
