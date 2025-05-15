@@ -84,7 +84,7 @@ include("../../site/backend/dbcon.php");
       </div>
     </div>
 
-    <div class="checkout-container">
+    <form class="checkout-container" id="checkout-container" method="POST" action="/user/payment.php">
       <div class="total-container">
 
         <div class="total-orders">
@@ -148,10 +148,12 @@ include("../../site/backend/dbcon.php");
         $total = $total_query_row["total"];
         echo "P$total";
         ?></div>
-
+        <input type="hidden" name="amount" value="
+        <?php
+        echo str_replace('.', '', $total);
+        ?>" />
       </div>
-      <button class="checkout-button" onclick="checkout()">CHECKOUT</button>
-    </div>
+      <input class="checkout-button" onclick="checkout('<?php echo $user_id; ?>')" value="CHECKOUT" />
   </div>
 
   <div class="main-checkout-container" id="main-checkout-container">

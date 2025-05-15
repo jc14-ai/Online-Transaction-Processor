@@ -54,7 +54,6 @@ include("../backend/dbcon.php");
     ?>
   </div>
   <script src="/site/script.js"></script>
-  <!-- <script src="/site/pages/donut.js"></script> -->
 </body>
 
 </html>

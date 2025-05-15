@@ -173,7 +173,6 @@ include("header.php");
     </form>
 
 </div>
-<!-- <div class="float-page" id="sign-in-page"></div> -->
 <!-- HOME PAGE -->
 <div class="pages" id="home-page"></div>
 <!-- ABOUT US PAGE -->

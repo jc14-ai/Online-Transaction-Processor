@@ -343,10 +343,15 @@ function logout() {
         window.location.href = "../site/php/index/body.php";
     });
 }
+    
+async function checkout(userID){
+    await fetch(`/user/boards/send_orders.php?user_id=${encodeURIComponent(userID)}`)
+    .then(res => res.json())
+    console.log("inserted");
+    // document.getElementById("cart-container").style.display = 'none';
+    // document.getElementById("main-checkout-container").style.display = 'flex';
 
-function checkout(){
-    document.getElementById("cart-container").style.display = 'none';
-    document.getElementById("main-checkout-container").style.display = 'flex';
+    document.getElementById("checkout-container").submit();
 }
 
 //select image for profile
