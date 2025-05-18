@@ -27,7 +27,13 @@ if (isset($_POST['save-donut-button']) && isValid($donut_name, $donut_price, $do
         exit;
     }
 
-    $donut_update_query = "UPDATE donut SET donut_name = '$donut_name', donut_price = $donut_price, status = '$donut_status' WHERE donut_id = $old_donut_id;";
+    $target_dir = "../../src/";
+    $imageName = basename($_FILES["image"]["name"]);
+    $target_file = $target_dir . $imageName;
+
+    move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
+
+    $donut_update_query = "UPDATE donut SET donut_name = '$donut_name', donut_price = $donut_price, status = '$donut_status', image = '$imageName' WHERE donut_id = $old_donut_id;";
     $donut_update_query_run = mysqli_query($conn, $donut_update_query);
     header("location: /admin/boards/donut.php");
     exit;

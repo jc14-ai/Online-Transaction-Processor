@@ -14,6 +14,7 @@ function editKofaiDetails(){
     document.getElementById("edit-kofai-button").type = 'hidden';
     document.getElementById("cancel-kofai-button").type = 'button';
     document.getElementById("back-kofai-button").type = 'hidden';
+    document.getElementById("detail-upload-label").style.display = 'inline-block';
     document.getElementById("details-kofai-name-input").disabled = false;
     document.getElementById("details-kofai-price-input").disabled = false;
     document.getElementById("details-kofai-status-input").disabled = false;
@@ -24,6 +25,7 @@ function cancelKofaiDetails(){
     document.getElementById("edit-kofai-button").type = 'button';
     document.getElementById("cancel-kofai-button").type = 'hidden';
     document.getElementById("back-kofai-button").type = 'button';
+    document.getElementById("detail-upload-label").style.display = 'none';
     document.getElementById("details-kofai-name-input").disabled = true;
     document.getElementById("details-kofai-price-input").disabled = true;
     document.getElementById("details-kofai-status-input").disabled = true;
@@ -36,7 +38,9 @@ function closeKofaiDetailsContainer(){
     document.getElementById("details-kofai-container").style.display = 'none';
 }
 
-function openKofaiDetailsContainer(name,price,status,size,coffeeId,coffeeSizeId){
+function openKofaiDetailsContainer(name,price,status,size,coffeeId,coffeeSizeId, image){
+
+    document.getElementById("detail-image-preview").src = `/src/${image}`;
     document.getElementById("details-kofai-name-input").value = name;
     document.getElementById("details-kofai-price-input").value = price;
     document.getElementById("details-kofai-status-input").value = status;
@@ -88,6 +92,7 @@ function editDonutDetails(){
     document.getElementById("edit-donut-button").type = 'hidden';
     document.getElementById("cancel-donut-button").type = 'button';
     document.getElementById("back-donut-button").type = 'hidden';
+    document.getElementById("detail-upload-label").style.display = 'inline-block';
     document.getElementById("details-donut-name-input").disabled = false;
     document.getElementById("details-donut-price-input").disabled = false;
     document.getElementById("details-donut-status-input").disabled = false;
@@ -98,6 +103,7 @@ function cancelDonutDetails(){
     document.getElementById("edit-donut-button").type = 'button';
     document.getElementById("cancel-donut-button").type = 'hidden';
     document.getElementById("back-donut-button").type = 'button';
+    document.getElementById("detail-upload-label").style.display = 'none';
     document.getElementById("details-donut-name-input").disabled = true;
     document.getElementById("details-donut-price-input").disabled = true;
     document.getElementById("details-donut-status-input").disabled = true;
@@ -107,10 +113,21 @@ function cancelDonutDetails(){
 }
 
 function closeDonutDetailsContainer(){
+    // document.getElementById("save-donut-button").type = 'hidden';
+    // document.getElementById("edit-donut-button").type = 'button';
+    // document.getElementById("detail-upload-label").style.display = 'none';
     document.getElementById("details-donut-container").style.display = 'none';
 }
 
-function openDonutDetailsContainer(name,price,status,donutId){
+function openDonutDetailsContainer(name,price,status,donutId,image){
+    // fetch(`/admin/boards/get_donut_image.php?id=${donutId}`)
+    // .then(res => res.json())
+    // .then(data => {
+    //     document.getElementById("image-preview").src = `/src/${data.image}`;
+    // }); 
+
+    document.getElementById("detail-image-preview").src = `/src/${image}`;
+    console.log(image);
     document.getElementById("details-donut-name-input").value = name;
     document.getElementById("details-donut-price-input").value = price;
     document.getElementById("details-donut-status-input").value = status;
@@ -121,7 +138,7 @@ function openDonutDetailsContainer(name,price,status,donutId){
     
     document.getElementById("old-donut-id").value = donutId;
 
-    console.log(document.getElementById("hidden-details-donut-status-input").value);
+    // console.log(document.getElementById("hidden-details-donut-status-input").value);
     // console.log(document.getElementById("hidden-details-donut-size-input").value);
 
     document.getElementById("details-donut-container").style.display = 'flex';
@@ -142,6 +159,7 @@ function editBundleDetails(){
     document.getElementById("edit-bundle-button").type = 'hidden';
     document.getElementById("cancel-bundle-button").type = 'button';
     document.getElementById("back-bundle-button").type = 'hidden';
+    document.getElementById("detail-upload-label").style.display = 'inline-block';
     document.getElementById("details-bundle-name-input").disabled = false;
     document.getElementById("details-bundle-price-input").disabled = false;
     document.getElementById("details-bundle-status-input").disabled = false;
@@ -152,6 +170,7 @@ function cancelBundleDetails(){
     document.getElementById("edit-bundle-button").type = 'button';
     document.getElementById("cancel-bundle-button").type = 'hidden';
     document.getElementById("back-bundle-button").type = 'button';
+    document.getElementById("detail-upload-label").style.display = 'none';
     document.getElementById("details-bundle-name-input").disabled = true;
     document.getElementById("details-bundle-price-input").disabled = true;
     document.getElementById("details-bundle-status-input").disabled = true;
@@ -164,7 +183,8 @@ function closeBundleDetailsContainer(){
     document.getElementById("details-bundle-container").style.display = 'none';
 }
 
-function openBundleDetailsContainer(name,price,status,bundleId){
+function openBundleDetailsContainer(name,price,status,bundleId, image){
+    document.getElementById("detail-image-preview").src = `/src/${image}`;
     document.getElementById("details-bundle-name-input").value = name;
     document.getElementById("details-bundle-price-input").value = price;
     document.getElementById("details-bundle-status-input").value = status;
@@ -215,26 +235,26 @@ function closeViewOrder(){
     document.getElementById("view-order-container").style.display = 'none';
 }
 
-function switchToUser(){
+// function switchToUser(){
     
-}
+// }
 
-let isLogoutShowing = false;
-function showLogout(){
-    if(isLogoutShowing){
-        document.getElementById("logout-button").style.display = 'none';
-    }else if(!isLogoutShowing){
-        document.getElementById("logout-button").style.display = 'block';
-    }
-    isLogoutShowing = !isLogoutShowing;
-}
+// let isLogoutShowing = false;
+// function showLogout(){
+//     if(isLogoutShowing){
+//         document.getElementById("logout-button").style.display = 'none';
+//     }else if(!isLogoutShowing){
+//         document.getElementById("logout-button").style.display = 'block';
+//     }
+//     isLogoutShowing = !isLogoutShowing;
+// }
 
-function logout() {
-    fetch("logout_admin.php?logout=1")
-    .then(() => {
-        window.location.href = "../site/php/index/body.php";
-    });
-}
+// function logout() {
+//     fetch("logout_admin.php?logout=1")
+//     .then(() => {
+//         window.location.href = "../site/php/index/body.php";
+//     });
+// }
 
 function completeOrder(orderID){
     fetch(`/admin/boards/complete_orders.php?order_id=${orderID}`)
@@ -242,32 +262,34 @@ function completeOrder(orderID){
     .then(data => {
         location.reload();
     });
-}
+}    
 
-document.getElementById("nav-button-dashboard").addEventListener("mouseover", () => {
-    document.getElementById("icon-dashboard").src = "/src/window-white.png";
-});
-document.getElementById("nav-button-dashboard").addEventListener("mouseout", () => {
-    document.getElementById("icon-dashboard").src = "/src/window-orange.png";
-});
+const imageUpload = document.getElementById("image-upload");
+const imageContainer = document.getElementById("image-preview");
+imageUpload.addEventListener('change', (event) => {
+    const  file = event.target.files[0];
+    if(file){
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            //fix this
+            imageContainer.src = e.target.result;
+            // console.log(file.name);
+        };
+        reader.readAsDataURL(file);
+    }
+}); 
 
-document.getElementById("nav-button-product").addEventListener("mouseover", () => {
-    document.getElementById("icon-product").src = "/src/product-white.png";
-});
-document.getElementById("nav-button-product").addEventListener("mouseout", () => {
-    document.getElementById("icon-product").src = "/src/product-orange.png";
-});
-
-document.getElementById("nav-button-order").addEventListener("mouseover", () => {
-    document.getElementById("icon-order").src = "/src/order-white.png";
-});
-document.getElementById("nav-button-order").addEventListener("mouseout", () => {
-    document.getElementById("icon-order").src = "/src/order-orange.png";
-});
-
-document.getElementById("nav-button-notif").addEventListener("mouseover", () => {
-    document.getElementById("icon-notif").src = "/src/notif-white.png";
-});
-document.getElementById("nav-button-notif").addEventListener("mouseout", () => {
-    document.getElementById("icon-notif").src = "/src/notif-orange.png";
+const detailsImageUpload = document.getElementById("detail-image-upload");
+const detailsImageContainer = document.getElementById("detail-image-preview");
+detailsImageUpload.addEventListener('change', (event) => {
+    const  file = event.target.files[0];
+    if(file){
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            //fix this
+            detailsImageContainer.src = e.target.result;
+            // console.log(file.name);
+        };
+        reader.readAsDataURL(file);
+    }
 });

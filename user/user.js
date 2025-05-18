@@ -21,12 +21,13 @@ function openDonutAddedToCartContainer(){
 function closeDonutAddedToCartContainer(){
     document.getElementById("donut-added-to-cart-pop-up-container").style.display = 'none';
 }
-function openDonutPopUpContainer(donutId,donutName,donutPrice){
+function openDonutPopUpContainer(donutId,donutName,donutPrice, image){
     // fetch(`/user/boards/get_donut_details.php?donut_id=${encodeURIComponent(donutId)}&donut_name=${encodeURIComponent(donutName)}&donut_price=${donutPrice}`)
     // .then(res => res.json())
     // .then(data =>{
 
     // })
+    document.getElementById("donut-pop-up-image").src = `/src/${image}`;
     document.getElementById("donut-pop-up-name").textContent = donutName;
     price = document.getElementById("donut-pop-up-price");
     donutPrice ='P' + parseFloat(donutPrice).toFixed(2);
@@ -75,12 +76,13 @@ function openBundleAddedToCartContainer(){
 function closeBundleAddedToCartContainer(){
     document.getElementById("bundle-added-to-cart-pop-up-container").style.display = 'none';
 }
-function openBundlePopUpContainer(bundleId,bundleName,bundlePrice){
+function openBundlePopUpContainer(bundleId,bundleName,bundlePrice, image){
     // fetch(`/user/boards/get_donut_details.php?donut_id=${encodeURIComponent(donutId)}&donut_name=${encodeURIComponent(donutName)}&donut_price=${donutPrice}`)
     // .then(res => res.json())
     // .then(data =>{
 
     // })
+    document.getElementById("bundle-pop-up-image").src = `/src/${image}`;
     document.getElementById("bundle-pop-up-name").textContent = bundleName;
     price = document.getElementById("bundle-pop-up-price");
     bundlePrice ='P' + parseFloat(bundlePrice).toFixed(2);
@@ -139,7 +141,7 @@ function getSizeListener(){
         })
     })
 }
-function openKofaiPopUpContainer(kofaiId,kofaiName){
+function openKofaiPopUpContainer(kofaiId,kofaiName, image){
     let num = 0;
     fetch(`/user/boards/get_kofai_size.php?kofai_id=${encodeURIComponent(kofaiId)}`)
     .then(res => res.json())
@@ -151,7 +153,7 @@ function openKofaiPopUpContainer(kofaiId,kofaiName){
         });
         getSizeListener();
     }).catch(error => console.error('Error:', error ));
-
+    document.getElementById("kofai-pop-up-image").src = `/src/${image}`;
     document.getElementById("kofai-pop-up-name").textContent = kofaiName;
 
     document.getElementById("kofai-pop-up-container").style.display = 'flex';

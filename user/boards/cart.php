@@ -146,7 +146,12 @@ include("../../site/backend/dbcon.php");
         $total_query_run = mysqli_query($conn, $total_query);
         $total_query_row = mysqli_fetch_assoc($total_query_run);
         $total = $total_query_row["total"];
-        echo "P$total";
+
+        if ($total === null) {
+          echo "";
+        } else if ($total !== null) {
+          echo "P$total";
+        }
         ?></div>
         <input type="hidden" name="amount" value="
         <?php

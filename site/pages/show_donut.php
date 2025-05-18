@@ -3,7 +3,7 @@ session_start();
 include("../backend/dbcon.php");
 
 if (isset($_GET['show'])) {
-    $donut_query = "SELECT donut_name, donut_price FROM donut WHERE status = 'active';";
+    $donut_query = "SELECT donut_name, donut_price, image FROM donut WHERE status = 'active';";
     $donut_query_run = mysqli_query($conn, $donut_query);
 
     $donuts = [];

@@ -7,24 +7,25 @@
 .coffee-donut-section{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     flex-direction: row;
     position: absolute;
-    height: clamp(160px,22vw,22vw);
-    width: 70vw;
+    height: clamp(160px,39vw,39vw);
+    width: 50vw;
     gap: 10%;
+    /* border: 1px solid; */
 }
 
 .donut-block, .coffee-block{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: clamp(130px,15vw,15vw);
-    width: clamp(130px,16vw,16vw);
-    border: 5px solid ;
+    height: clamp(130px,13vw,13vw);
+    width: clamp(130px,14vw,14vw);
+    border: 5px solid #3e3232;;
     border-radius: 100%;
     padding: 1%;
-    background-color: white;
+    background-color: rgb(228, 228, 228);
     cursor: pointer;
 }
 
@@ -67,9 +68,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 45%;
+    height: 25%;
     width: 100vw;
-    background-color: rgb(196, 144, 80);
+    background-color:#e2dfd0;
+    box-shadow: 2px -36px 36px -4px rgba(226,223,208,0.68);
+-webkit-box-shadow: 2px -36px 36px -4px rgba(226,223,208,0.68);
+-moz-box-shadow: 2px -36px 36px -4px rgba(226,223,208,0.68);
     /* border: 1px solid; */
 }
 

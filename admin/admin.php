@@ -11,7 +11,6 @@ include("../site/backend/dbcon.php");
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin</title>
   <link rel="stylesheet" href="admin.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com">
 </head>
 
 <body>
@@ -68,7 +67,53 @@ include("../site/backend/dbcon.php");
       </div>
     </div>
   </div>
-  <script src="admin.js"></script>
+  <script>
+    let isLogoutShowing = false;
+    function showLogout() {
+      if (isLogoutShowing) {
+        document.getElementById("logout-button").style.display = 'none';
+      } else if (!isLogoutShowing) {
+        document.getElementById("logout-button").style.display = 'block';
+      }
+      isLogoutShowing = !isLogoutShowing;
+    }
+
+    function logout() {
+      fetch("logout_admin.php?logout=1")
+        .then(() => {
+          window.location.href = "../site/php/index/body.php";
+        });
+    }
+
+    document.getElementById("nav-button-dashboard").addEventListener("mouseover", () => {
+      document.getElementById("icon-dashboard").src = "/src/window-white.png";
+    });
+    document.getElementById("nav-button-dashboard").addEventListener("mouseout", () => {
+      document.getElementById("icon-dashboard").src = "/src/window-orange.png";
+    });
+
+    document.getElementById("nav-button-product").addEventListener("mouseover", () => {
+      document.getElementById("icon-product").src = "/src/product-white.png";
+    });
+    document.getElementById("nav-button-product").addEventListener("mouseout", () => {
+      document.getElementById("icon-product").src = "/src/product-orange.png";
+    });
+
+    document.getElementById("nav-button-order").addEventListener("mouseover", () => {
+      document.getElementById("icon-order").src = "/src/order-white.png";
+    });
+    document.getElementById("nav-button-order").addEventListener("mouseout", () => {
+      document.getElementById("icon-order").src = "/src/order-orange.png";
+    });
+
+    document.getElementById("nav-button-notif").addEventListener("mouseover", () => {
+      document.getElementById("icon-notif").src = "/src/notif-white.png";
+    });
+    document.getElementById("nav-button-notif").addEventListener("mouseout", () => {
+      document.getElementById("icon-notif").src = "/src/notif-orange.png";
+    });
+  </script>
+  <!-- <script src="admin.js"></script> -->
 </body>
 
 </html>

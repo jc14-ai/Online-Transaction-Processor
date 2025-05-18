@@ -54,7 +54,8 @@ z-index: 16;
 }
 .store-home{
     width:  15%;
-    border: 5px solid white;
+    border: 5px solid #e2dfd0;
+    background-color: #e2dfd0;
     border-radius: 100px;
     transform: scale(1);
     transition: 0.2s ease;

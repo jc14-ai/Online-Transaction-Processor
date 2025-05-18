@@ -58,6 +58,16 @@ if (isset($_POST['save-kofai-button']) && isValid($kofai_name, $kofai_price, $ko
     // echo $old_kofai_id;
     // echo $old_kofai_size_id;
     // exit;
+
+    $target_dir = "../../src/";
+    $imageName = basename($_FILES["image"]["name"]);
+    $target_file = $target_dir . $imageName;
+
+    move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
+
+    $update_image_query = "UPDATE coffee SET image = '$imageName' WHERE coffee_id = " . $coffee_id['coffee_id'] . ";";
+    $update_image_query_run = mysqli_query($conn, $update_image_query);
+
     $update_query = "UPDATE coffee_price SET coffee_id = " . $coffee_id['coffee_id'] . ", coffee_size_id = " . $coffee_size_id['coffee_size_id'] . ", coffee_price = $kofai_price, status = '$kofai_status' WHERE coffee_id = $old_kofai_id AND coffee_size_id = $old_kofai_size_id;";
     $update_query_run = mysqli_query($conn, $update_query);
     header("location: /admin/boards/kofai.php");

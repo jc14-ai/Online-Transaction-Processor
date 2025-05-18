@@ -14,10 +14,10 @@ include("../backend/dbcon.php");
 </head>
 
 <body bgcolor="#e2dfd0">
-  <table>
+  <table style="background-color: #3e3232;">
     <tr>
       <td>
-        <div style="text-align: center">COFFEE</div>
+        <div style="text-align: center; background-color: #3e3232;"></div>
       </td>
     </tr>
   </table>
@@ -27,7 +27,7 @@ include("../backend/dbcon.php");
   <div class="donut-container">
     <?php
     $coffee_query = "
-      SELECT coffee.coffee_name FROM coffee_price 
+      SELECT coffee.coffee_name, coffee.image FROM coffee_price 
       LEFT JOIN coffee ON coffee_price.coffee_id = coffee.coffee_id 
       WHERE coffee_price.status = 'active' 
       GROUP BY coffee_price.coffee_id;";
@@ -36,10 +36,11 @@ include("../backend/dbcon.php");
 
     while ($coffee_row = mysqli_fetch_assoc($coffee_query_run)) {
       $coffee_name = $coffee_row['coffee_name'];
+      $coffee_image = $coffee_row['image'];
 
       echo "
         <div class=\"donut\">
-        <img src=\"/src/coffee.png\" width=\"40%\" />
+        <img src=\"/src/$coffee_image\" width=\"40%\" />
         <h2>$coffee_name</h2>
         <div style=\"text-align: center\">
           <button class=\"order-button\" onclick=\"showSignUp()\">

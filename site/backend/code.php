@@ -27,7 +27,7 @@ function send_email_verification($username, $email, $verify_token)
     $mail->Port = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('from@example.com', $username);
+    $mail->setFrom('from@example.com', "Kofai");
     $mail->addAddress($email);     //Add a recipient
     // $mail->addAddress('ellen@example.com');               //Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
@@ -62,11 +62,11 @@ if (isset($_POST['sign-up-button'])) {
     $check_username_query = "SELECT COUNT(*) AS usernames FROM user WHERE username = '$username';";
     $check_username_query_run = mysqli_query($conn, $check_username_query);
     $user_row = mysqli_fetch_assoc($check_username_query_run);
-    if ($user_row['usernames'] != null) {
-        $_SESSION['sign-up-status'] = 'Registration Failed.';
-        header('Location: /site/php/index/body.php');
-        exit;
-    }
+    // if ($user_row['usernames'] != null) {
+    //     $_SESSION['sign-up-status'] = 'Registration Failed.';
+    //     header('Location: /site/php/index/body.php');
+    //     exit;
+    // }
     // // USERNAME VERIFICATION
     // $username_query = "SELECT username FROM user WHERE username = '$username';";
     // $username_query_run = mysqli_query($conn, $username_query);

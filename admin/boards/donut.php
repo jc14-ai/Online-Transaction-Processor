@@ -31,23 +31,24 @@ include("../../site/backend/dbcon.php");
   </div>
 
   <!-- Floating Add Donut -->
-  <form class="add-donut-container" id="add-donut-container" action="add_donut.php" method="POST">
+  <form class="add-donut-container" id="add-donut-container" action="add_donut.php" method="POST"
+    enctype="multipart/form-data">
     <h1>ADD DONUT</h1>
+    <div class="image-upload-container">
+      <div class="preview-container" id="preview-container">
+        <img class="image-preview" id="image-preview" src="/src/donut.png" />
+      </div>
+      <label class="upload-label">
+        <span>Select Image</span>
+        <input type="file" id="image-upload" name="image" accept="image/*" required hidden />
+      </label>
+    </div>
     <input class="add-donut-name-input" type="text" name="donut_name" placeholder="Donut name" />
     <input class="add-donut-price-input" type="text" name="donut_price" placeholder="Donut price" />
     <input class="add-donut-status-input" id="add-donut-status-input" type="button" value="active"
       onclick="changeStatus(this, document.getElementById('hidden-add-donut-status-input'))" />
-    <!-- <input class="add-donut-size-input" id="add-donut-size-input" type="button" value="16"
-      onclick="changeSize(this,document.getElementById('hidden-add-donut-size-input'))" /> -->
     <input class="hidden-add-donut-status-input" id="hidden-add-donut-status-input" type="hidden" name="donut_status"
       value="active" />
-    <!-- <input class="hidden-add-donut-size-input" id="hidden-add-donut-size-input" type="hidden" name="donut_size"
-      value="16" /> -->
-    <!-- <input
-        class="add-donut-desc-input"
-        type="text"
-        placeholder="Donut description"
-      /> -->
     <button class="add-donut-button-floating" onclick="closeDonutAddContainer()" type="submit"
       name="add-donut-button-floating">ADD</button>
     <button class="back-donut-button" type="button" onclick="closeDonutAddContainer()">
@@ -56,8 +57,18 @@ include("../../site/backend/dbcon.php");
   </form>
 
   <!-- Floating Details Donut-->
-  <form class="details-donut-container" id="details-donut-container" action="edit_donut.php" method="POST">
+  <form class="details-donut-container" id="details-donut-container" action="edit_donut.php" method="POST"
+    enctype="multipart/form-data">
     <h1>DETAILS</h1>
+    <div class="image-upload-container">
+      <div class="preview-container" id="preview-container">
+        <img class="detail-image-preview" id="detail-image-preview" />
+      </div>
+      <label class="detail-upload-label" id="detail-upload-label">
+        <span>Select Image</span>
+        <input type="file" id="detail-image-upload" name="image" accept="image/*" required hidden />
+      </label>
+    </div>
 
     <input class="details-donut-name-input" id="details-donut-name-input" type="text" name="donut_name"
       placeholder="Donut name" value="" disabled />
@@ -106,6 +117,7 @@ include("../../site/backend/dbcon.php");
       <table>
         <thead>
           <tr>
+            <th>DONUT</th>
             <th>PRODUCT NAME</th>
             <th>PRICE</th>
             <th>STATUS</th>
@@ -119,11 +131,12 @@ include("../../site/backend/dbcon.php");
 
           while ($row = mysqli_fetch_assoc($refresh_query_run)) {
             echo "<tr>
+                    <td> <img style=\"width: 90px; height: 90px;\" src=\"/src/" . $row['image'] . "\"/> </td>
                     <td>" . $row['donut_name'] . "</td>
                     <td>P" . $row['donut_price'] . "</td>
                     <td>" . $row['status'] . "</td>
                     <td>
-                     <button class='details-button' onclick='openDonutDetailsContainer(\"" . addslashes($row['donut_name']) . "\", " . $row['donut_price'] . ", \"" . addslashes($row['status']) . "\", " . $row['donut_id'] . ")'>
+                     <button class='details-button' onclick='openDonutDetailsContainer(\"" . addslashes($row['donut_name']) . "\", " . $row['donut_price'] . ", \"" . addslashes($row['status']) . "\", " . $row['donut_id'] . ", \"" . $row['image'] . "\")'>
                      DETAILS
                      </button>
                     </td>

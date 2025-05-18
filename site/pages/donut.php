@@ -14,7 +14,7 @@ include("../backend/dbcon.php");
 </head>
 
 <body>
-  <table>
+  <table style="background-color: #3e3232;">
     <tr>
       <br />
       <td>
@@ -38,10 +38,10 @@ include("../backend/dbcon.php");
     while ($donut_row = mysqli_fetch_assoc($donut_query_run)) {
       $donut_name = $donut_row['donut_name'];
       $donut_price = $donut_row['donut_price'];
-
+      $donut_image = $donut_row['image'];
       echo "
         <div class=\"donut\">
-        <img src=\"/src/donut.png\" width=\"40%\" />
+        <img src=\"/src/$donut_image\" width=\"40%\" />
         <h2 class=\"donut-name-label\">$donut_name</h2>
         <p class=\"donut-price-label\">P$donut_price</p>
         <div style=\"text-align: center\">

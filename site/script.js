@@ -54,7 +54,7 @@ function showSolo() {
         data.forEach(donut => {
             container.innerHTML += 
             `<div class=\"donut\">
-            <img src=\"/src/donut.png\" width=\"40%\" />
+            <img src=\"/src/${donut.image}\" width=\"40%\" />
             <h2 class=\"donut-name-label\">${donut.donut_name}</h2>
             <p class=\"donut-price-label\">P${donut.donut_price}</p>
             <div style=\"text-align: center\">
@@ -77,7 +77,7 @@ function showBundle() {
         data.forEach(bundle => {
             container.innerHTML += 
             `<div class=\"donut\">
-            <img src=\"/src/bundle.png\" width=\"40%\" />
+            <img src=\"/src/${bundle.image}\" width=\"40%\" />
             <h2 class=\"donut-name-label\">${bundle.bundle_name}</h2>
             <p class=\"donut-price-label\" >P${bundle.bundle_price}</p>
             <div style=\"text-align: center\">

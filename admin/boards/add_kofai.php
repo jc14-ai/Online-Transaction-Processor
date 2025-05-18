@@ -20,8 +20,14 @@ if (isset($_POST['add-kofai-button-floating']) && isValid($kofai_name, $kofai_pr
     $coffee_name_exist_query = "SELECT coffee_name FROM coffee WHERE coffee_name = '$kofai_name';";
     $coffee_name_exist_query_run = mysqli_query($conn, $coffee_name_exist_query);
 
+    $target_dir = "../../src/";
+    $imageName = basename($_FILES["image"]["name"]);
+    $target_file = $target_dir . $imageName;
+
+    move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
+
     if (mysqli_num_rows($coffee_name_exist_query_run) == 0) {
-        $coffee_name_insert_query = "INSERT INTO coffee(coffee_name) VALUES ('$kofai_name');";
+        $coffee_name_insert_query = "INSERT INTO coffee(coffee_name, image) VALUES ('$kofai_name', '$imageName');";
         $coffee_name_insert_query_run = mysqli_query($conn, $coffee_name_insert_query);
     }
 

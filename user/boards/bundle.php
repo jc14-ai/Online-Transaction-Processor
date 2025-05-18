@@ -23,13 +23,14 @@ include("../../site/backend/dbcon.php");
 
       $num = 1;
       while ($row = mysqli_fetch_assoc($bundle_query_run)) {
+        $bundle_image = $row['image'];
         echo "<div class='bundle' id='bundle" . $num . "'>
         <div class='bundle-image-container'>
-          <img class='bundle-image' src='/src/bundle.png' />
+          <img class='bundle-image' src='/src/$bundle_image' />
         </div>
         <h2 class='bundle-name' id='bundle-name'>" . $row['bundle_name'] . "</h2>
         <h4 class='bundle-price' id='bundle-price'>P" . $row['bundle_price'] . "</h4>
-        <button class='bundle-add-to-cart-button' onclick='openBundlePopUpContainer(" . $row['bundle_id'] . ",\"" . $row['bundle_name'] . "\"," . $row['bundle_price'] . ")'>
+        <button class='bundle-add-to-cart-button' onclick='openBundlePopUpContainer(" . $row['bundle_id'] . ",\"" . $row['bundle_name'] . "\"," . $row['bundle_price'] . ", \"$bundle_image\")'>
           <img class='add-to-cart-image-button' src='/src/shopping-cart-add.png' />
           Add to Cart
         </button>
@@ -40,7 +41,7 @@ include("../../site/backend/dbcon.php");
       <!-- BUNDLE POP UP CONTAINER -->
       <div class="bundle-pop-up-container" id="bundle-pop-up-container">
         <div class="bundle-pop-up-image-container">
-          <img class="bundle-pop-up-image" src="/src/bundle.png" />
+          <img class="bundle-pop-up-image" id="bundle-pop-up-image" src="/src/bundle.png" />
         </div>
         <h1 class="bundle-pop-up-name" id="bundle-pop-up-name">bundle 1</h1>
         <h2 class="bundle-pop-up-price" id="bundle-pop-up-price">P2500.00</h2>

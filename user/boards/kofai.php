@@ -18,17 +18,21 @@ include("../../site/backend/dbcon.php");
     <!-- kofai CONTAINER -->
     <div class="kofai-container" id="kofai-container">
       <?php
-      $kofai_query = "SELECT * FROM coffee;";
+      $kofai_query = "SELECT DISTINCT coffee.coffee_id, coffee.coffee_name, coffee.image
+      FROM coffee
+      LEFT JOIN coffee_price ON coffee.coffee_id = coffee_price.coffee_id
+      WHERE coffee_price.status = 'active';";
       $kofai_query_run = mysqli_query($conn, $kofai_query);
 
       $num = 1;
       while ($row = mysqli_fetch_assoc($kofai_query_run)) {
+        $coffee_image = $row['image'];
         echo "<div class='kofai' id='kofai$num'>
         <div class='kofai-image-container'>
-          <img class='kofai-image' src='/src/coffee.png' />
+          <img class='kofai-image' src='/src/$coffee_image' />
         </div>
         <h2 class='kofai-name' id='kofai-name'>" . $row['coffee_name'] . "</h2>
-        <button class='kofai-add-to-cart-button' onclick='openKofaiPopUpContainer(" . $row['coffee_id'] . ",\"" . $row['coffee_name'] . "\")'>
+        <button class='kofai-add-to-cart-button' onclick='openKofaiPopUpContainer(" . $row['coffee_id'] . ",\"" . $row['coffee_name'] . "\", \"$coffee_image\")'>
           <img class='add-to-cart-image-button' src='/src/shopping-cart-add.png' />
           Add to Cart
         </button>
@@ -40,7 +44,7 @@ include("../../site/backend/dbcon.php");
       <!-- KOFAI POP UP CONTAINER -->
       <div class="kofai-pop-up-container" id="kofai-pop-up-container">
         <div class="kofai-pop-up-image-container">
-          <img class="kofai-pop-up-image" src="/src/coffee.png" />
+          <img class="kofai-pop-up-image" id="kofai-pop-up-image" src="/src/coffee.png" />
         </div>
         <h1 class="kofai-pop-up-name" id="kofai-pop-up-name">kofai 1</h1>
         <h2 class="kofai-pop-up-price" id="kofai-pop-up-price">P70.00</h2>

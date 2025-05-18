@@ -1079,3 +1079,47 @@ td{
   gap: 60%;
   background-color: brown;
 }
+
+.upload-label{
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.detail-upload-label{
+  display: none;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.image-upload-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  width: 70%;
+  height: 30%;
+}
+
+.preview-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 30%;
+  border-radius: 100px;
+}
+.image-preview{
+  width: 100%;
+}
+
+.detail-image-preview{
+  width: 100%;
+}
+

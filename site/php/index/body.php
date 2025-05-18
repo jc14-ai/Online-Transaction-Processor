@@ -189,7 +189,7 @@ include("header.php");
 <ul class="nav-bar">
     <div class="home-page" class="home-link">
         <a href="#home-page">
-            <img class="store-home" src="/src/store.png" />
+            <img class="store-home" src="/src/logo-kofai.png" />
         </a>
     </div>
     <li class="nav-section" id="menu">

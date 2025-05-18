@@ -27,7 +27,13 @@ if (isset($_POST['save-bundle-button']) && isValid($bundle_name, $bundle_price, 
         exit;
     }
 
-    $bundle_update_query = "UPDATE bundles SET bundle_name = '$bundle_name', bundle_price = $bundle_price, status = '$bundle_status' WHERE bundle_id = $old_bundle_id;";
+    $target_dir = "../../src/";
+    $imageName = basename($_FILES["image"]["name"]);
+    $target_file = $target_dir . $imageName;
+
+    move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
+
+    $bundle_update_query = "UPDATE bundles SET bundle_name = '$bundle_name', bundle_price = $bundle_price, status = '$bundle_status', image = '$imageName' WHERE bundle_id = $old_bundle_id;";
     $bundle_update_query_run = mysqli_query($conn, $bundle_update_query);
     header("location: /admin/boards/bundle.php");
     exit;

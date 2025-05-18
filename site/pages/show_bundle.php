@@ -3,7 +3,7 @@ session_start();
 include("../backend/dbcon.php");
 
 if (isset($_GET['show'])) {
-    $bundle_query = "SELECT bundle_name, bundle_price FROM bundles WHERE status = 'active';";
+    $bundle_query = "SELECT bundle_name, bundle_price, image FROM bundles WHERE status = 'active';";
     $bundle_query_run = mysqli_query($conn, $bundle_query);
 
     $bundles = [];

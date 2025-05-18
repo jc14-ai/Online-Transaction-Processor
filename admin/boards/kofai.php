@@ -31,8 +31,18 @@ include("../../site/backend/dbcon.php");
   </div>
 
   <!-- Floating Add Kofai -->
-  <form class="add-kofai-container" id="add-kofai-container" action="add_kofai.php" method="POST">
+  <form class="add-kofai-container" id="add-kofai-container" action="add_kofai.php" method="POST"
+    enctype="multipart/form-data">
     <h1>ADD KOFAI</h1>
+    <div class="image-upload-container">
+      <div class="preview-container" id="preview-container">
+        <img class="image-preview" id="image-preview" src="/src/coffee.png" />
+      </div>
+      <label class="upload-label">
+        <span>Select Image</span>
+        <input type="file" id="image-upload" name="image" accept="image/*" required hidden />
+      </label>
+    </div>
     <input class="add-kofai-name-input" type="text" name="kofai_name" placeholder="Kofai name" />
     <input class="add-kofai-price-input" type="text" name="kofai_price" placeholder="Kofai price" />
     <input class="add-kofai-status-input" id="add-kofai-status-input" type="button" value="active"
@@ -56,9 +66,18 @@ include("../../site/backend/dbcon.php");
   </form>
 
   <!-- Floating Details Kofai-->
-  <form class="details-kofai-container" id="details-kofai-container" action="edit_kofai.php" method="POST">
+  <form class="details-kofai-container" id="details-kofai-container" action="edit_kofai.php" method="POST"
+    enctype="multipart/form-data">
     <h1>DETAILS</h1>
-
+    <div class="image-upload-container">
+      <div class="preview-container" id="preview-container">
+        <img class="detail-image-preview" id="detail-image-preview" />
+      </div>
+      <label class="detail-upload-label" id="detail-upload-label">
+        <span>Select Image</span>
+        <input type="file" id="detail-image-upload" name="image" accept="image/*" required hidden />
+      </label>
+    </div>
     <input class="details-kofai-name-input" id="details-kofai-name-input" type="text" name="kofai_name"
       placeholder="Kofai name" value="" disabled />
 
@@ -106,6 +125,7 @@ include("../../site/backend/dbcon.php");
       <table>
         <thead>
           <tr>
+            <th>KOFAI</th>
             <th>PRODUCT NAME</th>
             <th>PRICE</th>
             <th>SIZE</th>
@@ -115,17 +135,18 @@ include("../../site/backend/dbcon.php");
         </thead>
         <tbody>
           <?php
-          $refresh_query = "SELECT coffee.coffee_name, coffee_price.coffee_price, coffee_size.coffee_size, coffee_price.status, coffee_price.coffee_id, coffee_price.coffee_size_id FROM coffee_price LEFT JOIN coffee ON coffee.coffee_id = coffee_price.coffee_id LEFT JOIN coffee_size ON coffee_size.coffee_size_id = coffee_price.coffee_size_id ORDER BY coffee_price.coffee_id;";
+          $refresh_query = "SELECT coffee.image, coffee.coffee_name, coffee_price.coffee_price, coffee_size.coffee_size, coffee_price.status, coffee_price.coffee_id, coffee_price.coffee_size_id FROM coffee_price LEFT JOIN coffee ON coffee.coffee_id = coffee_price.coffee_id LEFT JOIN coffee_size ON coffee_size.coffee_size_id = coffee_price.coffee_size_id ORDER BY coffee_price.coffee_id;";
           $refresh_query_run = mysqli_query($conn, $refresh_query);
 
           while ($row = mysqli_fetch_assoc($refresh_query_run)) {
             echo "<tr>
+                    <td> <img style=\"width: 90px; height: 90px;\" src=\"/src/" . $row['image'] . "\"/> </td>
                     <td>" . $row['coffee_name'] . "</td>
                     <td>P" . $row['coffee_price'] . "</td>
                     <td>" . $row['coffee_size'] . "oz</td>
                     <td>" . $row['status'] . "</td>
                     <td>
-                     <button class='details-button' onclick='openKofaiDetailsContainer(\"" . addslashes($row['coffee_name']) . "\",\"" . addslashes($row['coffee_price']) . "\",\"" . addslashes($row['status']) . "\",\"" . addslashes($row['coffee_size']) . "\"," . $row['coffee_id'] . "," . $row['coffee_size_id'] . ")'>
+                     <button class='details-button' onclick='openKofaiDetailsContainer(\"" . addslashes($row['coffee_name']) . "\",\"" . addslashes($row['coffee_price']) . "\",\"" . addslashes($row['status']) . "\",\"" . addslashes($row['coffee_size']) . "\"," . $row['coffee_id'] . "," . $row['coffee_size_id'] . ", \"" . $row['image'] . "\")'>
                      DETAILS
                      </button>
                     </td>

@@ -31,8 +31,18 @@ include("../../site/backend/dbcon.php");
   </div>
 
   <!-- Floating Add bundle -->
-  <form class="add-bundle-container" id="add-bundle-container" action="add_bundle.php" method="POST">
+  <form class="add-bundle-container" id="add-bundle-container" action="add_bundle.php" method="POST"
+    enctype="multipart/form-data">
     <h1>ADD bundle</h1>
+    <div class="image-upload-container">
+      <div class="preview-container" id="preview-container">
+        <img class="image-preview" id="image-preview" src="/src/bundle.png" />
+      </div>
+      <label class="upload-label">
+        <span>Select Image</span>
+        <input type="file" id="image-upload" name="image" accept="image/*" required hidden />
+      </label>
+    </div>
     <input class="add-bundle-name-input" type="text" name="bundle_name" placeholder="Bundle name" />
     <input class="add-bundle-price-input" type="text" name="bundle_price" placeholder="Bundle price" />
     <input class="add-bundle-status-input" id="add-bundle-status-input" type="button" value="active"
@@ -56,8 +66,18 @@ include("../../site/backend/dbcon.php");
   </form>
 
   <!-- Floating Details Bundle-->
-  <form class="details-bundle-container" id="details-bundle-container" action="edit_bundle.php" method="POST">
+  <form class="details-bundle-container" id="details-bundle-container" action="edit_bundle.php" method="POST"
+    enctype="multipart/form-data">
     <h1>DETAILS</h1>
+    <div class="image-upload-container">
+      <div class="preview-container" id="preview-container">
+        <img class="detail-image-preview" id="detail-image-preview" />
+      </div>
+      <label class="detail-upload-label" id="detail-upload-label">
+        <span>Select Image</span>
+        <input type="file" id="detail-image-upload" name="image" accept="image/*" required hidden />
+      </label>
+    </div>
 
     <input class="details-bundle-name-input" id="details-bundle-name-input" type="text" name="bundle_name"
       placeholder="Bundle name" value="" disabled />
@@ -107,6 +127,7 @@ include("../../site/backend/dbcon.php");
       <table>
         <thead>
           <tr>
+            <th>BUNDLE</th>
             <th>PRODUCT NAME</th>
             <th>PRICE</th>
             <th>STATUS</th>
@@ -120,11 +141,12 @@ include("../../site/backend/dbcon.php");
 
           while ($row = mysqli_fetch_assoc($refresh_query_run)) {
             echo "<tr>
+                    <td> <img style=\"width: 90px; height: 90px;\" src=\"/src/" . $row['image'] . "\"/> </td>
                     <td>" . $row['bundle_name'] . "</td>
                     <td>P" . $row['bundle_price'] . "</td>
                     <td>" . $row['status'] . "</td>
                     <td>
-                     <button class='details-button' onclick='openBundleDetailsContainer(\"" . addslashes($row['bundle_name']) . "\", " . $row['bundle_price'] . ", \"" . addslashes($row['status']) . "\", " . $row['bundle_id'] . ")'>
+                     <button class='details-button' onclick='openBundleDetailsContainer(\"" . addslashes($row['bundle_name']) . "\", " . $row['bundle_price'] . ", \"" . addslashes($row['status']) . "\", " . $row['bundle_id'] . ",\"" . $row['image'] . "\")'>
                      DETAILS
                      </button>
                     </td>

@@ -20,8 +20,14 @@ if (isset($_POST['add-bundle-button-floating']) && isValid($bundle_name, $bundle
     $bundle_name_exist_query = "SELECT bundle_name FROM bundles WHERE bundle_name = '$bundle_name';";
     $bundle_name_exist_query_run = mysqli_query($conn, $bundle_name_exist_query);
 
+    $target_dir = "../../src/";
+    $imageName = basename($_FILES["image"]["name"]);
+    $target_file = $target_dir . $imageName;
+
+    move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
+
     if (mysqli_num_rows($bundle_name_exist_query_run) === 0) {
-        $bundle_name_insert_query = "INSERT INTO bundles(bundle_name, bundle_price, status) VALUES ('$bundle_name', $bundle_price, '$bundle_status');";
+        $bundle_name_insert_query = "INSERT INTO bundles(bundle_name, bundle_price, status, image) VALUES ('$bundle_name', $bundle_price, '$bundle_status', '$imageName');";
         $bundle_name_insert_query_run = mysqli_query($conn, $bundle_name_insert_query);
         header("location: /admin/boards/bundle.php");
         exit;

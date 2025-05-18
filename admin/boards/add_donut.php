@@ -20,8 +20,14 @@ if (isset($_POST['add-donut-button-floating']) && isValid($donut_name, $donut_pr
     $donut_name_exist_query = "SELECT donut_name FROM donut WHERE donut_name = '$donut_name';";
     $donut_name_exist_query_run = mysqli_query($conn, $donut_name_exist_query);
 
+    $target_dir = "../../src/";
+    $imageName = basename($_FILES["image"]["name"]);
+    $target_file = $target_dir . $imageName;
+
+    move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
+
     if (mysqli_num_rows($donut_name_exist_query_run) === 0) {
-        $donut_name_insert_query = "INSERT INTO donut(donut_name, donut_price, status) VALUES ('$donut_name', $donut_price, '$donut_status');";
+        $donut_name_insert_query = "INSERT INTO donut(donut_name, donut_price, status, image) VALUES ('$donut_name', $donut_price, '$donut_status', '$imageName');";
         $donut_name_insert_query_run = mysqli_query($conn, $donut_name_insert_query);
         header("location: /admin/boards/donut.php");
         exit;

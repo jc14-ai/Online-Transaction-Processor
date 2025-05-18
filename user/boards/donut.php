@@ -23,13 +23,14 @@ include("../../site/backend/dbcon.php");
 
       $num = 1;
       while ($row = mysqli_fetch_assoc($donut_query_run)) {
+        $donut_image = $row['image'];
         echo "<div class='donut' id='donut" . $num . "'>
         <div class='donut-image-container'>
-          <img class='donut-image' src='/src/donut.png' />
+          <img class='donut-image' src='/src/$donut_image' />
         </div>
         <h2 class='donut-name' id='donut-name'>" . $row['donut_name'] . "</h2>
         <h4 class='donut-price' id='donut-price'>P" . $row['donut_price'] . "</h4>
-        <button class='donut-add-to-cart-button' onclick='openDonutPopUpContainer(" . $row['donut_id'] . ",\"" . $row['donut_name'] . "\"," . $row['donut_price'] . ")'>
+        <button class='donut-add-to-cart-button' onclick='openDonutPopUpContainer(" . $row['donut_id'] . ",\"" . $row['donut_name'] . "\"," . $row['donut_price'] . ", \"$donut_image\")'>
           <img class='add-to-cart-image-button' src='/src/shopping-cart-add.png' />
           Add to Cart
         </button>
@@ -40,7 +41,7 @@ include("../../site/backend/dbcon.php");
       <!-- DONUT POP UP CONTAINER -->
       <div class="donut-pop-up-container" id="donut-pop-up-container">
         <div class="donut-pop-up-image-container">
-          <img class="donut-pop-up-image" src="/src/donut.png" />
+          <img class="donut-pop-up-image" id="donut-pop-up-image" src="/src/donut.png" />
         </div>
         <h1 class="donut-pop-up-name" id="donut-pop-up-name">Donut 1</h1>
         <h2 class="donut-pop-up-price" id="donut-pop-up-price">P25.00</h2>
