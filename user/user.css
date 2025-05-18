@@ -101,12 +101,18 @@ body{
     font-weight: bold;
     color: #3e3232;
     text-decoration: none;
+    border-radius: 20px;
     justify-content: center;
+    cursor: pointer;
+}
+.dashboard-label:hover{
+    background-color: rgb(231, 231, 231);
 }
 
 .customer-profile{
         display: flex;
         flex-direction: column;
+        width: 80%;
     }
  
 .customer-container{
@@ -603,7 +609,7 @@ iframe{
         border-radius: 25px;
         height: 500px;
         width: 400px;
-        background-color: rgb(255, 234, 217);
+        background-color: rgb(45, 38, 32);
         gap: 3%;
     }
     .donut-pop-up-image-container{
@@ -613,7 +619,7 @@ iframe{
         height: 45%;
         width: 80%;
         border-radius: 20px;
-        background-color: rgb(255, 197, 161);
+        background-color: rgb(227, 227, 227);
          border: 4px solid;
     }
     .donut-pop-up-name{
@@ -621,14 +627,14 @@ iframe{
         font-weight: 600;
         font-size: 2em;
         margin: 0;
-        color: black;
+        color: rgb(233, 233, 233);
     }
     .donut-pop-up-price{
         font-family: 'Montserrat', Montserrat;
         font-weight: 600;
         font-size: 1.5em;
         margin: 0;
-        color: black;
+        color: rgb(233, 233, 233);
     }
     .donut-pop-up-counter-container{
         display: flex;
@@ -638,9 +644,9 @@ iframe{
         width: 35%;
     }
     .dec-donut,.inc-donut{
-        color: whitesmoke;
+        color: rgb(0, 0, 0);
         border: none;
-        background-color: rgb(219, 144, 119);
+        background-color: rgb(226, 226, 226);
         border-radius: 8px;
         font-size: 1.5em;
         font-family: 'Montserrat', Montserrat;
@@ -648,12 +654,12 @@ iframe{
         cursor: pointer;
     }
     .dec-donut:hover,.inc-donut:hover{
-        background-color: rgb(225, 165, 144);
+        background-color: rgb(240, 240, 240);
     }
     .donut-count{
         font-family: 'Montserrat',Montserrat;
         font-size: 1.5em;
-        color: black;
+        color: rgb(233, 233, 233);
     }
     .donut-pop-up-button-container{
         display: flex;
@@ -699,12 +705,14 @@ iframe{
         flex-direction: column;
         height: 20%;
         width: 30%;
+        padding: 2%;
         border-radius: 25px;
         background-color: rgb(115, 92, 92);
     }
     .donut-added-to-cart-pop-up-text{
         font-family: 'Montsserat', Montserrat;
         font-size: 1em;
+        text-align: center;
         font-weight: 400;
         color: white;
     }
@@ -714,6 +722,7 @@ iframe{
         border: none;
         border-radius: 10px;
         width: 100px;
+        cursor: pointer;
     }
 
     /* KOFAI DESIGN SETTINGS */
@@ -814,7 +823,7 @@ iframe{
         border-radius: 25px;
         height: 500px;
         width: 400px;
-        background-color: rgb(255, 234, 217);
+        background-color: rgb(45, 38, 32);
         gap: 1.8%;
     }
     .kofai-pop-up-image-container{
@@ -825,21 +834,21 @@ iframe{
         width: 80%;
         border-radius: 20px;
         border: 4px solid;
-        background-color: rgb(255, 197, 161);
+        background-color: rgb(227, 227, 227);
     }
     .kofai-pop-up-name{
         font-family: 'Montserrat', Montserrat;
         font-weight: 600;
         font-size: 2em;
         margin: 0;
-            color: black;
+        color: white;
     }
     .kofai-pop-up-price{
         font-family: 'Montserrat', Montserrat;
         font-weight: 600;
         font-size: 1.5em;
         margin: 0;
-            color: black;
+        color: white;
     }
     .kofai-pop-up-counter-container{
         display: flex;
@@ -849,9 +858,9 @@ iframe{
         width: 35%;
     }
     .dec-kofai,.inc-kofai{
-        color: whitesmoke;
+        color: rgb(0, 0, 0);
         border: none;
-        background-color: rgb(219, 144, 119);
+        background-color: rgb(222, 222, 222);
         border-radius: 8px;
         font-size: 1.5em;
         font-family: 'Montserrat', Montserrat;
@@ -859,12 +868,12 @@ iframe{
         cursor: pointer;
     }
     .dec-kofai:hover,.inc-kofai:hover{
-        background-color: rgb(225, 165, 144);;
+        background-color: rgb(255, 255, 255);;
     }
     .kofai-count{
         font-family: 'Montserrat',Montserrat;
         font-size: 1.5em;
-        color: black;
+        color: white;
     }
     .kofai-pop-up-button-container{
         display: flex;
@@ -933,7 +942,7 @@ iframe{
         border-radius: 8px;
         height: 8%;
         width: 25%;
-        background-color: rgb(45, 31, 15);
+        background-color: rgb(238, 238, 238);
         color: whitesmoke;
         cursor: pointer;
     }
@@ -1090,7 +1099,7 @@ iframe{
         border-radius: 25px;
         height: 500px;
         width: 400px;
-        background-color: rgb(206, 93, 85);
+        background-color: rgb(45, 38, 32);
         gap: 3%;
     }
     .bundle-pop-up-image-container{
@@ -1100,14 +1109,14 @@ iframe{
         height: 45%;
         width: 80%;
         border-radius: 20px;
-        background-color: white;
+        background-color: rgb(239, 239, 239);
     }
     .bundle-pop-up-name{
         font-family: 'Montserrat', Montserrat;
         font-weight: 600;
         font-size: 2em;
         margin: 0;
-        color: white;
+        color: rgb(255, 255, 255);
     }
     .bundle-pop-up-price{
         font-family: 'Montserrat', Montserrat;
@@ -1124,9 +1133,9 @@ iframe{
         width: 35%;
     }
     .dec-bundle,.inc-bundle{
-        color: whitesmoke;
+        color: rgb(0, 0, 0);
         border: none;
-        background-color: rgb(219, 144, 119);
+        background-color: rgb(215, 215, 215);
         border-radius: 8px;
         font-size: 1.5em;
         font-family: 'Montserrat', Montserrat;
@@ -1134,7 +1143,7 @@ iframe{
         cursor: pointer;
     }
     .dec-bundle:hover,.inc-bundle:hover{
-        background-color: rgb(225, 165, 144);;
+        background-color: rgb(239, 239, 239);;
     }
     .bundle-count{
         font-family: 'Montserrat',Montserrat;
@@ -1323,13 +1332,11 @@ iframe{
         justify-content: center;
         align-items: center;
         font-family: 'Montserrat', Montserrat;
-        font-size: 1.4em;
+        font-size: 1.1em;
         font-weight: 500;   
-        padding: 3%;
-        height: 5%;
-        width: 15%;
+        padding: 1.5%;
         border: none;
-        border-radius: 15px;
+        border-radius: 10px;
         background-color: #d96f47;
         color: white;
         cursor: pointer;

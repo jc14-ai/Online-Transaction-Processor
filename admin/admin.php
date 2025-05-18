@@ -20,7 +20,7 @@ include("../site/backend/dbcon.php");
       <h1 class="dashboard-name"> ADMIN</h1>
       <div class="top-right-container">
         <!-- <button class="switch-mode" onclick="switchToUser()">Switch to user</button> -->
-        <img class="profile" src="/src/avatar.png" onclick="showLogout()">
+        <img class="profile" src="/src/admin-profile.png" onclick="showLogout()">
         <button class="logout-button" id="logout-button" onclick="logout()">Logout</button>
       </div>
     </div>
@@ -30,6 +30,12 @@ include("../site/backend/dbcon.php");
           <a href="/admin/boards/dashboard.php" target="main" class="nav-button" id="nav-button-dashboard">
             <img src="/src/window-orange.png" class="icon" id="icon-dashboard">
             Dashboard
+          </a>
+        </div>
+        <div class="dashboard-item">
+          <a href="/admin/boards/notification.php" target="main" class="nav-button" id="nav-button-notif">
+            <img src="/src/notif-orange.png" class="icon" alt="Notification Icon" id="icon-notif">
+            Notification
           </a>
         </div>
         <div class="dashboard-item">
@@ -53,12 +59,6 @@ include("../site/backend/dbcon.php");
           <a href="/admin/boards/orders.php" target="main" class="nav-button" id="nav-button-order">
             <img src="/src/order-orange.png" class="icon" alt="Orders Icon" id="icon-order">
             Orders
-          </a>
-        </div>
-        <div class="dashboard-item">
-          <a href="/admin/boards/notification.php" target="main" class="nav-button" id="nav-button-notif">
-            <img src="/src/notif-orange.png" class="icon" alt="Notification Icon" id="icon-notif">
-            Notification
           </a>
         </div>
       </div>

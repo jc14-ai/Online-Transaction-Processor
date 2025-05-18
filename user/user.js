@@ -1,4 +1,17 @@
 
+
+function selectTab(id){
+    document.getElementById("my-account-tab").style.backgroundColor = '';
+    document.getElementById("purchases-tab").style.backgroundColor = '';
+    document.getElementById("donut-tab").style.backgroundColor = '';
+    document.getElementById("kofai-tab").style.backgroundColor = '';
+    document.getElementById("bundle-tab").style.backgroundColor = '';
+    document.getElementById("cart-tab").style.backgroundColor = '';
+    document.getElementById("notifications-tab").style.backgroundColor = '';
+
+    document.getElementById(id).style.backgroundColor = 'rgb(245, 245, 245)';
+}
+
 //DONUT FUNCTIONS
 function addDonutToCart(){
     // fetch(`/user/boards/add_donut_to_cart.php?name=${encodeURIComponent(name)}&price=${encodeURIComponent(price)}`)
@@ -346,7 +359,11 @@ function logout() {
     });
 }
     
-async function checkout(userID){
+async function checkout(userID, total){
+    if(total == null){
+        return;
+    }
+
     await fetch(`/user/boards/send_orders.php?user_id=${encodeURIComponent(userID)}`)
     .then(res => res.json())
     console.log("inserted");

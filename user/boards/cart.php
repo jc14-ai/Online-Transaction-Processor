@@ -158,7 +158,8 @@ include("../../site/backend/dbcon.php");
         echo str_replace('.', '', $total);
         ?>" />
       </div>
-      <input class="checkout-button" onclick="checkout('<?php echo $user_id; ?>')" value="CHECKOUT" />
+      <input type="button" class="checkout-button" onclick="checkout('<?php echo $user_id; ?>', <?php echo $total; ?>)"
+        value="CHECKOUT" />
   </div>
 
   <div class="main-checkout-container" id="main-checkout-container">

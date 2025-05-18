@@ -60,8 +60,19 @@ include("../site/backend/dbcon.php");
         </div>
       </div>
 
+
       <div class="customer-profile">
-        <div class="dashboard-label">
+
+        <div class="dashboard-label" id="notifications-tab" onclick="selectTab(this.id)">
+          <a href="/user/boards/notification.php" target="main" style="text-decoration: none; color: #3e3232;">
+            <span class="icon-wrapper">
+              <img class="dashboard-icon" src="/src/notification-default.png">
+            </span>
+            &nbsp;&nbsp;&nbsp;&nbsp; Notifications
+          </a>
+        </div>
+
+        <div class=" dashboard-label" id="my-account-tab" onclick="selectTab(this.id)">
           <a href="/user/boards/account.php" target="main" style="text-decoration: none; color: #3e3232;">
             <span class="icon-wrapper">
               <img class="dashboard-icon" src="/src/account-default.png" width="45px" height="45px">
@@ -69,7 +80,7 @@ include("../site/backend/dbcon.php");
             &nbsp;&nbsp;&nbsp;&nbsp; My Account</a>
         </div>
 
-        <div class="dashboard-label">
+        <div class="dashboard-label" id="purchases-tab" onclick="selectTab(this.id)">
           <a href="/user/boards/purchases.php" target="main" style="text-decoration: none; color: #3e3232;">
             <span class="icon-wrapper">
               <img class="dashboard-icon" src="/src/purchases-default.png">
@@ -77,7 +88,7 @@ include("../site/backend/dbcon.php");
             &nbsp;&nbsp;&nbsp;&nbsp; Purchases</a>
         </div>
 
-        <div class="dashboard-label">
+        <div class="dashboard-label" id="donut-tab" onclick="selectTab(this.id)">
           <a href="/user/boards/donut.php" target="main" style="text-decoration: none; color: #3e3232;">
             <span class="icon-wrapper">
               <img class="dashboard-icon" src="/src/donut-default.png">
@@ -85,7 +96,7 @@ include("../site/backend/dbcon.php");
             &nbsp;&nbsp;&nbsp;&nbsp; Donut</a>
         </div>
 
-        <div class="dashboard-label">
+        <div class="dashboard-label" id="kofai-tab" onclick="selectTab(this.id)">
           <a href="/user/boards/kofai.php" target="main" style="text-decoration: none; color: #3e3232;">
             <span class="icon-wrapper">
               <img class="dashboard-icon" src="/src/coffee-default.png">
@@ -93,7 +104,7 @@ include("../site/backend/dbcon.php");
             &nbsp;&nbsp;&nbsp;&nbsp; Kofai</a>
         </div>
 
-        <div class="dashboard-label">
+        <div class="dashboard-label" id="bundle-tab" onclick="selectTab(this.id)">
           <a href="/user/boards/bundle.php" target="main" style="text-decoration: none; color: #3e3232;">
             <span class="icon-wrapper">
               <img class="dashboard-icon" src="/src/bundle-default.png">
@@ -101,7 +112,7 @@ include("../site/backend/dbcon.php");
             &nbsp;&nbsp;&nbsp;&nbsp; Bundle</a>
         </div>
 
-        <div class="dashboard-label">
+        <div class="dashboard-label" id="cart-tab" onclick="selectTab(this.id)">
           <a href="/user/boards/cart.php" target="main" style="text-decoration: none; color: #3e3232;">
             <span class="icon-wrapper">
               <img class="dashboard-icon" src="/src/cart-default.png">
@@ -109,13 +120,6 @@ include("../site/backend/dbcon.php");
             &nbsp;&nbsp;&nbsp;&nbsp; Cart</a>
         </div>
 
-        <div class="dashboard-label">
-          <a href="/user/boards/notification.php" target="main" style="text-decoration: none; color: #3e3232;">
-            <span class="icon-wrapper">
-              <img class="dashboard-icon" src="/src/notification-default.png">
-            </span>
-            &nbsp;&nbsp;&nbsp;&nbsp; Notifcations</a>
-        </div>
       </div>
     </div>
 

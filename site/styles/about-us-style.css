@@ -38,7 +38,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 32px;
+    border-radius: 32px 32px 0 0;
 }
 
 .likod {
@@ -66,7 +66,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 30px;
+    border-radius: 30px 30px 0px 0px;
     transition: all 0.5s ease;
 }
 
@@ -74,8 +74,10 @@
     opacity: 0;
     padding: 10px;
     text-align: center;
+    font-family: 'Montserrat', Montserrat;
     font-size: 1em;
-    color: #333;
+    color: white;
+    background-color: #333;
     transition: opacity 0.5s ease;
 }
 

@@ -168,7 +168,7 @@ include("header.php");
         </div>
         <a class="forgot-password" href="">forgot password?</a>
         <button class="sign-in-button" name="sign-in-button" type="submit">
-            LOGIN
+            Login
         </button>
     </form>
 
