@@ -20,7 +20,7 @@ include("../../site/backend/dbcon.php");
         <h3>MY PROFILE</h3>
       </div>
       <div class="name-board">
-        <h1 class="acc-greetings-label">HELLO,<?php echo ' ' . $_SESSION['user']; ?></h1>
+        <h1 class="acc-greetings-label">HELLO,<?php echo ' ' . strtoupper(($_SESSION['user'])) . "!"; ?></h1>
       </div>
 
       <div class="display-orders-container">

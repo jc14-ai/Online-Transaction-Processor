@@ -21,7 +21,7 @@ include("../../site/backend/dbcon.php");
         <h1 class="admin-name">
           HELLO,
           <strong>
-            <?php echo ' ' . strtoupper($_SESSION['user']) ?>
+            <?php echo ' ' . strtoupper($_SESSION['user']) . "!" ?>
           </strong>
         </h1>
       </div>

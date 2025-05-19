@@ -16,7 +16,7 @@ include("../../site/backend/dbcon.php");
 <body>
   <div class="cart-container" id="cart-container">
     <div class="my-cart-container">
-      <h1 class="my-cart-label">MY CART</h1>
+      <h1 class="my-cart-label" style="font-size: 1.3em;">MY CART</h1>
       <div class="cart-table-wrapper">
         <table class="cart-table">
           <thead class="my-cart-theader">

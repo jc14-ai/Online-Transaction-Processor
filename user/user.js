@@ -286,7 +286,6 @@ async function saveInfo(saveButton) {
         amount.textContent = data.quantity;
         total.textContent = `P${data.totalPrice}.00`;
         totallAll.textContent = `P${data.totalAll}`;
-        // location.reload();
     })
   }
 
