@@ -40,7 +40,7 @@ function closeKofaiDetailsContainer(){
 
 function openKofaiDetailsContainer(name,price,status,size,coffeeId,coffeeSizeId, image){
 
-    document.getElementById("detail-image-preview").src = `/src/${image}`;
+    document.getElementById("detail-kofai-image-preview").src = `/src/${image}`;
     document.getElementById("details-kofai-name-input").value = name;
     document.getElementById("details-kofai-price-input").value = price;
     document.getElementById("details-kofai-status-input").value = status;
@@ -126,7 +126,7 @@ function openDonutDetailsContainer(name,price,status,donutId,image){
     //     document.getElementById("image-preview").src = `/src/${data.image}`;
     // }); 
 
-    document.getElementById("detail-image-preview").src = `/src/${image}`;
+    document.getElementById("detail-donut-image-preview").src = `/src/${image}`;
     console.log(image);
     document.getElementById("details-donut-name-input").value = name;
     document.getElementById("details-donut-price-input").value = price;
@@ -184,7 +184,7 @@ function closeBundleDetailsContainer(){
 }
 
 function openBundleDetailsContainer(name,price,status,bundleId, image){
-    document.getElementById("detail-image-preview").src = `/src/${image}`;
+    document.getElementById("detail-bundle-image-preview").src = `/src/${image}`;
     document.getElementById("details-bundle-name-input").value = name;
     document.getElementById("details-bundle-price-input").value = price;
     document.getElementById("details-bundle-status-input").value = status;
@@ -278,18 +278,3 @@ imageUpload.addEventListener('change', (event) => {
         reader.readAsDataURL(file);
     }
 }); 
-
-const detailsImageUpload = document.getElementById("detail-image-upload");
-const detailsImageContainer = document.getElementById("detail-image-preview");
-detailsImageUpload.addEventListener('change', (event) => {
-    const  file = event.target.files[0];
-    if(file){
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            //fix this
-            detailsImageContainer.src = e.target.result;
-            // console.log(file.name);
-        };
-        reader.readAsDataURL(file);
-    }
-});

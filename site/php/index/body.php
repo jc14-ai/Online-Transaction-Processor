@@ -172,6 +172,49 @@ include("header.php");
         </button>
     </form>
 
+    <!-- FORGOT PASSWORD -->
+    <!-- <form class="sign-in-form" id="sign-in-form" action="/site/backend/login_backend.php" method="POST">
+        <div class="header-box">
+            <div class="close-box">
+                <img onclick="closeSignIn()" class="close-button" id="close-button" src="/src/close-white.png" />
+            </div>
+            <label class="header-sign-in">SIGN IN</label>
+        </div>
+        <div class="form-input-box"> -->
+    <!-- <div class="sub-input-box">
+                <div class="label-box">
+                    <label class="label-sign-in">Username:</label>
+                </div>
+                <div class="input-box">
+                    <input id="username-input" class="input-sign-in" type="text" placeholder="Username"
+                        name="sign-in-username" required />
+                </div>
+            </div> -->
+    <!-- <div class="sub-input-box">
+                <div class="label-box">
+                    <label class="label-sign-in">Email:</label>
+                </div>
+                <div class="input-box">
+                    <input id="email-input" class="input-sign-in" type="email" placeholder="Email" name="sign-in-email"
+                        required />
+                </div>
+            </div> -->
+    <!-- <div class="sub-input-box">
+                <div class="label-box">
+                    <label class="label-sign-in">Password:</label>
+                </div>
+                <div class="input-box">
+                    <input id="password-input" class="input-sign-in" type="password" placeholder="Password"
+                        name="sign-in-password" required />
+                </div>
+            </div> -->
+    <!-- </div> -->
+    <!-- <a class="forgot-password" href="">forgot password?</a> -->
+    <!-- <button class="sign-in-button" name="send-email-button" type="submit">
+            Send Email
+        </button>
+    </form> -->
+
 </div>
 <!-- HOME PAGE -->
 <div class="pages" id="home-page"></div>

@@ -62,11 +62,12 @@ include("../../site/backend/dbcon.php");
     <h1>DETAILS</h1>
     <div class="image-upload-container">
       <div class="preview-container" id="preview-container">
-        <img class="detail-image-preview" id="detail-image-preview" />
+        <img class="detail-image-preview" id="detail-donut-image-preview" />
+        <input type="hidden" name="DonutImageSrc" id="DonutImageSrc">
       </div>
       <label class="detail-upload-label" id="detail-upload-label">
         <span>Select Image</span>
-        <input type="file" id="detail-image-upload" name="image" accept="image/*" required hidden />
+        <input type="file" id="detail-donut-image-upload" name="image" accept="image/*" hidden />
       </label>
     </div>
 
@@ -149,6 +150,27 @@ include("../../site/backend/dbcon.php");
   </div>
 
   <script src="/admin/admin.js"></script>
+  <script>
+    const detailsDonutImageUpload = document.getElementById("detail-donut-image-upload");
+    const detailsDonutImageContainer = document.getElementById("detail-donut-image-preview");
+    detailsDonutImageUpload.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          //fix this
+          detailsDonutImageContainer.src = e.target.result;
+          // console.log(file.name);
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    document.getElementById('details-donut-container').addEventListener('submit', function () {
+      const src = document.getElementById('detail-donut-image-preview').src;
+      document.getElementById('DonutImageSrc').value = src;
+    });
+  </script>
 </body>
 
 </html>

@@ -71,11 +71,12 @@ include("../../site/backend/dbcon.php");
     <h1>DETAILS</h1>
     <div class="image-upload-container">
       <div class="preview-container" id="preview-container">
-        <img class="detail-image-preview" id="detail-image-preview" />
+        <img class="detail-image-preview" id="detail-bundle-image-preview" />
+        <input type="hidden" name="BundleImageSrc" id="BundleImageSrc">
       </div>
       <label class="detail-upload-label" id="detail-upload-label">
         <span>Select Image</span>
-        <input type="file" id="detail-image-upload" name="image" accept="image/*" required hidden />
+        <input type="file" id="detail-bundle-image-upload" name="image" accept="image/*" hidden />
       </label>
     </div>
 
@@ -159,6 +160,27 @@ include("../../site/backend/dbcon.php");
   </div>
 
   <script src="/admin/admin.js"></script>
+  <script>
+    const detailsBundleImageUpload = document.getElementById("detail-bundle-image-upload");
+    const detailsBundleImageContainer = document.getElementById("detail-bundle-image-preview");
+    detailsBundleImageUpload.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          //fix this
+          detailsBundleImageContainer.src = e.target.result;
+          // console.log(file.name);
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    document.getElementById('details-bundle-container').addEventListener('submit', function () {
+      const src = document.getElementById('detail-bundle-image-preview').src;
+      document.getElementById('BundleImageSrc').value = src;
+    });
+  </script>
 </body>
 
 </html>

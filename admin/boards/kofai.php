@@ -71,11 +71,12 @@ include("../../site/backend/dbcon.php");
     <h1>DETAILS</h1>
     <div class="image-upload-container">
       <div class="preview-container" id="preview-container">
-        <img class="detail-image-preview" id="detail-image-preview" />
+        <img class="detail-image-preview" id="detail-kofai-image-preview" />
+        <input type="hidden" name="KofaiImageSrc" id="KofaiImageSrc">
       </div>
       <label class="detail-upload-label" id="detail-upload-label">
         <span>Select Image</span>
-        <input type="file" id="detail-image-upload" name="image" accept="image/*" required hidden />
+        <input type="file" id="detail-kofai-image-upload" name="image" accept="image/*" hidden />
       </label>
     </div>
     <input class="details-kofai-name-input" id="details-kofai-name-input" type="text" name="kofai_name"
@@ -159,6 +160,27 @@ include("../../site/backend/dbcon.php");
   </div>
 
   <script src="/admin/admin.js"></script>
+  <script>
+    const detailsKofaiImageUpload = document.getElementById("detail-kofai-image-upload");
+    const detailsKofaiImageContainer = document.getElementById("detail-kofai-image-preview");
+    detailsKofaiImageUpload.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          //fix this
+          detailsKofaiImageContainer.src = e.target.result;
+          // console.log(file.name);
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    document.getElementById('details-kofai-container').addEventListener('submit', function () {
+      const src = document.getElementById('detail-kofai-image-preview').src;
+      document.getElementById('KofaiImageSrc').value = src;
+    });
+  </script>
 </body>
 
 </html>

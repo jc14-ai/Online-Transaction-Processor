@@ -94,3 +94,7 @@ function showBundle() {
     // void bundleContainer.offsetWidth;
     // bundleContainer.classList.add('slide-in-right');
 }
+
+function showForgotPass(){
+    
+}

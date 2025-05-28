@@ -28,7 +28,12 @@ if (isset($_POST['save-bundle-button']) && isValid($bundle_name, $bundle_price, 
     }
 
     $target_dir = "../../src/";
-    $imageName = basename($_FILES["image"]["name"]);
+    $imageName = "";
+    if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+        $imageName = basename($_FILES['image']['name']);
+    } else {
+        $imageName = basename($_POST['BundleImageSrc']);
+    }
     $target_file = $target_dir . $imageName;
 
     move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
