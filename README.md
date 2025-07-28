@@ -1,5 +1,4 @@
-# A Startup Website for Kofei
-
+# Online Transaction Processor for a Donut & Coffee Business!
 Current contributors:
 popefransheesh
 miguelskiee
